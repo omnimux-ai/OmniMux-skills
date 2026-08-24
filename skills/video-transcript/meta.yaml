@@ -1,0 +1,15 @@
+display-name-zh: 视频转录
+version: 0.2.1
+tag-en: "Audio Content / Post-Production"
+tag-cn: "音频内容 / 后期制作"
+complete-tags-en:
+  - "Education / Post-production"
+complete-tags-cn:
+  - "教育 / 后期处理"
+summary-en: "Turn uploaded video or audio into timestamped Markdown transcripts, subtitle sources, summaries, and quote banks."
+summary-cn: "将音视频转为带时间戳逐字稿。"
+desc-en: "Video Transcript converts uploaded video or audio into readable transcripts. It first extracts and normalizes audio with ffmpeg, uses the built-in ASR subtitle generator as the primary path, and treats local Whisper as an optional fallback for offline or failed-ASR cases. It can produce timestamped Markdown, subtitle sources, key-point summaries, and reusable quote banks for videos, podcasts, interviews, and meetings."
+desc-cn: "视频转录把上传的视频或音频整理成可阅读的逐字稿。默认先用 ffmpeg 快速抽取并标准化音频，再调用内置 ASR 生成字幕源；只有在主 ASR 失败、结果无效或用户明确要求本地离线时，才把 Whisper 作为兜底方案。适合视频字幕、播客转录、访谈整理、会议记录、关键观点和金句提取。"
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

@@ -1,0 +1,16 @@
+display-name-zh: 多角度
+version: 1.0.9
+tag-en: "Visual Production / Image Generation"
+tag-cn: "视觉创作 / 图像生成"
+complete-tags-en:
+  - "Animation / Creative Generation"
+complete-tags-cn:
+  - "动画 / 创作生成"
+summary-en: "Re-render image from a new camera angle"
+summary-cn: "用新相机视角重新渲染图片"
+desc-en: "For re-rendering an existing image from a new camera viewpoint with interactive 3D controls. Takes one source image plus rotation, tilt and zoom parameters set via a 3D sphere control as input. Produces a regenerated version of the original from the chosen viewpoint via the nano banana model. Parameter collection happens in the GUI panel and the result is delivered in the main chat conversation flow."
+desc-cn: "适用于把已有的一张图换一个相机视角重新生成,通过交互式 3D 控件精确调整视角。输入一张原图与通过 3D 球体控件设定的旋转、倾斜与缩放参数,输出按该视角重新渲染后的新图(由 nano banana 模型生成)。参数采集在 GUI 面板中完成,最终生成结果在主站对话流中呈现,实现操作与展示的分离。"
+cover: ""
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

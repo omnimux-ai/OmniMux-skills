@@ -1,0 +1,16 @@
+display-name-zh: 电商图设计
+version: 1.0.11
+tag-en: "E-Commerce / Image Generation"
+tag-cn: "电商 / 图像生成"
+complete-tags-en:
+  - "E-Commerce / Creative Generation"
+complete-tags-cn:
+  - "电商 / 创作生成"
+summary-en: "E-commerce design across 14 categories"
+summary-cn: "覆盖14品类的电商图设计"
+desc-en: "For full e-commerce visual design across 14 verticals such as apparel, beauty, 3C electronics, baby, pets and home furnishing. Takes product info or a brief plus optional reference images as input. Produces white-background, hero, detail page, lifestyle, size-reference and multi-angle images compliant with Amazon, Taobao, JD, Shopify and Xiaohongshu platform specifications and guidelines."
+desc-cn: "适用于电商商品图的全套视觉设计,覆盖女装、美妆、3C 数码、母婴、宠物、家居等 14 个垂直品类。输入商品信息或设计简报、可选参考图,输出白底图、hero 主图、详情页图、lifestyle 场景图、尺寸参考图、多角度展示图等完整商品图套件。全部适配 Amazon、淘宝、京东、Shopify、小红书等平台的规格与合规要求。"
+cover: ""
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

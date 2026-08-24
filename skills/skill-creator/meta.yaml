@@ -1,0 +1,16 @@
+display-name-zh: 技能创建
+version: 2.3.2
+tag-en: "Platform Tooling"
+tag-cn: "平台工具"
+complete-tags-en:
+  - "Platform Tooling"
+complete-tags-cn:
+  - "平台工具"
+summary-en: "Create bilingual reusable skills"
+summary-cn: "创建双语可复用Skill"
+desc-en: "For creating, modifying or installing reusable skills, including saving the current conversation flow as a skill. Takes the user's intent or an existing workflow as input and produces market-ready bilingual files: SKILL.md, SKILL.cn.md, meta.yaml, and optional resources. Also helps with skill installation, directory rules, trigger validation, and market compliance checks."
+desc-cn: "适用于创建、修改或安装可复用 Skill，也可把当前对话流程保存为 Skill。输入用户意图或已有工作流，输出符合市场校验的双语目录：SKILL.md、SKILL.cn.md、meta.yaml 及可选资源，并协助完成安装、目录规则、触发测试、引用完整性检查和发布前校验。"
+cover: ""
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

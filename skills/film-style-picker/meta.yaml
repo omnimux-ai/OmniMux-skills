@@ -1,0 +1,16 @@
+display-name-zh: 影视风格选择器
+version: 0.3.10
+tag-en: "Visual Production / Idea & Concept"
+tag-cn: "视觉创作 / 创意构思"
+complete-tags-en:
+  - "Short Drama / Intent Brainstorming"
+complete-tags-cn:
+  - "短剧漫剧 / 意图脑爆"
+summary-en: "Pick genre and master, get reference shots"
+summary-cn: "选定影视类别与导演获取参考图"
+desc-en: "For locking a visual style direction before AI image or video generation by referencing established cinematic aesthetics. Takes a genre interest or director and film reference target as input. Produces a curated set of style references collected from Film-Grab, Pinterest, Cosmos and similar visual databases plus an AI prompt template ready for direct generation. Essential for maintaining visual consistency across production."
+desc-cn: "适用于 AI 生图或生视频前确定视觉风格、找参考图、对标导演或电影镜头美学的场景,是保持制作视觉一致性的关键步骤。输入感兴趣的影视类别或导演、影片对标方向,输出该风格下的代表性参考图(自动从 Film-Grab、Pinterest、Cosmos 等视觉数据库采集)及可直接用于生成的 AI Prompt 模板。"
+cover: ""
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

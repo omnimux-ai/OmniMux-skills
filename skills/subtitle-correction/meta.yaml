@@ -1,0 +1,15 @@
+display-name-zh: 字幕修正
+version: 0.1.1
+tag-en: "Audio Content / Post-Production"
+tag-cn: "音频内容 / 后期制作"
+complete-tags-en:
+  - "Platform Tooling"
+complete-tags-cn:
+  - "平台工具"
+summary-en: "Correct speech recognition errors in SRT subtitles while strictly preserving timeline and numbering."
+summary-cn: "修正 SRT 字幕语音识别错误，严格保留时间轴和编号。"
+desc-en: "Subtitle Correction fixes speech-recognition errors in SRT files while strictly preserving all timestamps and subtitle numbering. Interactively asks the user for domain-specific terminology first — proper nouns, technical terms, framework names — then applies domain-aware corrections tuned for that vocabulary. Covers Chinese phonetic confusions, technical term misrecognitions, English-Chinese mixed content, and code identifier spelling. Ships a subtitle_tool.py validator, diff viewer, and HTML report generator for structured review before finalizing changes."
+desc-cn: "字幕修正修 SRT 文件里的语音识别错误，严格保留所有时间戳和字幕编号。会先向用户索取领域术语——专有名词、专业术语、框架名——然后按该词汇领域调优做修正。覆盖中文谐音混淆、专业术语误识、中英文混排、代码标识符拼写。附带 subtitle_tool.py 校验器、diff 查看器和 HTML 报告生成器，方便修改定稿前做结构化 review。适合技术教程、AI/ML 课程等带专业术语的字幕修正。"
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

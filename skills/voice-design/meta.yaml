@@ -1,0 +1,16 @@
+display-name-zh: 声音设计
+version: 2.0.8
+tag-en: "Audio Content / Audio Generation"
+tag-cn: "音频内容 / 音频生成"
+complete-tags-en:
+  - "Sound & Music / Creative Generation"
+complete-tags-cn:
+  - "音频音乐 / 创作生成"
+summary-en: "Design and preview custom voices from text"
+summary-cn: "用文字描述设计并试听自定义音色"
+desc-en: "For designing custom AI voices when no suitable voice exists in the standard library and a unique voice identity is required. Takes a natural-language description of the desired voice characteristics plus a preview text as input. Produces a sample audio for previewing and a reusable voice_id for TTS integration. This is an experimental feature and quality may be lower than the built-in voice library."
+desc-cn: "适用于官方音色库找不到合适声音、需要自定义设计独特音色身份时使用。输入对声音特征的自然语言描述(如年龄、性别、情感色彩、语速等)与试听文本,输出试听样本音频与可复用的 voice_id 供 TTS 集成使用。此功能为实验性质,品质通常低于内置音色库,建议优先使用 get_voice_id 检索现有音色。"
+cover: ""
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

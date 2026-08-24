@@ -1,0 +1,18 @@
+display-name-zh: MV创作
+version: 0.1.16
+tag-en: "Music Video / Video Generation"
+tag-cn: "音乐视频 / 视频生成"
+complete-tags-en:
+  - "Animation / Planning"
+  - "Creative & Experimental / Planning"
+complete-tags-cn:
+  - "动画 / 计划制定"
+  - "创意实验 / 计划制定"
+summary-en: "Turn lyrics into MV storyboard and video"
+summary-cn: "把歌词转化为MV分镜与成片"
+desc-en: "For music-video creation from lyrics or song to finished cut covering the full production pipeline. Takes lyrics or a music track plus desired style direction as input material. Produces an MV storyboard with shot breakdown, AI generation prompts for each scene, an MV timeline with beat synchronization and editing-software workflow guidance. Delivers a complete generated music video ready for review and publishing."
+desc-cn: "适用于音乐视频从歌词到成片的全流程创作,覆盖创意构思、分镜设计到成片输出的完整制作管线。输入歌词或音乐文件、期望的视觉风格方向,输出 MV 分镜故事板(含逐镜头拆解)、各场景 AI 视频生成提示词、与节拍同步的 MV 时间线规划、剪辑软件工作流指引,最终交付可供审阅和发布的 MV 成片。"
+cover: "https://cdn.hailuoai.com/hailuo-video-web/public_assets/deb44193-a6e6-46c7-8d19-f602ad240201.mp4"
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

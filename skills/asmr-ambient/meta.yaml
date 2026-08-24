@@ -1,0 +1,16 @@
+display-name-zh: 助眠音频
+version: 0.1.14
+tag-en: "Audio Content / Audio Generation"
+tag-cn: "音频内容 / 音频生成"
+complete-tags-en:
+  - "Sound & Music / Creative Generation"
+complete-tags-cn:
+  - "音频音乐 / 创作生成"
+summary-en: "Generate sleep meditation and ASMR audio"
+summary-cn: "生成助眠冥想与ASMR音频"
+desc-en: "For sleep, meditation and relaxation audio production covering guided meditation, bedtime stories and ASMR content types. Takes a scene, theme or content direction as input. Produces fully mixed audio combining ASMR-specific TTS with whisper characteristics, intelligent pacing with natural breath pauses, curated nature sound assets and AI-generated background music. Optimized for immersive listening experiences."
+desc-cn: "适用于助眠、放松、冥想类音频内容的制作,覆盖引导冥想、睡前故事、ASMR(耳语加白噪音)三种内容类型。输入场景或内容主题,输出混音完成的成品音频。制作流程组合 ASMR 专用耳语音色、带自然呼吸间隔的智能停顿节奏、精选自然音效素材与 AI 生成的背景音乐,针对沉浸式聆听体验进行优化。"
+cover: ""
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official

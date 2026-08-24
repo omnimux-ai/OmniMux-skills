@@ -1,0 +1,17 @@
+display-name-zh: 社媒文案
+version: 0.3.1
+tag-en: "Platform Tooling"
+tag-cn: "平台工具"
+complete-tags-en:
+  - "Commercial Ad / Post-production"
+  - "E-Commerce / Post-production"
+complete-tags-cn:
+  - "商业广告 / 后期处理"
+  - "电商 / 后期处理"
+summary-en: "Write native captions for Facebook, Instagram, TikTok, Pinterest, and YouTube — hook + payoff + CTA per platform's rules."
+summary-cn: "为 FB、IG、TikTok、Pinterest、YouTube 写原生文案，hook + payoff + CTA 按各平台规则。"
+desc-en: "Caption Writer produces platform-native captions for visual-first social posts. Ships explicit specs per surface: Facebook 40-500 chars, Instagram 125-char truncation + 3-10 hashtags, TikTok SEO-friendly under 150, Pinterest title ≤100 + description ≤500 with no hashtags, YouTube title 60-70 + description with chapters, Shorts under 150 with #shorts. Every caption follows the hook + payoff + CTA anatomy and comes with a pre-publish checklist."
+desc-cn: "Caption Writer 为视觉优先社交贴生成平台原生文案。分平台明码规格：Facebook 40-500 字符、Instagram 125 字符 truncation 加 3-10 hashtag、TikTok 通常 150 字以内且带 SEO、Pinterest title ≤100 加 description ≤500 且不用 hashtag、YouTube title 60-70 加带 chapters 的长视频描述、Shorts 150 字以内且加 #shorts 标签。每条文案走 hook + payoff + CTA 结构，按 context 文件匹配用户声线，附发布前 checklist 覆盖 hashtag 规则、链接位置、alt text、chapters 等要点。"
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: official
