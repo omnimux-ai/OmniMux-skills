@@ -1,0 +1,10 @@
+display-name-zh: "3D漫剧半解说"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "短剧漫剧"
+  - "精选"
+summary-cn: "专为3D漫剧打造的半解说视频生成工作流，自动完成分镜调度、角色动作与解说音轨合成"
+desc-cn: "专为3D漫剧打造的半解说视频生成工作流，自动完成分镜调度、角色动作与解说音轨合成"
+author-cn: "OmniMux"
+source: official

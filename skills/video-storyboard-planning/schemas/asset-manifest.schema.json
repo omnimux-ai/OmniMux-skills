@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Storyboard Asset Manifest",
+  "description": "用于管理视频分镜项目中输入与输出素材的清单 schema，包括产品图、参考图、分镜图、导出文件、音频与辅助素材。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_name",
+    "assets"
+  ],
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "description": "项目名称",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "description": "素材清单版本号，例如 1.0.0"
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "生成时间，建议 ISO 8601 格式"
+    },
+    "assets": {
+      "type": "array",
+      "description": "素材条目列表",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset_id",
+          "asset_type",
+          "role",
+          "path"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "description": "素材唯一标识，例如 product_main_01 / shot_03_frame / bgm_01",
+            "minLength": 1
+          },
+          "asset_type": {
+            "type": "string",
+            "description": "素材类型",
+            "enum": [
+              "image",
+              "video",
+              "audio",
+              "document",
+              "csv",
+              "json",
+              "prompt",
+              "other"
+            ]
+          },
+          "role": {
+            "type": "string",
+            "description": "素材在项目中的角色",
+            "enum": [
+              "input_product_image",
+              "input_reference_image",
+              "input_reference_video",
+              "input_brief",
+              "input_script",
+              "input_data",
+              "storyboard_output",
+              "shotlist_output",
+              "prompt_output",
+              "generated_frame",
+              "production_note",
+              "voiceover_script",
+              "subtitle_script",
+              "style_reference",
+              "music_reference",
+              "sfx_reference",
+              "archive",
+              "other"
+            ]
+          },
+          "path": {
+            "type": "string",
+            "description": "素材相对路径",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "description": "素材标题或名称"
+          },
+          "description": {
+            "type": "string",
+            "description": "素材描述"
+          },
+          "format": {
+            "type": "string",
+            "description": "文件格式，例如 png / jpg / mp4 / md / csv / json"
+          },
+          "mime_type": {
+            "type": "string",
+            "description": "MIME 类型，例如 image/png"
+          },
+          "source": {
+            "type": "string",
+            "description": "来源说明，例如 user_upload / generated / external_reference / internal_export"
+          },
+          "linked_shot_ids": {
+            "type": "array",
+            "description": "关联的镜头编号",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "description": "标签列表",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "素材状态",
+            "enum": [
+              "raw",
+              "selected",
+              "in_use",
+              "generated",
+              "approved",
+              "archived"
+            ]
+          },
+          "width": {
+            "type": "integer",
+            "description": "图片或视频宽度",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "description": "图片或视频高度",
+            "minimum": 1
+          },
+          "duration_seconds": {
+            "type": "number",
+            "description": "视频或音频时长（秒）",
+            "minimum": 0
+          },
+          "checksum": {
+            "type": "string",
+            "description": "可选校验值"
+          },
+          "notes": {
+            "type": "string",
+            "description": "补充备注"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,368 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/video-script-creation/input.schema.json",
+  "title": "视频脚本创作输入结构",
+  "description": "用于公开复用模板的输入结构定义，描述生成短视频电商脚本时可接收的产品、受众、平台、风格与输出偏好信息。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product_name",
+    "core_selling_points",
+    "target_audience"
+  ],
+  "properties": {
+    "product_name": {
+      "type": "string",
+      "title": "产品名称",
+      "description": "用于脚本创作的产品名称。",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "title": "品类",
+      "description": "产品所属品类，例如家居收纳、个护、美妆、小家电等。"
+    },
+    "brand_name": {
+      "type": "string",
+      "title": "品牌名称",
+      "description": "产品或品牌名称，可选。"
+    },
+    "product_summary": {
+      "type": "string",
+      "title": "产品一句话介绍",
+      "description": "对产品的简要概述。"
+    },
+    "product_link": {
+      "type": "string",
+      "title": "商品链接",
+      "description": "商品详情页或产品页链接。",
+      "format": "uri"
+    },
+    "product_images": {
+      "type": "array",
+      "title": "商品图片",
+      "description": "商品图片 URL 列表或其他公开引用地址。",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "price_range": {
+      "type": "string",
+      "title": "价格带",
+      "description": "例如低客单、中客单、高客单。"
+    },
+    "market_region": {
+      "type": "string",
+      "title": "目标市场",
+      "description": "例如美国、东南亚、英国等。"
+    },
+    "core_selling_points": {
+      "type": "array",
+      "title": "核心卖点",
+      "description": "建议按重要性排序的卖点列表。",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "priority_selling_point": {
+      "type": "string",
+      "title": "优先强调卖点",
+      "description": "希望重点突出的单一卖点。"
+    },
+    "target_audience": {
+      "type": "object",
+      "title": "目标用户",
+      "description": "目标用户信息。",
+      "additionalProperties": false,
+      "required": [
+        "primary_segment"
+      ],
+      "properties": {
+        "primary_segment": {
+          "type": "string",
+          "title": "主要人群",
+          "description": "最主要目标受众描述。"
+        },
+        "age_range": {
+          "type": "string",
+          "title": "年龄范围",
+          "description": "例如 18-24、25-34。"
+        },
+        "gender_skew": {
+          "type": "string",
+          "title": "性别倾向",
+          "description": "例如女性为主、男性为主、不限。"
+        },
+        "purchase_power": {
+          "type": "string",
+          "title": "消费能力",
+          "description": "例如价格敏感、中等、愿意为体验付费。"
+        },
+        "pain_points": {
+          "type": "array",
+          "title": "用户痛点",
+          "description": "目标用户常见问题或困扰。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "decision_factors": {
+          "type": "array",
+          "title": "购买决策因素",
+          "description": "用户下单时最在意的要素。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "use_scenarios": {
+          "type": "array",
+          "title": "使用场景",
+          "description": "典型使用场景列表。",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content_goal": {
+      "type": "string",
+      "title": "内容目标",
+      "description": "例如提升点击、提高下单、增强种草、提高完播等。"
+    },
+    "cta_goal": {
+      "type": "string",
+      "title": "CTA 目标",
+      "description": "期望引导的动作，例如点击链接、查看商品页、下单、收藏等。"
+    },
+    "platform": {
+      "type": "string",
+      "title": "发布平台",
+      "description": "例如 TikTok、Instagram Reels、YouTube Shorts。"
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "title": "视频时长（秒）",
+      "description": "期望的视频时长，单位为秒。",
+      "minimum": 5,
+      "maximum": 180
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "title": "画幅比例",
+      "description": "例如 9:16、1:1、16:9。",
+      "enum": [
+        "9:16",
+        "1:1",
+        "16:9",
+        "4:5",
+        "other"
+      ]
+    },
+    "style_preferences": {
+      "type": "array",
+      "title": "风格偏好",
+      "description": "期望的视频风格，可多选。",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ugc",
+          "demo",
+          "unboxing",
+          "comparison",
+          "pain_point",
+          "lifestyle",
+          "storytelling",
+          "listicle",
+          "expert",
+          "premium_ad",
+          "other"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "tone_preference": {
+      "type": "string",
+      "title": "语气偏好",
+      "description": "例如更口语化、理性、轻松、精致。"
+    },
+    "reference_script": {
+      "type": "string",
+      "title": "参考脚本",
+      "description": "用户已有的脚本、口播草稿或参考文案。"
+    },
+    "reference_videos": {
+      "type": "array",
+      "title": "参考视频",
+      "description": "公开参考视频链接列表。",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "title": "竞品或参考品牌",
+      "description": "竞品、参考产品或相关品牌。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "must_include": {
+      "type": "array",
+      "title": "必须包含内容",
+      "description": "脚本中必须体现的元素、卖点或台词要点。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "must_avoid": {
+      "type": "array",
+      "title": "必须避免内容",
+      "description": "禁止出现的表达、场景、承诺或词汇。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compliance_notes": {
+      "type": "array",
+      "title": "合规备注",
+      "description": "敏感类目、风险边界或审核提醒。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_preferences": {
+      "type": "object",
+      "title": "输出偏好",
+      "description": "控制输出内容范围和详细度。",
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "type": "string",
+          "title": "输出语言",
+          "description": "例如 zh-CN、en-US。"
+        },
+        "detail_level": {
+          "type": "string",
+          "title": "详细程度",
+          "description": "输出详细程度。",
+          "enum": [
+            "brief",
+            "standard",
+            "detailed"
+          ]
+        },
+        "include_angles": {
+          "type": "boolean",
+          "title": "是否包含创意角度",
+          "default": true
+        },
+        "include_full_script": {
+          "type": "boolean",
+          "title": "是否包含完整脚本",
+          "default": true
+        },
+        "include_storyboard": {
+          "type": "boolean",
+          "title": "是否包含分镜",
+          "default": true
+        },
+        "include_subtitles": {
+          "type": "boolean",
+          "title": "是否包含字幕",
+          "default": true
+        },
+        "include_voiceover": {
+          "type": "boolean",
+          "title": "是否包含口播",
+          "default": true
+        },
+        "include_production_notes": {
+          "type": "boolean",
+          "title": "是否包含制作建议",
+          "default": true
+        },
+        "include_ai_handoff": {
+          "type": "boolean",
+          "title": "是否包含 AI 视频交接摘要",
+          "default": true
+        },
+        "number_of_angles": {
+          "type": "integer",
+          "title": "创意角度数量",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 3
+        }
+      }
+    },
+    "assumptions_allowed": {
+      "type": "boolean",
+      "title": "是否允许基于默认假设先输出",
+      "description": "当信息不完整时，是否允许系统先按合理默认值产出一版。",
+      "default": true
+    }
+  },
+  "examples": [
+    {
+      "product_name": "便携榨汁杯",
+      "category": "小家电",
+      "brand_name": "FreshGo",
+      "core_selling_points": [
+        "无线便携",
+        "即打即喝",
+        "易清洗"
+      ],
+      "priority_selling_point": "无线便携",
+      "target_audience": {
+        "primary_segment": "上班族和健身人群",
+        "age_range": "18-35",
+        "gender_skew": "不限",
+        "pain_points": [
+          "早上赶时间",
+          "想喝得更健康但嫌麻烦"
+        ],
+        "decision_factors": [
+          "方便",
+          "轻便",
+          "清洗省事"
+        ],
+        "use_scenarios": [
+          "通勤前",
+          "办公室",
+          "健身后"
+        ]
+      },
+      "content_goal": "提升点击与商品兴趣",
+      "cta_goal": "引导查看商品链接",
+      "platform": "TikTok",
+      "duration_seconds": 20,
+      "aspect_ratio": "9:16",
+      "style_preferences": [
+        "ugc",
+        "demo"
+      ],
+      "tone_preference": "口语化、真实体验",
+      "must_avoid": [
+        "绝对化承诺",
+        "夸大动力参数"
+      ],
+      "output_preferences": {
+        "language": "zh-CN",
+        "detail_level": "standard",
+        "include_angles": true,
+        "include_full_script": true,
+        "include_storyboard": true,
+        "include_subtitles": true,
+        "include_voiceover": true,
+        "include_production_notes": true,
+        "include_ai_handoff": true,
+        "number_of_angles": 3
+      },
+      "assumptions_allowed": true
+    }
+  ]
+}

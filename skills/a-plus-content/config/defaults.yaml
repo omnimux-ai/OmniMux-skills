@@ -1,0 +1,110 @@
+meta:
+  name: "a-plus-content"
+  version: "1.0.0"
+  public: true
+  description: "A+ 内容与商品详情页模块规划的静态默认配置。"
+  supported_outputs:
+    - "plan_only"
+    - "plan_and_copy"
+    - "plan_copy_and_prompts"
+    - "review_ready"
+  supported_platforms:
+    - "amazon"
+    - "tiktok_shop"
+    - "independent_site"
+    - "general_ecommerce"
+  supported_languages:
+    - "zh"
+    - "en"
+
+defaults:
+  locale: "zh"
+  platform: "general_ecommerce"
+  market: "CN"
+  output_mode: "plan_copy_and_prompts"
+  module_count:
+    min: 4
+    recommended_min: 6
+    recommended_max: 8
+    max: 10
+  style_depth: "standard"
+  evidence_mode: "conservative"
+  prompt_detail_level: "high"
+  visual_consistency_required: true
+  preserve_product_identity: true
+  require_risk_review: true
+  allow_generation_handoff: true
+  include_style_bible: true
+  include_page_order_rationale: true
+  include_delivery_notes: true
+
+input_requirements:
+  minimum_one_of:
+    - "product_info"
+    - "product_images"
+    - "product_url"
+    - "reference_pages"
+  recommended:
+    - "brand_name"
+    - "target_platform"
+    - "target_market"
+    - "core_selling_points"
+    - "target_audience"
+    - "brand_guidelines"
+    - "competitor_references"
+    - "must_avoid_claims"
+  optional:
+    - "price_band"
+    - "bundle_contents"
+    - "size_specs"
+    - "material_specs"
+    - "certifications"
+    - "usage_steps"
+    - "faq"
+    - "existing_copy"
+
+question_policy:
+  ask_only_when_critical: true
+  max_questions_per_round: 3
+  prioritize_questions:
+    - "target_platform"
+    - "top_3_selling_points"
+    - "output_goal"
+    - "target_market"
+    - "brand_constraints"
+  missing_input_behavior:
+    - "Work from confirmed product facts first."
+    - "Flag visual uncertainty when product images are missing."
+    - "Avoid hard claims when specs or proof are absent."
+
+analysis:
+  enabled: true
+  goals:
+    - "identify_core_value"
+    - "extract_supporting_evidence"
+    - "rank_selling_points"
+    - "detect_visual_opportunities"
+    - "flag_compliance_risks"
+  priority_framework:
+    A: "must_frontload"
+    B: "mid_page_support"
+    C: "back_page_support"
+    D: "do_not_emphasize"
+  risk_categories:
+    - "medical_claim"
+    - "absolute_claim"
+    - "unverified_certification"
+    - "unverified_ranking"
+    - "unverified_sales_claim"
+    - "aggressive_competitor_comparison"
+    - "before_after_claim"
+
+copywriting:
+  enabled: true
+  principles:
+    - "lead_with_user_value"
+    - "one_module_one_job"
+    - "headline_before_explanation"
+    - "avoid_repetition"
+    - "prefer_specific_over_vague"
+    - "fit_platform_tone"

@@ -1,0 +1,12 @@
+display-name-zh: "TikTok Market Trend Analysis"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "TikTok"
+  - "电商"
+  - "市场趋势"
+  - "Topview"
+summary-cn: "TikTok Shop region, category, item and seller trend analysis using Topview td tools."
+desc-cn: "TikTok Shop region, category, item and seller trend analysis using Topview td tools."
+author-cn: "OmniMux"
+source: official

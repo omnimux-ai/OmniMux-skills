@@ -1,0 +1,66 @@
+{
+  "project_name": "Portable Blender TikTok Shop UGC Brief",
+  "platform": "TikTok",
+  "format": "9:16",
+  "duration_seconds": 24,
+  "language": "zh-CN",
+  "objective": "Create a short TikTok Shop style storyboard that sells a portable blender through a problem-solution UGC angle.",
+  "cta": "Tap to view the product",
+  "video_type": "ecommerce_conversion",
+  "target_audience": {
+    "primary": "Busy women aged 22-35 interested in fitness, wellness, and convenient routines",
+    "secondary": "Office workers, commuters, gym-goers, and students",
+    "pain_points": [
+      "No time to prepare fresh drinks in the morning",
+      "Full-size blenders feel bulky for daily use"
+    ],
+    "motivations": [
+      "Make drinks anywhere",
+      "Save time during busy mornings",
+      "Support a convenient healthy routine"
+    ]
+  },
+  "creative_direction": {
+    "style": "Fast-paced UGC with selfie and handheld demo shots",
+    "tone": "Relatable, direct, and lightly persuasive",
+    "with_voiceover": true,
+    "with_subtitles": true,
+    "show_face": true
+  },
+  "key_messages": [
+    "Strong hook in the first 2 seconds",
+    "Clear product reveal",
+    "Blending demo",
+    "Portable use moment"
+  ],
+  "core_selling_points": [
+    "USB rechargeable",
+    "Portable cup design",
+    "One-button blending",
+    "Easy to carry in a bag or car"
+  ],
+  "scene_preferences": [
+    "Bright kitchen",
+    "Car cup holder",
+    "Gym bag or office desk"
+  ],
+  "constraints": {
+    "avoid": [
+      "Medical or weight-loss claims",
+      "Unsupported ice-crushing claims",
+      "Overly polished TV commercial mood"
+    ],
+    "must_include": [
+      "Product reveal",
+      "Blending action",
+      "Call to action"
+    ]
+  },
+  "deliverables": {
+    "need_storyboard": true,
+    "need_shotlist": true,
+    "need_prompts": true,
+    "need_production_notes": true
+  },
+  "notes": "The storyboard should feel like a real TikTok Shop creator post."
+}

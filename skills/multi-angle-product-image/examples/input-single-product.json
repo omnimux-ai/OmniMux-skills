@@ -1,0 +1,41 @@
+{
+  "input_mode": "single_product_image",
+  "product_name": "双层不锈钢保温杯",
+  "category": "drinkware",
+  "product_description": "一款便携式双层不锈钢保温杯，圆柱形杯身，哑光白色主体，顶部为旋拧式杯盖，风格简洁，适合电商展示。",
+  "reference_images": [
+    {
+      "id": "ref_01",
+      "source": "https://example.com/images/tumbler-front.jpg",
+      "view_hint": "front",
+      "notes": "正面参考图，能看到杯身主体与杯盖轮廓。"
+    }
+  ],
+  "desired_angles": [
+    "hero_three_quarter",
+    "clean_front",
+    "left_side",
+    "macro_detail"
+  ],
+  "output_count": 4,
+  "background_mode": "white",
+  "lighting_style": "soft_studio",
+  "platform_target": "amazon",
+  "strict_consistency_level": "high",
+  "include_packaging": false,
+  "include_macro_detail": true,
+  "include_scale_context": false,
+  "allow_inferred_surfaces": true,
+  "brand_elements": {
+    "has_logo": false,
+    "text_policy": "omit_if_unknown"
+  },
+  "material_notes": "主体应表现为哑光喷涂不锈钢，不要做成高反镜面金属。",
+  "color_notes": "主色为干净白色，避免偏黄或偏蓝。",
+  "constraints": [
+    "保持杯身比例稳定",
+    "不要新增提手、吸管、按钮或额外装饰",
+    "适合电商白底图使用"
+  ],
+  "notes": "当前只有正面参考，背面和底部结构请保守处理。"
+}

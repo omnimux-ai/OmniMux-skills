@@ -1,0 +1,12 @@
+display-name-zh: "Amazon Market Analysis"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Amazon"
+  - "市场分析"
+  - "精选"
+summary-cn: "Amazon category and market opportunity analysis using amazon-mcp."
+desc-cn: "Amazon category and market opportunity analysis using amazon-mcp."
+author-cn: "OmniMux"
+source: official

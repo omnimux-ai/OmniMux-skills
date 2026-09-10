@@ -1,0 +1,36 @@
+levels:
+  - reject
+  - confirm_before_continue
+  - allow_with_care
+  - allow
+
+reject:
+  - unauthorized person image
+  - minor sexualization
+  - humiliation or harassment intent
+  - fake official identity
+  - explicit misleading proof of real try-on
+
+confirmBeforeContinue:
+  - public figure usage
+  - brand logo or protected design
+  - professional uniform or institution markers
+  - material, color, or fit claims that may mislead buyers
+
+allowWithCare:
+  - mild beauty cleanup
+  - lifestyle scene styling
+  - non-sensitive before-after comparison
+  - generic professional styling without real institution markers
+
+allow:
+  - normal ecommerce outfit planning
+  - social content outfit planning
+  - internal review of multi-variant briefs
+
+reviewChecklist:
+  - subject authorization is clear
+  - garment facts come from visible evidence
+  - risky branding is flagged
+  - ecommerce truthfulness is preserved
+  - manual review points are recorded

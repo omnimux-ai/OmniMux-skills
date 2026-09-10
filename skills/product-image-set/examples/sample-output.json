@@ -1,0 +1,511 @@
+{
+  "version": "1.0",
+  "request_summary": {
+    "product_name": "示例产品名",
+    "category": "示例类目",
+    "goal": "为电商平台规划一套高转化商品套图，覆盖点击吸引、卖点传达、质感建立与转化辅助。",
+    "target_platforms": [
+      "Amazon",
+      "TikTok Shop"
+    ],
+    "constraints": [
+      "避免夸大或不可验证功效",
+      "不得改变产品真实结构",
+      "保持整套图的品牌一致性"
+    ],
+    "input_assets_summary": [
+      "用户提供了产品正面图、侧面图与包装图",
+      "现有素材可用于建立产品一致性锚点"
+    ]
+  },
+  "style_bible": {
+    "version": "1.0",
+    "product_identity": {
+      "product_name": "示例产品名",
+      "category": "示例类目",
+      "core_shape": "主体轮廓简洁，结构比例稳定，包装视觉统一",
+      "key_features_to_preserve": [
+        "产品外轮廓比例",
+        "关键功能部位位置",
+        "包装主色与版式关系"
+      ],
+      "forbidden_identity_drifts": [
+        "不可随意改变瓶身/机身比例",
+        "不可删除关键结构",
+        "不可生成模糊或错误品牌标识"
+      ]
+    },
+    "visual_direction": {
+      "style_keywords": [
+        "clean commercial",
+        "premium ecommerce",
+        "high-conversion",
+        "detail-driven"
+      ],
+      "market_level": "premium",
+      "mood": [
+        "可信",
+        "简洁",
+        "高级",
+        "可购买"
+      ],
+      "commercial_intent": "提升首图点击率，并通过后续卖点图增强信任与转化。"
+    },
+    "composition_rules": {
+      "camera_language": [
+        "正视主图",
+        "45度展示",
+        "局部微距细节",
+        "适度场景化构图"
+      ],
+      "framing": "以清晰主体为中心，结合少量留白支持卖点排版。",
+      "product_scale": "主体通常占据画面 60% 到 85%，确保移动端快速识别。",
+      "safe_margins": "四周保留安全区域，适配平台裁切与后期加字。",
+      "depth_of_field": "主图和细节图以主体清晰为主，场景图允许轻微景深分层。"
+    },
+    "lighting_rules": {
+      "light_style": "以干净柔和的商业棚拍光为主，局部可增加高端质感轮廓光。",
+      "shadow_style": "保持轻柔、可控、干净的落影，不产生脏灰感。",
+      "highlight_control": "高光要服务材质表达，避免过曝和塑料廉价感。",
+      "reflection_policy": "对于亮面材质，反射应规整、可控，不遮挡产品关键信息。"
+    },
+    "background_rules": {
+      "background_type": "主图以纯净白底或浅色渐变为主，其他图可扩展到轻场景化背景。",
+      "complexity": "moderate",
+      "allowed_elements": [
+        "简洁平台",
+        "轻量功能辅助道具",
+        "符合类目语义的环境元素"
+      ],
+      "forbidden_elements": [
+        "喧宾夺主的大面积复杂道具",
+        "侵权标识",
+        "与产品无关的人物或品牌信息"
+      ]
+    },
+    "color_rules": {
+      "primary_palette": [
+        "#FFFFFF",
+        "#F5F5F2",
+        "#D9D4CC"
+      ],
+      "accent_palette": [
+        "#222222",
+        "#C8A96B"
+      ],
+      "temperature": "neutral",
+      "saturation_policy": "整体低到中等饱和，强调高级和可信任感。",
+      "contrast_policy": "以中高对比突出主体边界，但保留材质层次。"
+    },
+    "material_surface_rules": {
+      "texture_priority": [
+        "主体材质细节",
+        "边缘做工",
+        "表面光泽或磨砂质感"
+      ],
+      "retouch_level": "clean_commercial",
+      "imperfection_policy": "去除影响转化的瑕疵，但保留合理真实感，避免过度CG化。"
+    },
+    "branding_rules": {
+      "logo_visibility": "若产品自带品牌标识，应尽量在至少部分核心图中保持可识别。",
+      "text_overlay_policy": "主图禁大字，卖点图允许预留清晰文案区域。",
+      "packaging_presence": "包装可在信任建立图、礼赠图或组合展示图中出现。"
+    },
+    "consistency_rules": {
+      "must_remain_constant_across_set": [
+        "产品形体比例",
+        "核心颜色关系",
+        "品牌识别元素",
+        "整体修图风格"
+      ],
+      "allowed_variations": [
+        "镜头角度变化",
+        "背景层次变化",
+        "轻量道具变化"
+      ],
+      "set_cohesion_note": "整套图需保持同一品牌世界观：干净、可信、高级、可转化。"
+    },
+    "negative_rules": {
+      "avoid_visual_problems": [
+        "透视畸变",
+        "产品结构漂移",
+        "标签乱码",
+        "不真实悬浮",
+        "边缘脏污",
+        "高光爆点"
+      ],
+      "avoid_ecommerce_risks": [
+        "夸大或暗示不可验证功效",
+        "误导性赠品展示",
+        "侵权素材",
+        "不真实对比结果"
+      ]
+    },
+    "shot_modules": [
+      {
+        "module_name": "hero_main",
+        "purpose": "吸引点击并建立第一印象",
+        "composition": "正视或轻微45度，主体大比例居中",
+        "background": "纯净白底或极浅渐变",
+        "lighting": "柔和商业棚拍光",
+        "must_show": [
+          "完整产品主体",
+          "核心外形",
+          "清晰边缘"
+        ],
+        "optional_props": [],
+        "copy_space": "主图尽量不加文案，如平台允许仅保留极少留白。",
+        "negative_prompt_focus": [
+          "杂乱背景",
+          "结构变形",
+          "过度反光"
+        ]
+      },
+      {
+        "module_name": "benefit_feature",
+        "purpose": "传达核心卖点",
+        "composition": "主体+局部放大或辅助构图",
+        "background": "简洁功能型背景",
+        "lighting": "清晰利落，突出卖点区域",
+        "must_show": [
+          "产品主体",
+          "核心卖点对应区域"
+        ],
+        "optional_props": [
+          "功能辅助元素"
+        ],
+        "copy_space": "左侧或上方预留标题与要点区。",
+        "negative_prompt_focus": [
+          "卖点区域模糊",
+          "信息主次不清"
+        ]
+      }
+    ]
+  },
+  "shot_plan": {
+    "version": "1.0",
+    "plan_name": "示例产品商品套图计划",
+    "objective": "构建一套适用于电商详情页和商品列表的高转化图组。",
+    "set_strategy": {
+      "set_size": 6,
+      "channel": [
+        "Amazon",
+        "TikTok Shop"
+      ],
+      "narrative_flow": [
+        "主图",
+        "核心卖点",
+        "材质细节",
+        "使用场景",
+        "参数说明",
+        "信任补充"
+      ],
+      "priority_message_order": [
+        "快速识别产品",
+        "理解核心利益点",
+        "感知品质",
+        "建立购买信心"
+      ]
+    },
+    "global_constraints": {
+      "consistency_rules": [
+        "产品结构必须前后一致",
+        "品牌气质统一",
+        "整体光感统一"
+      ],
+      "compliance_rules": [
+        "不加入无法验证的医疗、功效或排名表达",
+        "不制造误导性对比"
+      ],
+      "visual_risks_to_avoid": [
+        "比例失真",
+        "文字乱码",
+        "材质失真",
+        "背景喧宾夺主"
+      ],
+      "copy_overlay_policy": "主图避免叠字，卖点图与参数图为主要文案承载位。"
+    },
+    "shots": [
+      {
+        "shot_id": "shot_01",
+        "shot_type": "hero",
+        "purpose": "商品列表点击吸引",
+        "priority": 1,
+        "composition": {
+          "angle": "正视或轻微45度",
+          "framing": "主体居中，简洁有力",
+          "product_scale": "80%左右",
+          "focus_strategy": "整体清晰",
+          "copy_space": "极少或不留"
+        },
+        "subject_requirements": {
+          "must_show": [
+            "完整产品",
+            "核心结构"
+          ],
+          "must_preserve": [
+            "外形比例",
+            "品牌识别元素"
+          ],
+          "optional_elements": [],
+          "forbidden_elements": [
+            "无关道具",
+            "复杂背景"
+          ]
+        },
+        "background_requirements": {
+          "background_type": "纯白或浅色极简背景",
+          "complexity": "minimal",
+          "allowed_props": [],
+          "forbidden_props": [
+            "大型场景道具"
+          ]
+        },
+        "lighting_requirements": {
+          "light_style": "柔光棚拍",
+          "shadow_style": "轻微干净落影",
+          "highlight_policy": "保留质感高光，不可过曝",
+          "reflection_policy": "避免遮挡主体信息"
+        },
+        "message_layer": {
+          "headline_goal": "无需文案也能一眼识别产品",
+          "supporting_points": [],
+          "proof_elements": [
+            "清晰轮廓",
+            "真实材质表现"
+          ]
+        },
+        "generation_guidance": {
+          "prompt_focus": [
+            "clean ecommerce hero shot",
+            "high detail product fidelity"
+          ],
+          "negative_prompt_focus": [
+            "deformed shape",
+            "busy background",
+            "text artifacts"
+          ],
+          "consistency_with_shots": [
+            "shot_02",
+            "shot_03"
+          ]
+        },
+        "deliverables": {
+          "asset_role": "主图",
+          "must_pass_checklist": [
+            "主体清晰",
+            "轮廓准确",
+            "无杂乱元素"
+          ],
+          "export_notes": "优先适配商品列表缩略图场景。"
+        }
+      },
+      {
+        "shot_id": "shot_02",
+        "shot_type": "benefit",
+        "purpose": "传达核心卖点",
+        "priority": 2,
+        "composition": {
+          "angle": "45度展示",
+          "framing": "主体偏一侧，留出文案区",
+          "product_scale": "65%左右",
+          "focus_strategy": "主体与卖点区域优先清晰",
+          "copy_space": "右侧或上方"
+        },
+        "subject_requirements": {
+          "must_show": [
+            "产品主体",
+            "卖点相关部位"
+          ],
+          "must_preserve": [
+            "主体结构",
+            "颜色关系"
+          ],
+          "optional_elements": [
+            "简洁功能辅助图形"
+          ],
+          "forbidden_elements": [
+            "夸张特效"
+          ]
+        },
+        "background_requirements": {
+          "background_type": "简洁功能背景",
+          "complexity": "moderate",
+          "allowed_props": [
+            "少量语义化元素"
+          ],
+          "forbidden_props": [
+            "干扰主体的复杂纹理"
+          ]
+        },
+        "lighting_requirements": {
+          "light_style": "清晰明快商业光",
+          "shadow_style": "柔和阴影",
+          "highlight_policy": "突出材质与边缘",
+          "reflection_policy": "控制亮面反射"
+        },
+        "message_layer": {
+          "headline_goal": "一句话说清最大卖点",
+          "supporting_points": [
+            "补充1个关键利益点",
+            "补充1个品质证据"
+          ],
+          "proof_elements": [
+            "结构特写",
+            "材质近景"
+          ]
+        },
+        "generation_guidance": {
+          "prompt_focus": [
+            "benefit-focused ecommerce composition",
+            "premium commercial lighting"
+          ],
+          "negative_prompt_focus": [
+            "overdesigned props",
+            "misleading effect"
+          ],
+          "consistency_with_shots": [
+            "shot_01",
+            "shot_03",
+            "shot_04"
+          ]
+        },
+        "deliverables": {
+          "asset_role": "卖点图1",
+          "must_pass_checklist": [
+            "主体与卖点强关联",
+            "文案区清晰可用",
+            "整体风格统一"
+          ],
+          "export_notes": "适合叠加标题与2-3个短文案点。"
+        }
+      }
+    ]
+  },
+  "generation_plan": {
+    "prompting_principles": [
+      "先把产品身份锚点写清楚，再扩展单图说明",
+      "每张图只承担一个主任务，避免提示词信息过载",
+      "先写画面职责，再写构图、文案和一致性约束"
+    ],
+    "consistency_strategy": [
+      "始终锁定产品核心轮廓与比例",
+      "在相邻镜头之间复用相同的灯光逻辑与色彩关系",
+      "控制背景变化幅度，避免整套图割裂",
+      "优先固定主图后再扩展其他图"
+    ],
+    "planned_asset_order": [
+      {
+        "order": 1,
+        "shot_id": "shot_01",
+        "depends_on": [],
+        "notes": "主图作为全套一致性的视觉锚点。"
+      },
+      {
+        "order": 2,
+        "shot_id": "shot_02",
+        "depends_on": [
+          "shot_01"
+        ],
+        "notes": "继承主图的产品外观与基础光感。"
+      },
+      {
+        "order": 3,
+        "shot_id": "shot_03",
+        "depends_on": [
+          "shot_01"
+        ],
+        "notes": "优先放大材质细节。"
+      },
+      {
+        "order": 4,
+        "shot_id": "shot_04",
+        "depends_on": [
+          "shot_01",
+          "shot_02"
+        ],
+        "notes": "场景图需在一致性基础上增加生活化氛围。"
+      }
+    ],
+    "handoff_notes": [
+      "先用主图说明校准产品一致性，再扩展其他图型",
+      "所有卖点文案都必须能回到用户提供的证据或可见素材",
+      "规格图和对比图在执行前再次核对数值、配件和展示范围"
+    ]
+  },
+  "qa_checklist": {
+    "identity_checks": [
+      "产品外形、比例、结构是否在整套图中一致",
+      "品牌识别元素是否清晰且未漂移",
+      "包装与主体是否匹配"
+    ],
+    "commercial_checks": [
+      "首图是否具备点击吸引力",
+      "卖点图是否清晰传达利益点",
+      "场景图是否帮助建立购买想象"
+    ],
+    "technical_checks": [
+      "边缘是否干净",
+      "高光与阴影是否自然",
+      "是否存在乱码、畸变、悬浮或脏污"
+    ],
+    "compliance_checks": [
+      "是否包含夸大或不可验证表达",
+      "是否有侵权元素",
+      "是否存在误导性展示"
+    ]
+  },
+  "deliverables": {
+    "planned_assets": [
+      {
+        "shot_id": "shot_01",
+        "asset_role": "主图",
+        "purpose": "提升商品列表点击率",
+        "status": "planned"
+      },
+      {
+        "shot_id": "shot_02",
+        "asset_role": "卖点图1",
+        "purpose": "传达核心利益点",
+        "status": "planned"
+      },
+      {
+        "shot_id": "shot_03",
+        "asset_role": "细节图",
+        "purpose": "建立材质与做工信任",
+        "status": "planned"
+      },
+      {
+        "shot_id": "shot_04",
+        "asset_role": "场景图",
+        "purpose": "建立使用想象与氛围",
+        "status": "planned"
+      }
+    ],
+    "export_targets": [
+      {
+        "platform": "Amazon",
+        "asset_types": [
+          "主图",
+          "卖点图",
+          "细节图"
+        ],
+        "notes": "优先适配商品详情页与列表点击。"
+      },
+      {
+        "platform": "TikTok Shop",
+        "asset_types": [
+          "主图",
+          "场景图",
+          "卖点图"
+        ],
+        "notes": "强调移动端快速识别与转化。"
+      }
+    ],
+    "handoff_notes": [
+      "执行时先锁定主图风格，再扩展后续画面",
+      "必要时为文案团队保留清晰可用的留白区域",
+      "所有图需以真实可转化为第一原则"
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A+内容最终输出",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "plan",
+    "prompt_package"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "generated_at",
+        "language"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "输出版本号"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "生成时间"
+        },
+        "language": {
+          "type": "string",
+          "description": "输出语言"
+        },
+        "market": {
+          "type": "string",
+          "description": "目标市场"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "plan": {
+      "type": "object",
+      "description": "A+内容规划对象",
+      "additionalProperties": true
+    },
+    "prompt_package": {
+      "type": "object",
+      "description": "A+图片提示词对象",
+      "additionalProperties": true
+    },
+    "assets_to_generate": {
+      "type": "array",
+      "description": "待生成素材清单",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "module_id",
+          "asset_type",
+          "purpose"
+        ],
+        "properties": {
+          "module_id": {
+            "type": "string"
+          },
+          "asset_type": {
+            "type": "string",
+            "enum": [
+              "image",
+              "infographic",
+              "comparison_chart",
+              "brand_banner"
+            ]
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "recommended_aspect_ratio": {
+            "type": "string",
+            "enum": ["1:1", "4:5", "16:9", "3:4", "auto"]
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "review_checklist": {
+      "type": "array",
+      "description": "交付前检查清单",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

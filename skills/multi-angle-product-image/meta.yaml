@@ -1,0 +1,10 @@
+display-name-zh: "multi-angle-product-image"
+version: 1.0.0
+tag-cn: "图像视觉"
+complete-tags-cn:
+  - "image"
+  - "多模态"
+summary-cn: "multi-angle-product-image 通用创作技能，支持多模态自动化工作流。"
+desc-cn: "multi-angle-product-image 通用创作技能，支持多模态自动化工作流。"
+author-cn: "OmniMux"
+source: official

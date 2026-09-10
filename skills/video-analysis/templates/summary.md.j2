@@ -1,0 +1,31 @@
+## 分析摘要
+
+- 证据等级：{{ evidence_level | default("无法确认") }}
+- 视频来源：{{ basic_info.source | default("无法确认") }}
+- 视频时长：{{ basic_info.duration | default("无法确认") }}
+- 画幅：{{ basic_info.orientation | default("无法确认") }}
+- 语言：{{ basic_info.language | default("无法确认") }}
+
+### 一句话概述
+{{ overview | default("无") }}
+
+### 结构摘要
+{% for item in toc %}
+- {{ item.start }} - {{ item.end }}：{{ item.section }}｜{{ item.summary }}
+{% else %}
+- 无可用结构摘要
+{% endfor %}
+
+### 关键观察
+{% for item in key_observations | default([]) %}
+- {{ item }}
+{% else %}
+- 无
+{% endfor %}
+
+### 优化建议
+{% for item in actionable_recommendations | default([]) %}
+- {{ item }}
+{% else %}
+- 无
+{% endfor %}

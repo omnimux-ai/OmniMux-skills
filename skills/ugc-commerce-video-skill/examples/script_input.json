@@ -1,0 +1,100 @@
+{
+  "task_type": "script_planning",
+  "product_info": {
+    "name": "GlowMist Hydration Serum",
+    "category": "beauty_skincare",
+    "description": "A lightweight facial serum designed to improve hydration and give the skin a brighter, dewier appearance.",
+    "main_benefit": "Makes skin look more hydrated and fresh quickly",
+    "secondary_benefits": [
+      "lightweight feel",
+      "easy daily use",
+      "glowy finish"
+    ],
+    "features": [
+      "fast-absorbing serum texture",
+      "dropper bottle",
+      "daily skincare use"
+    ],
+    "use_cases": [
+      "morning skincare routine",
+      "pre-makeup hydration",
+      "quick glow boost before going out"
+    ],
+    "price_positioning": "mid_range",
+    "offer_details": "Buy one, get 20% off the second bottle this week",
+    "objection_notes": [
+      "Will it feel greasy?",
+      "Will it actually make a visible difference?",
+      "Do I really need another serum?"
+    ],
+    "proof_assets_available": [
+      "demo",
+      "creator_reaction",
+      "close_up_detail",
+      "ugc_review"
+    ]
+  },
+  "target_audience": {
+    "segment_name": "young skincare shoppers",
+    "demographics": "Women ages 18-30 who care about fresh-looking skin, light makeup prep, and easy skincare routines",
+    "pain_points": [
+      "skin looks dull",
+      "makeup looks dry or flat",
+      "heavy skincare feels uncomfortable"
+    ],
+    "desires": [
+      "healthy glow",
+      "easy routine",
+      "fresh-looking skin without effort"
+    ],
+    "awareness_level": "solution_aware",
+    "skepticism_level": "medium",
+    "buying_temperature": "warm"
+  },
+  "creative_goal": "Create a short TikTok-style UGC selling script that feels natural, highlights quick hydration and glow, and drives product clicks.",
+  "video_goal": "direct_conversion",
+  "platform": "tiktok",
+  "region": "US",
+  "video_length_seconds": 18,
+  "format_specs": {
+    "aspect_ratio": "9:16",
+    "orientation": "vertical",
+    "style": "ugc",
+    "creator_presence": "required"
+  },
+  "creator_style": "natural, relatable, friendly, lightly excited, not over-scripted",
+  "brand_tone": "fresh, helpful, modern",
+  "reviews_or_testimonials": [
+    "My skin looks way less tired when I use this before makeup.",
+    "I like that it feels light but still makes my skin look hydrated.",
+    "This is one of the few serums that gives me glow without feeling sticky."
+  ],
+  "desired_cta": "Tap to check it out",
+  "desired_hooks": [
+    "skin looks dull lately",
+    "if your makeup has been looking dry",
+    "I didn’t expect this serum to make that much difference"
+  ],
+  "constraints": {
+    "must_include": [
+      "visible product application",
+      "clear glow result",
+      "natural spoken language"
+    ],
+    "must_avoid": [
+      "overly clinical claims",
+      "overhyped luxury language",
+      "stiff brand-copy tone"
+    ],
+    "compliance_notes": [
+      "Avoid exaggerated medical or dermatological claims."
+    ],
+    "production_limits": [
+      "simple home setting",
+      "single creator shoot",
+      "no complex props needed"
+    ]
+  },
+  "variant_count": 3,
+  "notes": "This is a sample script-planning input for a creator-led beauty product video optimized for direct-response TikTok content."
+}

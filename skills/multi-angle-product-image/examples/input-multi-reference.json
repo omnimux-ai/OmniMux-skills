@@ -1,0 +1,72 @@
+{
+  "input_mode": "multi_product_images",
+  "product_name": "真皮通勤托特包",
+  "category": "fashion_bag",
+  "product_description": "中号通勤托特包，硬挺包型，暖棕色真皮材质，双提手设计，正面简洁，适合电商多角度展示与细节图规划。",
+  "reference_images": [
+    {
+      "id": "ref_01",
+      "source": "https://example.com/images/tote-front.jpg",
+      "view_hint": "front",
+      "notes": "正面图，可见整体包型与双提手结构。"
+    },
+    {
+      "id": "ref_02",
+      "source": "https://example.com/images/tote-side.jpg",
+      "view_hint": "left_side",
+      "notes": "左侧图，可见包身厚度与侧边轮廓。"
+    },
+    {
+      "id": "ref_03",
+      "source": "https://example.com/images/tote-back.jpg",
+      "view_hint": "back",
+      "notes": "背面图，可见后片结构与走线。"
+    },
+    {
+      "id": "ref_04",
+      "source": "https://example.com/images/tote-detail.jpg",
+      "view_hint": "detail",
+      "notes": "细节图，可见皮纹、车线与五金。"
+    },
+    {
+      "id": "ref_05",
+      "source": "https://example.com/images/tote-packaging.jpg",
+      "view_hint": "packaging",
+      "notes": "包装与防尘袋参考图。"
+    }
+  ],
+  "desired_angles": [
+    "hero_three_quarter",
+    "clean_front",
+    "left_side",
+    "right_side",
+    "back_view",
+    "bottom_view",
+    "macro_detail",
+    "packaging_set"
+  ],
+  "output_count": 8,
+  "background_mode": "light_gray",
+  "lighting_style": "clean_catalog",
+  "platform_target": "shopify",
+  "strict_consistency_level": "high",
+  "include_packaging": true,
+  "include_macro_detail": true,
+  "include_scale_context": false,
+  "allow_inferred_surfaces": true,
+  "brand_elements": {
+    "has_logo": true,
+    "logo_notes": "正面有低调压印标识，避免夸张放大。",
+    "text_policy": "preserve_if_visible"
+  },
+  "material_notes": "保持真皮细腻纹理与自然哑光感，不要做成亮面漆皮。",
+  "color_notes": "暖棕色需在各角度保持一致，不要偏红或偏灰。",
+  "packaging_notes": "包装包含防尘袋与简洁纸盒，避免虚构额外赠品。",
+  "accessory_notes": "不需要额外挂件或肩带。",
+  "constraints": [
+    "保持包型硬挺与顶部开口比例稳定",
+    "不要新增口袋、铆钉、装饰带或五金结构",
+    "细节图需与全景图可回指"
+  ],
+  "notes": "目标是电商上架图与详情页辅图兼容。"
+}

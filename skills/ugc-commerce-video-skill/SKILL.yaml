@@ -1,0 +1,58 @@
+schema_version: 1
+kind: gxgen.skill-package-manifest
+
+package:
+  id: ugc-commerce-video-skill
+  display_name: UGC Commerce Video Skill
+  version: "1.0.0"
+  category: short_form_ecommerce_video
+  status: active
+  author: Public Build
+
+runtime:
+  standard_entrypoint: SKILL.md
+  discovery_source: SKILL.md frontmatter
+  instructions_source: SKILL.md body
+  manifest_runtime_role: none
+  notes: >
+    This file is package metadata only. Gxgen and Mastra must discover,
+    index, publish, and activate this skill from SKILL.md. Do not use
+    this manifest as a router, workflow owner, tool selector, prompt
+    source, completion gate, or runtime policy source.
+
+catalog:
+  canonical_skill_id: ugc-commerce-video-skill
+  catalog_id: ugc-commerce-video-skill
+  namespace: video
+  alignment_status: aligned
+
+package_contents:
+  entrypoint: SKILL.md
+  directories:
+    - prompts
+    - schemas
+    - templates
+    - examples
+    - docs
+    - assets
+  primary_files:
+    - README.md
+    - SKILL.md
+
+capability_tags:
+  - short-form ecommerce video
+  - UGC script planning
+  - video analysis
+  - storyboard planning
+  - AI video prompting
+  - reference-video adaptation
+  - hook and CTA testing
+  - creator brief planning
+
+governance:
+  non_runtime_manifest: true
+  runtime_authority: SKILL.md
+  no_tool_routing: true
+  no_workflow_binding: true
+  no_prompt_injection: true
+  no_completion_gate: true

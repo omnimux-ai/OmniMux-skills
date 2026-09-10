@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Garment Review Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "category",
+    "colors",
+    "materials",
+    "silhouette",
+    "visibleDetails"
+  ],
+  "properties": {
+    "category": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "colors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "pattern": {
+      "type": "string"
+    },
+    "fit": {
+      "type": "string"
+    },
+    "silhouette": {
+      "type": "string"
+    },
+    "visibleDetails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "mustKeep": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainAreas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

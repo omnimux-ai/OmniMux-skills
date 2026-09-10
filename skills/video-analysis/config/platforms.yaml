@@ -1,0 +1,69 @@
+platforms:
+  - key: tiktok
+    name: TikTok
+    url_patterns:
+      - tiktok.com
+      - vm.tiktok.com
+      - vt.tiktok.com
+    supports:
+      - short_video
+      - creator_content
+      - commerce_video
+    notes:
+      - 适合短视频内容结构分析
+      - 可结合带货表达与转化动作进行复盘
+
+  - key: instagram
+    name: Instagram
+    url_patterns:
+      - instagram.com
+    supports:
+      - reels
+      - post_video
+      - creator_content
+    notes:
+      - 适合分析 Reels 的开场、节奏和 CTA
+      - 可关注字幕密度与镜头切换速度
+
+  - key: youtube
+    name: YouTube
+    url_patterns:
+      - youtube.com
+      - youtu.be
+    supports:
+      - shorts
+      - long_form_video
+    notes:
+      - Shorts 可按短视频逻辑分析
+      - 长视频可按段落主题和转场逻辑拆解
+
+  - key: facebook
+    name: Facebook
+    url_patterns:
+      - facebook.com
+      - fb.watch
+    supports:
+      - short_video
+      - social_video
+    notes:
+      - 适合公共视频内容的基础结构拆解
+
+  - key: x
+    name: X
+    url_patterns:
+      - x.com
+      - twitter.com
+    supports:
+      - social_video
+      - short_video
+    notes:
+      - 适合对短视频传播型表达进行基础复盘
+
+  - key: generic
+    name: Generic
+    url_patterns: []
+    supports:
+      - direct_video_url
+      - unknown_platform
+    notes:
+      - 作为无法识别平台时的平台线索分类，不代表已访问视频内容

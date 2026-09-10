@@ -1,0 +1,58 @@
+guidance_version: "1.0.0"
+
+models:
+  generic:
+    label: "Generic"
+    emphasis:
+      - "Keep the prompt portable across multiple video models."
+      - "State subject, scene, action order, and style without platform-specific jargon."
+    recommended_sections:
+      - "subject-and-goal"
+      - "scene-and-action-order"
+      - "visual-style"
+      - "constraints"
+    common_risks:
+      - "Too many abstract adjectives without visible action."
+      - "Weak continuity across shots."
+
+  sora:
+    label: "Sora"
+    emphasis:
+      - "Describe continuous actions and stable world state."
+      - "Show how the environment and subject interact over time."
+    recommended_sections:
+      - "subject-and-scene"
+      - "continuous-action-chain"
+      - "camera-observation"
+      - "continuity-constraints"
+    common_risks:
+      - "Scene fragments that do not connect."
+      - "Conflicting motion or physics instructions."
+
+  veo:
+    label: "Veo"
+    emphasis:
+      - "Strengthen commercial image quality, product clarity, and camera readability."
+      - "Use crisp action and clean composition cues."
+    recommended_sections:
+      - "hero-subject"
+      - "shot-order"
+      - "lighting-and-texture"
+      - "product-consistency"
+    common_risks:
+      - "Style words replacing concrete subject motion."
+      - "Product details drifting across shots."
+
+  seedance:
+    label: "Seedance"
+    emphasis:
+      - "Prioritize hook speed, visible selling point, and short-form clarity."
+      - "Keep each shot concrete and compact."
+    recommended_sections:
+      - "hook"
+      - "proof-or-demo"
+      - "end-frame-or-cta"
+      - "negative-constraints"
+    common_risks:
+      - "Too much buildup before the first visible payoff."
+      - "Overloaded prompts with conflicting short-form pacing."

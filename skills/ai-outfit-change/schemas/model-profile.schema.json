@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Subject Review Schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "subjectType",
+    "identityPriority"
+  ],
+  "properties": {
+    "subjectType": {
+      "type": "string",
+      "enum": [
+        "fixed_person",
+        "candidate_pool",
+        "generic_direction"
+      ]
+    },
+    "identityPriority": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "keepFeatures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowedChanges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "riskFlags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

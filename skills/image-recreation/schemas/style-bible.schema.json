@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gxgen.dev/skills/image-recreation/schemas/style-bible.schema.json",
+  "title": "Style Bible Schema",
+  "description": "图片参考改编任务中的 Style Bible 结构参考。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "visual_objective",
+    "subject_preservation_rules",
+    "style_keywords",
+    "composition_rules",
+    "lighting_rules",
+    "background_rules"
+  ],
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "title": "Project Name",
+      "description": "项目名称。",
+      "minLength": 1
+    },
+    "visual_objective": {
+      "type": "string",
+      "title": "Visual Objective",
+      "description": "整组图片的视觉目标描述。",
+      "minLength": 1
+    },
+    "usage_context": {
+      "type": "string",
+      "title": "Usage Context",
+      "description": "使用场景，例如 TikTok Shop、Amazon listing、社媒广告等。"
+    },
+    "subject_preservation_rules": {
+      "type": "array",
+      "title": "Subject Preservation Rules",
+      "description": "主体保留规则，用于约束外形、结构、材质与关键识别点的一致性。",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "style_keywords": {
+      "type": "array",
+      "title": "Style Keywords",
+      "description": "风格关键词列表。",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "composition_rules": {
+      "type": "array",
+      "title": "Composition Rules",
+      "description": "构图规则列表。",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "lighting_rules": {
+      "type": "array",
+      "title": "Lighting Rules",
+      "description": "光线规则列表。",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "background_rules": {
+      "type": "array",
+      "title": "Background Rules",
+      "description": "背景规则列表。",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "color_rules": {
+      "type": "array",
+      "title": "Color Rules",
+      "description": "色彩规则列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "material_rules": {
+      "type": "array",
+      "title": "Material Rules",
+      "description": "材质表现规则列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "camera_rules": {
+      "type": "array",
+      "title": "Camera Rules",
+      "description": "镜头语言或机位规则列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "mood_rules": {
+      "type": "array",
+      "title": "Mood Rules",
+      "description": "情绪氛围规则列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "commercial_rules": {
+      "type": "array",
+      "title": "Commercial Rules",
+      "description": "商业表达规则列表，例如主体突出、卖点优先、平台友好等。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "text_safe_area_rules": {
+      "type": "array",
+      "title": "Text Safe Area Rules",
+      "description": "文案安全区规则列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "consistency_rules": {
+      "type": "array",
+      "title": "Consistency Rules",
+      "description": "整组图的一致性规则。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "negative_rules": {
+      "type": "array",
+      "title": "Negative Rules",
+      "description": "负向约束规则列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "platform_notes": {
+      "type": "array",
+      "title": "Platform Notes",
+      "description": "平台适配说明列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "compliance_notes": {
+      "type": "array",
+      "title": "Compliance Notes",
+      "description": "公开可见的合规提醒列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes",
+      "description": "补充说明。"
+    }
+  },
+  "examples": [
+    {
+      "project_name": "便携咖啡杯图组重构",
+      "visual_objective": "建立一组干净、高级、适合电商转化的商品图视觉体系。",
+      "usage_context": "TikTok Shop 商品图 / 电商详情页",
+      "subject_preservation_rules": [
+        "保持杯身比例稳定",
+        "保留杯盖结构与开启逻辑",
+        "维持金属与塑料材质关系",
+        "品牌位置不得错误变化"
+      ],
+      "style_keywords": [
+        "clean commercial",
+        "premium",
+        "modern",
+        "warm lifestyle"
+      ],
+      "composition_rules": [
+        "主体必须明确成为视觉焦点",
+        "构图应稳定且适合商品展示",
+        "留白应服务于商业可读性"
+      ],
+      "lighting_rules": [
+        "使用柔和受控的商业打光",
+        "高光用于强调材质，不应过曝",
+        "阴影保持干净，不制造脏乱感"
+      ],
+      "background_rules": [
+        "背景简洁，不可喧宾夺主",
+        "场景化元素应克制且服务于卖点表达"
+      ],
+      "color_rules": [
+        "整体色调统一为暖白与中性色",
+        "避免明显偏冷或偏脏色彩"
+      ],
+      "material_rules": [
+        "金属反光需自然克制",
+        "塑料部分不得显得廉价或失真"
+      ],
+      "camera_rules": [
+        "优先使用平视与三分之四视角",
+        "细节图可使用近景特写"
+      ],
+      "mood_rules": [
+        "整体氛围应温暖、可信、精致",
+        "避免戏剧化或廉价感过强的表达"
+      ],
+      "commercial_rules": [
+        "主体必须清晰可识别",
+        "卖点表达优先于纯装饰效果",
+        "适合电商首图与详情图拆分使用"
+      ],
+      "text_safe_area_rules": [
+        "必要时保留顶部留白",
+        "不要让关键卖点区域被文案位挤压"
+      ],
+      "consistency_rules": [
+        "整组图应像同一次拍摄产出",
+        "不同图之间保持统一的材质与光线逻辑"
+      ],
+      "negative_rules": [
+        "避免主体比例失真",
+        "避免错误品牌元素",
+        "避免背景杂乱",
+        "避免低细节渲染"
+      ],
+      "platform_notes": [
+        "适合 TikTok Shop 商品封面与详情展示",
+        "适合移动端快速识别"
+      ],
+      "compliance_notes": [
+        "避免误导性产品表现",
+        "避免直接复制受保护的竞品包装"
+      ],
+      "notes": "该 Style Bible 适合 3-5 张商品图的一致性规划。"
+    }
+  ]
+}

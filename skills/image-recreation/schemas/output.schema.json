@@ -1,0 +1,552 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gxgen.dev/skills/image-recreation/schemas/output.schema.json",
+  "title": "Image Recreation Output Schema",
+  "description": "图片参考改编任务的结构化输出参考。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "reference_analysis",
+    "style_bible",
+    "recreation_plan",
+    "prompt_set"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "title": "Summary",
+      "description": "对本次任务结果的简要总结。",
+      "minLength": 1
+    },
+    "reference_analysis": {
+      "type": "array",
+      "title": "Reference Analysis",
+      "description": "对参考图的分析结果列表。",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/referenceAnalysisItem"
+      }
+    },
+    "style_bible": {
+      "$ref": "#/$defs/styleBible"
+    },
+    "recreation_plan": {
+      "type": "array",
+      "title": "Recreation Plan",
+      "description": "批量图片复刻计划，每张图一个条目。",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/recreationPlanItem"
+      }
+    },
+    "prompt_set": {
+      "type": "array",
+      "title": "Prompt Set",
+      "description": "最终提示词集合。",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/promptItem"
+      }
+    },
+    "negative_guidance": {
+      "type": "array",
+      "title": "Negative Guidance",
+      "description": "通用负向约束列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "quality_notes": {
+      "type": "array",
+      "title": "Quality Notes",
+      "description": "质检备注列表。",
+      "items": {
+        "$ref": "#/$defs/qualityNote"
+      }
+    },
+    "export_manifest": {
+      "type": "array",
+      "title": "Export Manifest",
+      "description": "导出文件清单。",
+      "items": {
+        "$ref": "#/$defs/exportManifestItem"
+      }
+    },
+    "compliance_notes": {
+      "type": "array",
+      "title": "Compliance Notes",
+      "description": "公开可见的合规或风险提醒。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes",
+      "description": "附加说明。"
+    }
+  },
+  "$defs": {
+    "referenceAnalysisItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reference_id",
+        "reference_type",
+        "observations"
+      ],
+      "properties": {
+        "reference_id": {
+          "type": "string",
+          "description": "参考图标识。",
+          "minLength": 1
+        },
+        "reference_type": {
+          "type": "string",
+          "description": "参考图类型。",
+          "enum": [
+            "product_ref",
+            "style_ref",
+            "scene_ref",
+            "layout_ref",
+            "pose_ref",
+            "detail_ref",
+            "competitor_ref",
+            "other"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "description": "客观观察结果。",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "reusable_elements": {
+          "type": "array",
+          "description": "可复用的视觉元素。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "avoid_copying": {
+          "type": "array",
+          "description": "不建议直接照搬的元素。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "styleBible": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "visual_objective",
+        "subject_preservation_rules",
+        "style_keywords",
+        "composition_rules",
+        "lighting_rules",
+        "background_rules"
+      ],
+      "properties": {
+        "visual_objective": {
+          "type": "string",
+          "description": "视觉目标。"
+        },
+        "subject_preservation_rules": {
+          "type": "array",
+          "description": "主体保留规则。",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "style_keywords": {
+          "type": "array",
+          "description": "风格关键词。",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "composition_rules": {
+          "type": "array",
+          "description": "构图规则。",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "lighting_rules": {
+          "type": "array",
+          "description": "光线规则。",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "background_rules": {
+          "type": "array",
+          "description": "背景规则。",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "color_rules": {
+          "type": "array",
+          "description": "色彩规则。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "material_rules": {
+          "type": "array",
+          "description": "材质表现规则。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "negative_rules": {
+          "type": "array",
+          "description": "负向约束规则。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "platform_notes": {
+          "type": "array",
+          "description": "平台适配说明。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "recreationPlanItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "role",
+        "objective"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "图片序号。"
+        },
+        "role": {
+          "type": "string",
+          "description": "图片角色，例如 Hero、Detail、Lifestyle。",
+          "minLength": 1
+        },
+        "objective": {
+          "type": "string",
+          "description": "该图的目标。"
+        },
+        "composition_direction": {
+          "type": "string",
+          "description": "构图方向。"
+        },
+        "background_direction": {
+          "type": "string",
+          "description": "背景方向。"
+        },
+        "lighting_direction": {
+          "type": "string",
+          "description": "光线方向。"
+        },
+        "selling_point_focus": {
+          "type": "string",
+          "description": "卖点重点。"
+        }
+      }
+    },
+    "promptItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "title",
+        "prompt"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "提示词序号。"
+        },
+        "title": {
+          "type": "string",
+          "description": "提示词标题。",
+          "minLength": 1
+        },
+        "prompt": {
+          "type": "string",
+          "description": "完整提示词正文。",
+          "minLength": 1
+        },
+        "negative_prompt": {
+          "type": "string",
+          "description": "对应的负向约束。"
+        },
+        "notes": {
+          "type": "string",
+          "description": "补充说明。"
+        }
+      }
+    },
+    "qualityNote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "status"
+      ],
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "质检对象，例如 Image 01。"
+        },
+        "status": {
+          "type": "string",
+          "description": "质检状态。",
+          "enum": [
+            "pass",
+            "needs_review",
+            "warning"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "description": "质检说明。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "exportManifestItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "file_name",
+        "file_type",
+        "visibility"
+      ],
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "文件名。",
+          "minLength": 1
+        },
+        "file_type": {
+          "type": "string",
+          "description": "文件类型。",
+          "enum": [
+            "prompt",
+            "report",
+            "image",
+            "manifest",
+            "note",
+            "other"
+          ]
+        },
+        "visibility": {
+          "type": "string",
+          "description": "可见性。",
+          "enum": [
+            "public",
+            "internal-review",
+            "private"
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "description": "说明。"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "summary": "已为同一商品输出一套包含主图、细节图、场景图的批量复刻方案，强调主体一致性、材质真实性与电商商业感。",
+      "reference_analysis": [
+        {
+          "reference_id": "ref_01",
+          "reference_type": "product_ref",
+          "observations": [
+            "主体外形清晰",
+            "材质为金属与塑料结合",
+            "比例偏修长"
+          ],
+          "reusable_elements": [
+            "产品轮廓",
+            "材质关系",
+            "颜色逻辑"
+          ],
+          "avoid_copying": [
+            "原图中的品牌元素",
+            "完全相同的背景摆件"
+          ]
+        }
+      ],
+      "style_bible": {
+        "visual_objective": "建立一组干净、高级、适合电商转化的统一商业图风格。",
+        "subject_preservation_rules": [
+          "保持主体外形比例稳定",
+          "保留关键结构细节",
+          "维持材质逻辑一致"
+        ],
+        "style_keywords": [
+          "clean commercial",
+          "premium",
+          "modern"
+        ],
+        "composition_rules": [
+          "主体必须突出",
+          "背景不能喧宾夺主"
+        ],
+        "lighting_rules": [
+          "使用柔和受控商业打光",
+          "高光应服务于材质表现"
+        ],
+        "background_rules": [
+          "背景保持简洁",
+          "场景变化应服务于卖点表达"
+        ],
+        "color_rules": [
+          "整体色调统一",
+          "避免明显偏色"
+        ],
+        "material_rules": [
+          "金属表面反光应自然",
+          "塑料部分不应显得廉价"
+        ],
+        "negative_rules": [
+          "避免主体失真",
+          "避免背景杂乱"
+        ],
+        "platform_notes": [
+          "适合 TikTok Shop 商品展示",
+          "适合电商详情页拆分使用"
+        ]
+      },
+      "recreation_plan": [
+        {
+          "index": 1,
+          "role": "Hero",
+          "objective": "突出整体外观与第一眼识别度",
+          "composition_direction": "三分之四角度主视图",
+          "background_direction": "简洁高级背景",
+          "lighting_direction": "柔和方向性主光",
+          "selling_point_focus": "外观与材质"
+        },
+        {
+          "index": 2,
+          "role": "Detail",
+          "objective": "展示材质与做工",
+          "composition_direction": "近景特写",
+          "background_direction": "弱化背景",
+          "lighting_direction": "强化质感的局部打光",
+          "selling_point_focus": "工艺细节"
+        },
+        {
+          "index": 3,
+          "role": "Lifestyle",
+          "objective": "展示使用场景与转化感",
+          "composition_direction": "中近景生活方式构图",
+          "background_direction": "克制场景化背景",
+          "lighting_direction": "自然柔和光线",
+          "selling_point_focus": "使用氛围"
+        }
+      ],
+      "prompt_set": [
+        {
+          "index": 1,
+          "title": "Hero 主图",
+          "prompt": "Create a premium commercial hero image featuring the product as the main focus, preserving its defining shape, materials, and recognizable structure, with clean controlled lighting and a minimal elegant background.",
+          "negative_prompt": "Avoid distorted proportions, incorrect structure, cluttered background, wrong branding, and low-detail rendering."
+        },
+        {
+          "index": 2,
+          "title": "Detail 细节图",
+          "prompt": "Create a refined close-up image emphasizing the product's craftsmanship, material quality, and surface texture with realistic lighting and clean composition.",
+          "negative_prompt": "Avoid fake textures, oversharpening, structural mistakes, and distracting scene elements."
+        },
+        {
+          "index": 3,
+          "title": "Lifestyle 场景图",
+          "prompt": "Create a lifestyle-oriented commercial image placing the product in a believable, aesthetically clean environment while keeping it as the visual hero.",
+          "negative_prompt": "Avoid clutter, inaccurate scale, conflicting light logic, and background elements overpowering the subject."
+        }
+      ],
+      "negative_guidance": [
+        "避免主体比例失真",
+        "避免错误品牌元素",
+        "避免光线逻辑混乱",
+        "避免背景喧宾夺主"
+      ],
+      "quality_notes": [
+        {
+          "target": "Image 01",
+          "status": "pass",
+          "notes": [
+            "主体清晰",
+            "商业感强"
+          ]
+        },
+        {
+          "target": "Image 02",
+          "status": "needs_review",
+          "notes": [
+            "需进一步强化局部材质层次"
+          ]
+        }
+      ],
+      "export_manifest": [
+        {
+          "file_name": "final_prompt_01.md",
+          "file_type": "prompt",
+          "visibility": "public",
+          "notes": "Hero 主图提示词"
+        },
+        {
+          "file_name": "style_bible.md",
+          "file_type": "report",
+          "visibility": "public",
+          "notes": "风格统一规则"
+        }
+      ],
+      "compliance_notes": [
+        "避免误导性产品表现",
+        "避免未经授权的品牌复制"
+      ]
+    }
+  ]
+}

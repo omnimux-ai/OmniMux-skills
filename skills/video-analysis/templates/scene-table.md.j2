@@ -1,0 +1,9 @@
+## 场景表
+
+| 序号 | 时间 | 标签 | 摘要 | 主要信号 |
+|---|---|---|---|---|
+{% for scene in scenes %}
+| {{ scene.index | default("?") }} | {{ scene.start | default("无法确认") }} - {{ scene.end | default("无法确认") }} | {{ scene.section | default("unknown") }} | {{ scene.summary | default("无") }} | {{ scene.signals | join(" / ") if scene.signals else "无" }} |
+{% else %}
+| 1 | 无法确认 | unknown | 无可用场景 | 无 |
+{% endfor %}

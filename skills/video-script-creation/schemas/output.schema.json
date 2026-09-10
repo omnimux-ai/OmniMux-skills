@@ -1,0 +1,549 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/video-script-creation/output.schema.json",
+  "title": "视频脚本创作输出结构",
+  "description": "用于公开复用模板的输出结构定义，描述视频脚本创作阶段建议交付的创意角度、推荐方向、完整脚本、制作建议与 AI 视频交接摘要。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product_understanding",
+    "creative_angles",
+    "recommended_direction",
+    "script"
+  ],
+  "properties": {
+    "product_understanding": {
+      "type": "object",
+      "title": "产品理解",
+      "additionalProperties": false,
+      "required": [
+        "product",
+        "target_audience",
+        "core_pain_point",
+        "core_selling_point",
+        "primary_purchase_reason"
+      ],
+      "properties": {
+        "product": {
+          "type": "string",
+          "description": "产品名称或产品定义。"
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "目标用户摘要。"
+        },
+        "core_pain_point": {
+          "type": "string",
+          "description": "最核心的用户痛点。"
+        },
+        "core_selling_point": {
+          "type": "string",
+          "description": "最核心的主卖点。"
+        },
+        "secondary_selling_points": {
+          "type": "array",
+          "description": "辅助卖点列表。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "primary_purchase_reason": {
+          "type": "string",
+          "description": "用户最可能被打动并产生购买意图的原因。"
+        },
+        "objections": {
+          "type": "array",
+          "description": "用户潜在疑虑。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "use_scenarios": {
+          "type": "array",
+          "description": "典型使用场景。",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "creative_angles": {
+      "type": "array",
+      "title": "创意角度候选",
+      "description": "至少 1 个，通常建议 3 个及以上。",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "mechanism",
+          "hook",
+          "fit_audience",
+          "conversion_logic"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "角度名称。"
+          },
+          "mechanism": {
+            "type": "string",
+            "description": "内容机制，例如 UGC、痛点、演示、对比、场景代入等。"
+          },
+          "hook": {
+            "type": "string",
+            "description": "开头钩子表达。"
+          },
+          "first_3s_visual": {
+            "type": "string",
+            "description": "前 3 秒建议画面。"
+          },
+          "fit_audience": {
+            "type": "string",
+            "description": "更适合的人群。"
+          },
+          "fit_scenario": {
+            "type": "string",
+            "description": "更适合的内容或使用场景。"
+          },
+          "emotion": {
+            "type": "string",
+            "description": "主打情绪，如真实感、满足感、轻松感、反差感等。"
+          },
+          "conversion_logic": {
+            "type": "string",
+            "description": "该角度推动用户产生兴趣或点击的核心逻辑。"
+          },
+          "execution_difficulty": {
+            "type": "string",
+            "description": "执行难度说明。"
+          },
+          "risks": {
+            "type": "array",
+            "description": "风险、限制或注意事项。",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scores": {
+            "type": "object",
+            "description": "可选评分。",
+            "additionalProperties": false,
+            "properties": {
+              "hook_strength": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "conversion_potential": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "platform_fit": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "execution_feasibility": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              }
+            }
+          }
+        }
+      }
+    },
+    "recommended_direction": {
+      "type": "object",
+      "title": "推荐方向",
+      "additionalProperties": false,
+      "required": [
+        "angle_name",
+        "reason",
+        "suggested_duration",
+        "presentation_format"
+      ],
+      "properties": {
+        "angle_name": {
+          "type": "string",
+          "description": "推荐采用的角度名称。"
+        },
+        "reason": {
+          "type": "string",
+          "description": "推荐原因。"
+        },
+        "suggested_duration": {
+          "type": "integer",
+          "description": "建议时长（秒）。",
+          "minimum": 5,
+          "maximum": 180
+        },
+        "presentation_format": {
+          "type": "string",
+          "description": "建议表现形式，例如 UGC 口播、演示型、剧情型等。"
+        },
+        "test_priority_reason": {
+          "type": "string",
+          "description": "为什么建议优先测试该方向。"
+        }
+      }
+    },
+    "script": {
+      "type": "object",
+      "title": "完整视频脚本",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "goal",
+        "duration_seconds",
+        "main_selling_point",
+        "cta",
+        "scenes"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "脚本标题或主题。"
+        },
+        "goal": {
+          "type": "string",
+          "description": "视频目标，如点击、种草、下单等。"
+        },
+        "platform": {
+          "type": "string",
+          "description": "目标平台。"
+        },
+        "duration_seconds": {
+          "type": "integer",
+          "description": "视频时长，单位为秒。",
+          "minimum": 5,
+          "maximum": 180
+        },
+        "main_selling_point": {
+          "type": "string",
+          "description": "主卖点。"
+        },
+        "secondary_selling_points": {
+          "type": "array",
+          "description": "辅助卖点列表。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "目标人群摘要。"
+        },
+        "style": {
+          "type": "string",
+          "description": "视频风格。"
+        },
+        "cta": {
+          "type": "string",
+          "description": "结尾 CTA 表达。"
+        },
+        "structure_summary": {
+          "type": "array",
+          "description": "脚本结构概览。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scenes": {
+          "type": "array",
+          "title": "分镜列表",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "scene_id",
+              "duration",
+              "segment",
+              "task",
+              "visual",
+              "voiceover",
+              "subtitle",
+              "selling_point"
+            ],
+            "properties": {
+              "scene_id": {
+                "type": "string",
+                "description": "镜头编号，例如 scene_1。"
+              },
+              "duration": {
+                "type": "string",
+                "description": "镜头时长范围，例如 0-3s。"
+              },
+              "segment": {
+                "type": "string",
+                "description": "结构段落，例如 hook、pain_point、demo、proof、cta。"
+              },
+              "task": {
+                "type": "string",
+                "description": "该镜头承担的主要任务。"
+              },
+              "visual": {
+                "type": "string",
+                "description": "画面内容说明。"
+              },
+              "voiceover": {
+                "type": "string",
+                "description": "口播或对白。"
+              },
+              "subtitle": {
+                "type": "string",
+                "description": "屏幕字幕。"
+              },
+              "selling_point": {
+                "type": "string",
+                "description": "该镜头承载的卖点。"
+              },
+              "camera_note": {
+                "type": "string",
+                "description": "摄影、构图或机位建议。"
+              },
+              "edit_note": {
+                "type": "string",
+                "description": "剪辑节奏或转场建议。"
+              }
+            }
+          }
+        }
+      }
+    },
+    "production_notes": {
+      "type": "object",
+      "title": "制作建议",
+      "additionalProperties": false,
+      "properties": {
+        "first_screen_optimization": {
+          "type": "string",
+          "description": "首屏优化建议。"
+        },
+        "visual_focus": {
+          "type": "string",
+          "description": "商品展示重点。"
+        },
+        "b_roll_suggestions": {
+          "type": "array",
+          "description": "建议补充的 B-roll 画面。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subtitle_style": {
+          "type": "string",
+          "description": "字幕风格建议。"
+        },
+        "music_style": {
+          "type": "string",
+          "description": "背景音乐风格建议。"
+        },
+        "transition_style": {
+          "type": "string",
+          "description": "转场或剪辑节奏建议。"
+        },
+        "performance_notes": {
+          "type": "string",
+          "description": "真人表演、口播状态或拍摄执行补充建议。"
+        }
+      }
+    },
+    "ai_handoff": {
+      "type": "object",
+      "title": "AI 视频交接摘要",
+      "additionalProperties": false,
+      "properties": {
+        "subject": {
+          "type": "string",
+          "description": "主体定义。"
+        },
+        "scene": {
+          "type": "string",
+          "description": "场景定义。"
+        },
+        "style": {
+          "type": "string",
+          "description": "整体风格。"
+        },
+        "camera_language": {
+          "type": "string",
+          "description": "镜头语言。"
+        },
+        "must_keep_details": {
+          "type": "array",
+          "description": "必须保留的关键细节。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_avoid_errors": {
+          "type": "array",
+          "description": "必须避免的错误生成或错误执行内容。",
+          "items": {
+            "type": "string"
+          }
+        },
+        "voiceover_summary": {
+          "type": "string",
+          "description": "旁白摘要。"
+        },
+        "onscreen_text_summary": {
+          "type": "string",
+          "description": "屏幕文字摘要。"
+        },
+        "cta_summary": {
+          "type": "string",
+          "description": "CTA 摘要。"
+        }
+      }
+    },
+    "assumptions_used": {
+      "type": "array",
+      "title": "使用的默认假设",
+      "description": "当输入信息不完整时，记录本次输出采用的默认假设。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compliance_flags": {
+      "type": "array",
+      "title": "合规提醒",
+      "description": "如有需要，可标记需要谨慎处理的表达风险。",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "product_understanding": {
+        "product": "便携榨汁杯",
+        "target_audience": "上班族和健身人群",
+        "core_pain_point": "想喝得更健康但嫌麻烦",
+        "core_selling_point": "便携且真的会被高频使用",
+        "secondary_selling_points": [
+          "清洗方便",
+          "做完可直接喝"
+        ],
+        "primary_purchase_reason": "把健康饮食这件事变得更省事",
+        "objections": [
+          "动力够不够",
+          "会不会难洗"
+        ],
+        "use_scenarios": [
+          "通勤前",
+          "办公室",
+          "健身后"
+        ]
+      },
+      "creative_angles": [
+        {
+          "name": "我本来以为会鸡肋",
+          "mechanism": "ugc",
+          "hook": "我本来真的觉得这种便携榨汁杯就是摆设",
+          "first_3s_visual": "真人手持产品出镜",
+          "fit_audience": "对真实体验内容敏感的人",
+          "fit_scenario": "日常通勤和办公室场景",
+          "emotion": "反转与真实感",
+          "conversion_logic": "先降低用户戒备，再用真实使用体验推动点击",
+          "execution_difficulty": "低到中",
+          "risks": [
+            "需要口播自然"
+          ],
+          "scores": {
+            "hook_strength": 8.5,
+            "conversion_potential": 8,
+            "platform_fit": 8.5,
+            "execution_feasibility": 8
+          }
+        }
+      ],
+      "recommended_direction": {
+        "angle_name": "我本来以为会鸡肋",
+        "reason": "更容易降低广告感并建立真实可信度",
+        "suggested_duration": 20,
+        "presentation_format": "UGC 口播 + 产品演示",
+        "test_priority_reason": "适合冷启动素材测试"
+      },
+      "script": {
+        "title": "我本来以为这种便携榨汁杯会很鸡肋",
+        "goal": "提升点击与商品兴趣",
+        "platform": "TikTok",
+        "duration_seconds": 20,
+        "main_selling_point": "便携且高频使用",
+        "secondary_selling_points": [
+          "清洗方便",
+          "适合通勤"
+        ],
+        "target_audience": "上班族和健身人群",
+        "style": "真实 UGC",
+        "cta": "如果你也想喝得健康一点但又怕麻烦，可以看看这种便携款",
+        "structure_summary": [
+          "反差开头",
+          "真实体验",
+          "演示便携性",
+          "补充清洗方便",
+          "自然 CTA"
+        ],
+        "scenes": [
+          {
+            "scene_id": "scene_1",
+            "duration": "0-3s",
+            "segment": "hook",
+            "task": "建立反差停留",
+            "visual": "真人手持榨汁杯出镜",
+            "voiceover": "我本来真的觉得这种便携榨汁杯就是摆设",
+            "subtitle": "本来以为会鸡肋",
+            "selling_point": "反差钩子",
+            "camera_note": "手持近景",
+            "edit_note": "开场快切"
+          }
+        ]
+      },
+      "production_notes": {
+        "first_screen_optimization": "第一句需快速建立反差",
+        "visual_focus": "杯体大小、使用便利性、通勤带走场景",
+        "b_roll_suggestions": [
+          "放水果",
+          "按启动键",
+          "放进包里",
+          "直接饮用"
+        ],
+        "subtitle_style": "简洁大字",
+        "music_style": "轻快生活方式",
+        "transition_style": "动作衔接快切",
+        "performance_notes": "口播语气需自然，像真实分享"
+      },
+      "ai_handoff": {
+        "subject": "年轻女性上班族",
+        "scene": "厨房与办公室",
+        "style": "真实、轻快、生活化",
+        "camera_language": "近景手持 + 产品特写",
+        "must_keep_details": [
+          "便携尺寸",
+          "直接带走",
+          "清洗简单"
+        ],
+        "must_avoid_errors": [
+          "不要生成大体积机器",
+          "不要夸张科技感"
+        ],
+        "voiceover_summary": "从怀疑鸡肋到变成高频使用物",
+        "onscreen_text_summary": "本来以为鸡肋 / 结果天天带去公司 / 重点是真的方便",
+        "cta_summary": "适合怕麻烦但想更健康的人"
+      },
+      "assumptions_used": [
+        "默认平台为 TikTok",
+        "默认真人 UGC 风格"
+      ],
+      "compliance_flags": [
+        "避免夸大动力或健康效果"
+      ]
+    }
+  ]
+}

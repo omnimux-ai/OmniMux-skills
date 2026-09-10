@@ -1,0 +1,12 @@
+display-name-zh: "Ecommerce Output Spec"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "输出规范"
+  - "报表"
+  - "精选"
+summary-cn: "Shared report and file output rules for ecommerce operation agents."
+desc-cn: "Shared report and file output rules for ecommerce operation agents."
+author-cn: "OmniMux"
+source: official

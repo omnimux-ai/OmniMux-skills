@@ -1,0 +1,132 @@
+{
+  "project": {
+    "title": "Portable Blender TikTok Shop UGC",
+    "platform": "TikTok",
+    "format": "9:16",
+    "duration_seconds": 24,
+    "language": "zh-CN",
+    "video_type": "ecommerce_conversion"
+  },
+  "summary": {
+    "objective": "Sell a portable blender through a relatable busy-morning problem and quick demo sequence.",
+    "target_audience": "Busy women aged 22-35 who want faster wellness routines.",
+    "core_selling_points": [
+      "portable cup design",
+      "one-button blending",
+      "easy morning routine"
+    ],
+    "cta": "Tap to view the product",
+    "creative_strategy": "Open with a real morning pain point, show one clear product demo, then close with a natural creator CTA."
+  },
+  "structure": [
+    {
+      "section": "Hook",
+      "start_time": 0,
+      "end_time": 3,
+      "goal": "Stop scroll with a familiar rushed-morning problem.",
+      "content": "Creator shows breakfast chaos and says she has no time."
+    },
+    {
+      "section": "Demo",
+      "start_time": 3,
+      "end_time": 18,
+      "goal": "Show the product as a simple solution.",
+      "content": "Product reveal, fruit loading, one-button blending, and portability moment."
+    },
+    {
+      "section": "CTA",
+      "start_time": 18,
+      "end_time": 24,
+      "goal": "Convert interest into a product click.",
+      "content": "Creator drinks, shows the product clearly, and gives a natural CTA."
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "01",
+      "section": "Hook",
+      "start_time": 0,
+      "end_time": 3,
+      "duration": 3,
+      "scene_purpose": "Stop scroll with relatable pain point.",
+      "visual_description": "Creator in a bright kitchen looks rushed while holding a banana and gym bag.",
+      "framing": "Medium handheld vertical shot",
+      "camera_movement": "Slight handheld movement",
+      "subject_action": "Creator glances at the counter and then to camera.",
+      "dialogue_vo": "没时间做早餐？我现在连奶昔都是出门路上现打。",
+      "on_screen_text": "没时间做早餐？",
+      "selling_point": "fast morning routine",
+      "transition": "Hard cut",
+      "production_notes": "Keep movement natural and product teaser visible on counter.",
+      "prompt_hint": "Bright kitchen UGC shot, rushed creator, banana, gym bag, vertical framing."
+    },
+    {
+      "shot_id": "02",
+      "section": "Demo",
+      "start_time": 3,
+      "end_time": 9,
+      "duration": 6,
+      "scene_purpose": "Reveal product and demonstrate one-button use.",
+      "visual_description": "Close-up of the white portable blender as fruit and milk are added, then the button is pressed.",
+      "framing": "Close-up to overhead detail",
+      "camera_movement": "Quick push-in then static detail",
+      "subject_action": "Hand adds fruit and presses the button.",
+      "dialogue_vo": "把水果切好丢进去，按一下就行。",
+      "on_screen_text": "按一下就行",
+      "selling_point": "one-button blending",
+      "transition": "Match cut",
+      "production_notes": "Do not claim hard ice crushing; keep product shape consistent.",
+      "prompt_hint": "White portable blender close-up, fruit and milk added, clean kitchen counter."
+    },
+    {
+      "shot_id": "03",
+      "section": "Demo",
+      "start_time": 9,
+      "end_time": 18,
+      "duration": 9,
+      "scene_purpose": "Show the finished drink and portable carry moment.",
+      "visual_description": "Creator twists the blender cup off the base, snaps on the travel lid, and puts it into a gym bag side pocket.",
+      "framing": "Close-up to medium detail",
+      "camera_movement": "Fast handheld follow",
+      "subject_action": "Hand removes the blender cup, adds lid, and packs it into the bag.",
+      "dialogue_vo": "打完直接换盖就能带走，早上不用多洗一个杯子。",
+      "on_screen_text": "换盖就能带走",
+      "selling_point": "portable cup design",
+      "transition": "Action cut",
+      "production_notes": "Show the cup and lid clearly; keep the gym bag from covering the product.",
+      "prompt_hint": "Portable blender cup with travel lid, gym bag side pocket, fast UGC detail shot."
+    },
+    {
+      "shot_id": "04",
+      "section": "CTA",
+      "start_time": 18,
+      "end_time": 24,
+      "duration": 6,
+      "scene_purpose": "Connect lifestyle payoff to purchase action.",
+      "visual_description": "Creator drinks from the blender outside the gym, then holds it near camera.",
+      "framing": "Selfie medium close-up",
+      "camera_movement": "Static selfie shot",
+      "subject_action": "Creator smiles, drinks, and presents the product.",
+      "dialogue_vo": "如果你也总是赶时间但又想吃得健康一点，这个真的可以看看。",
+      "on_screen_text": "赶时间又想吃得健康一点，可以看看",
+      "selling_point": "portable healthy routine",
+      "transition": "End card cut",
+      "production_notes": "Keep CTA conversational, not over-polished.",
+      "prompt_hint": "Selfie UGC outside gym, creator holding white portable blender clearly."
+    }
+  ],
+  "rhythm_notes": [
+    "Hook must land in the first 2 seconds.",
+    "Demo shots should use fast, readable cuts.",
+    "CTA should feel like creator recommendation, not a hard-sell ad."
+  ],
+  "production_notes": [
+    "Maintain the same white blender shape across all shots.",
+    "Use vertical 9:16 framing with space for subtitles.",
+    "Avoid medical, detox, or weight-loss claims."
+  ],
+  "compliance_notes": [
+    "Do not imply unsupported ice-crushing performance.",
+    "Avoid health outcome guarantees."
+  ]
+}

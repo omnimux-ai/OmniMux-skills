@@ -1,0 +1,202 @@
+profile:
+  name: image-recreation-defaults
+  description: >
+    图片参考改编的默认静态偏好，用于统一输入要求、批量角色建议、
+    主体保留优先级和输出质量检查口径。
+  version: 1.0.0
+
+input_defaults:
+  task_goal: "生成一组风格统一、主体稳定、适合商业使用的复刻图片方案"
+  usage: "ecommerce"
+  platform: "TikTok Shop"
+  desired_output_count: 3
+  aspect_ratio: "4:5"
+  resolution_tier: "high"
+  consistency_priority: "high"
+  text_overlay_needed: false
+  text_safe_area: "none"
+
+reference_policy:
+  min_reference_images: 1
+  recommended_reference_images: 2
+  max_reference_images_for_template: 12
+  accepted_reference_types:
+    - product_ref
+    - style_ref
+    - scene_ref
+    - layout_ref
+    - pose_ref
+    - detail_ref
+    - competitor_ref
+    - other
+  require_reference_type_label: true
+  prefer_at_least_one_product_ref: true
+  prefer_at_least_one_style_ref: true
+  allow_competitor_ref_for_analysis_only: true
+  direct_copy_of_protected_expression: false
+
+subject_preservation:
+  enabled: true
+  preserve_identity: true
+  preserve_structure: true
+  preserve_material_logic: true
+  preserve_brand_position_when_provided: true
+  preserve_color_when_explicitly_required: true
+  allow_minor_scene_adaptation: true
+  forbid_conflicting_new_attributes: true
+
+style_defaults:
+  direction:
+    - clean_commercial
+    - premium
+    - modern
+  composition:
+    - subject_first
+    - stable_framing
+    - commercial_readability
+  lighting:
+    - soft_directional_key_light
+    - controlled_highlights
+    - clean_shadows
+  background:
+    - uncluttered
+    - supportive
+    - commercially_safe
+  color:
+    - neutral_base
+    - restrained_saturation
+  texture:
+    - realistic
+    - readable
+    - materially_consistent
+
+batch_roles:
+  enabled: true
+  default_roles:
+    - index: 1
+      role: hero
+      objective: "突出主体整体外观与第一眼识别度"
+    - index: 2
+      role: detail
+      objective: "突出材质、工艺或局部卖点"
+    - index: 3
+      role: lifestyle
+      objective: "展示使用场景与转化氛围"
+  allow_custom_roles: true
+  require_distinct_role_per_image: true
+
+prompting:
+  language: "zh-CN"
+  include_subject_description: true
+  include_preservation_rules: true
+  include_scene_description: true
+  include_composition_guidance: true
+  include_lighting_guidance: true
+  include_background_guidance: true
+  include_commercial_goal: true
+  include_negative_guidance: true
+  prefer_observable_descriptions: true
+  avoid_unsupported_claims: true
+  avoid_hidden_control_tokens: true
+
+negative_defaults:
+  enabled: true
+  core_negative_points:
+    - "避免主体比例失真"
+    - "避免结构错误或多余结构"
+    - "避免材质表现不真实"
+    - "避免背景杂乱"
+    - "避免错误品牌元素"
+    - "避免光线逻辑混乱"
+    - "避免低细节或明显伪影"
+  batch_consistency_negative_points:
+    - "避免同一主体在不同图中外观漂移"
+    - "避免不同图片之间材质逻辑不一致"
+    - "避免色调与风格突然变化"
+    - "避免背景复杂度差异过大"
+
+quality_review:
+  enabled: true
+  checklist:
+    subject_consistency: true
+    structure_accuracy: true
+    material_accuracy: true
+    composition_clarity: true
+    lighting_consistency: true
+    background_control: true
+    branding_accuracy: true
+    commercial_readiness: true
+    batch_cohesion: true
+  statuses:
+    - pass
+    - needs_review
+    - warning
+  fail_conditions:
+    - "主体无法识别"
+    - "核心结构错误"
+    - "品牌信息明显错误"
+    - "商业用途可读性过低"
+
+commercial_defaults:
+  prioritize_subject_visibility: true
+  prioritize_first_glance_readability: true
+  prioritize_platform_fit: true
+  prioritize_conversion_friendly_composition: true
+  allow_decorative_elements_only_if_supportive: true
+
+platform_notes:
+  tiktok_shop:
+    mobile_first: true
+    clear_subject_focus: true
+    avoid_tiny_secondary_details: true
+    support_cover_image_use: true
+  amazon_listing:
+    clear_product_readability: true
+    avoid_background_clutter: true
+    support_detail_page_breakdown: true
+  instagram:
+    visual_thumbstop_needed: true
+    lifestyle_friendly: true
+
+compliance:
+  avoid_unverifiable_claims: true
+  avoid_unauthorized_brand_copy: true
+  avoid_unlicensed_person_identity_replication: true
+  avoid_misleading_visual_exaggeration: true
+  public_export_safe_only: true
+
+export:
+  include_reference_analysis: true
+  include_style_bible: true
+  include_recreation_plan: true
+  include_final_prompts: true
+  include_negative_guidance: true
+  include_quality_notes: true
+  include_export_manifest: true
+  allowed_public_files:
+    - "SKILL.md"
+    - "README.md"
+    - "examples/"
+    - "prompts/"
+    - "schemas/"
+    - "configs/"
+    - "templates/"
+    - "docs/"
+    - "exports/"
+  forbid_private_or_internal_files: true
+
+naming:
+  prompt_prefix: "final_prompt_"
+  preview_prefix: "preview_"
+  report_names:
+    reference_analysis: "reference_analysis.md"
+    style_bible: "style_bible.md"
+    recreation_plan: "recreation_plan.md"
+    quality_report: "quality_report.md"
+    final_prompts: "final_prompts.md"
+    negative_prompts: "negative_prompts.md"
+    export_manifest: "export_manifest.csv"
+
+notes:
+  - "这些字段是静态偏好提示，不是强制执行顺序。"
+  - "输出时优先保留主体事实和品牌边界，再讨论风格变化。"

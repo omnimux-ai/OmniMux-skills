@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video-analysis-toc.schema.json",
+  "description": "Gxgen 视频分析分段目录结构",
+  "type": "object",
+  "properties": {
+    "evidence_level": {
+      "type": "string",
+      "enum": [
+        "raw-video",
+        "transcript-plus-frames",
+        "transcript-only",
+        "summary-only",
+        "url-only"
+      ]
+    },
+    "video_duration_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "toc": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start": {
+            "type": "string",
+            "description": "建议格式 mm:ss 或 hh:mm:ss"
+          },
+          "end": {
+            "type": "string",
+            "description": "建议格式 mm:ss 或 hh:mm:ss"
+          },
+          "section": {
+            "type": "string",
+            "description": "片段标签，例如 hook、demo_scene、cta"
+          },
+          "summary": {
+            "type": "string",
+            "description": "该片段的一句话摘要"
+          }
+        },
+        "required": [
+          "index",
+          "start",
+          "end",
+          "section",
+          "summary"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "evidence_level",
+    "toc"
+  ],
+  "additionalProperties": false
+}

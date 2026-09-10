@@ -1,0 +1,11 @@
+This directory is reserved for optional supporting assets used by the public UGC Commerce Video Skill package.
+
+Typical contents may include:
+- reference screenshots
+- sample product stills
+- storyboard thumbnails
+- visual style reference boards
+- prompt examples linked to generated outputs
+- internal placeholders for future documentation assets
+
+This file exists only to preserve the folder in version control and document its intended use.

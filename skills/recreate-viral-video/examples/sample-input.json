@@ -1,0 +1,23 @@
+{
+  "reference_video_url": "https://example.com/reference-video",
+  "product": {
+    "name": "Example Kitchen Tool",
+    "category": "home_living",
+    "target_audience": "希望省时省事的家庭用户",
+    "selling_points": [
+      "一步完成关键动作",
+      "结果更直观",
+      "适合高频日常场景"
+    ],
+    "constraints": [
+      "不要使用绝对化主张",
+      "不要暗示未经验证的效果"
+    ],
+    "brand_tone": "真实实用"
+  },
+  "language": "zh-CN",
+  "market": "US",
+  "duration_seconds": 15,
+  "aspect_ratio": "9:16",
+  "ugc_level": "high"
+}

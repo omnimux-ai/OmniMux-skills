@@ -1,0 +1,433 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Storyboard Schema",
+  "type": "object",
+  "description": "Schema for structured short-form ecommerce storyboard planning output.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "const": "storyboard_planning",
+      "description": "Fixed task type for this schema."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Top-level summary of the storyboard and its commercial purpose.",
+      "additionalProperties": false,
+      "properties": {
+        "storyboard_objective": {
+          "type": "string",
+          "description": "Primary business or communication objective of the video."
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "Audience summary guiding the storyboard."
+        },
+        "product_category": {
+          "type": "string",
+          "description": "Product category or vertical."
+        },
+        "core_angle": {
+          "type": "string",
+          "description": "Central creative angle of the storyboard."
+        },
+        "recommended_format": {
+          "type": "string",
+          "description": "Suggested visual format such as UGC demo, testimonial, comparison, routine integration, or showcase."
+        },
+        "recommended_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300,
+          "description": "Recommended total runtime."
+        },
+        "main_promise": {
+          "type": "string",
+          "description": "Primary product promise communicated by the storyboard."
+        },
+        "proof_strategy": {
+          "type": "string",
+          "description": "How the storyboard visually proves the promise."
+        },
+        "cta_goal": {
+          "type": "string",
+          "description": "Intended next action for the viewer."
+        }
+      }
+    },
+    "structure_overview": {
+      "type": "object",
+      "description": "Macro structure of the storyboard.",
+      "additionalProperties": false,
+      "properties": {
+        "structure_type": {
+          "type": "string",
+          "description": "Narrative or selling structure such as hook-product-demo-proof-cta or pain-solution-proof-cta."
+        },
+        "flow_summary": {
+          "type": "string",
+          "description": "High-level summary of how the scenes progress."
+        },
+        "product_reveal_timing": {
+          "type": "string",
+          "description": "When the product becomes clearly visible.",
+          "enum": [
+            "immediate",
+            "early",
+            "mid",
+            "late"
+          ]
+        },
+        "proof_timing": {
+          "type": "string",
+          "description": "When meaningful visual proof appears.",
+          "enum": [
+            "immediate",
+            "early",
+            "mid",
+            "late"
+          ]
+        },
+        "cta_position": {
+          "type": "string",
+          "description": "Where the CTA lands in the sequence.",
+          "enum": [
+            "opening",
+            "middle",
+            "closing",
+            "multiple"
+          ]
+        }
+      }
+    },
+    "scene_breakdown": {
+      "type": "array",
+      "description": "Detailed scene-by-scene storyboard plan.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scene_number": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Ordered scene number."
+          },
+          "scene_name": {
+            "type": "string",
+            "description": "Short label for the scene."
+          },
+          "duration_seconds": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Approximate scene duration."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Commercial function of the scene such as hook, product intro, demo, proof, objection handling, or CTA."
+          },
+          "viewer_takeaway": {
+            "type": "string",
+            "description": "What the viewer should understand, feel, or believe after this scene."
+          },
+          "visual_description": {
+            "type": "string",
+            "description": "Detailed description of what should appear on screen."
+          },
+          "product_visibility_note": {
+            "type": "string",
+            "description": "How clearly and prominently the product should be shown."
+          },
+          "spoken_line_or_message": {
+            "type": "string",
+            "description": "Recommended spoken line, narration, or core message."
+          },
+          "overlay_text": {
+            "type": "string",
+            "description": "Suggested on-screen text or subtitle emphasis."
+          },
+          "proof_role": {
+            "type": "string",
+            "description": "How this scene contributes proof or credibility."
+          },
+          "objection_role": {
+            "type": "string",
+            "description": "If relevant, what hesitation this scene helps reduce."
+          },
+          "camera_framing": {
+            "type": "string",
+            "description": "Suggested framing such as close-up, medium shot, macro detail, POV, or over-the-shoulder."
+          },
+          "camera_motion": {
+            "type": "string",
+            "description": "Suggested motion such as static, handheld, push-in, reveal pan, or quick cut."
+          },
+          "transition_note": {
+            "type": "string",
+            "description": "How the scene should connect to the next one."
+          }
+        },
+        "required": [
+          "scene_number",
+          "purpose",
+          "visual_description"
+        ]
+      }
+    },
+    "hook_scene_plan": {
+      "type": "object",
+      "description": "Special planning layer for the opening scene or first few seconds.",
+      "additionalProperties": false,
+      "properties": {
+        "hook_scene_number": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Scene number containing the primary hook."
+        },
+        "hook_type": {
+          "type": "string",
+          "description": "Type of hook such as pain, result, comparison, identity, curiosity, or surprise."
+        },
+        "hook_visual_strategy": {
+          "type": "string",
+          "description": "What visual pattern makes the opening likely to stop the scroll."
+        },
+        "hook_message": {
+          "type": "string",
+          "description": "Main opening message."
+        },
+        "mute_viewing_support": {
+          "type": "string",
+          "description": "How the hook remains understandable without audio."
+        }
+      }
+    },
+    "product_visibility_plan": {
+      "type": "object",
+      "description": "How product clarity is maintained across the storyboard.",
+      "additionalProperties": false,
+      "properties": {
+        "first_clear_product_scene": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Scene where the product first becomes clearly understandable."
+        },
+        "visibility_priority_note": {
+          "type": "string",
+          "description": "What must be visually clear about the product."
+        },
+        "usage_clarity_note": {
+          "type": "string",
+          "description": "How the viewer learns how the product is used."
+        },
+        "repeat_visibility_strategy": {
+          "type": "string",
+          "description": "How the product continues to stay present and legible throughout the video."
+        }
+      }
+    },
+    "proof_plan": {
+      "type": "object",
+      "description": "Visual proof design layer for the storyboard.",
+      "additionalProperties": false,
+      "properties": {
+        "primary_proof_method": {
+          "type": "string",
+          "description": "Main visual proof technique used."
+        },
+        "proof_scenes": {
+          "type": "array",
+          "description": "Scene numbers or labels where proof appears.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proof_priority_note": {
+          "type": "string",
+          "description": "What absolutely must be shown to make the storyboard convincing."
+        },
+        "proof_risk_note": {
+          "type": "string",
+          "description": "What may feel unconvincing if proof is too weak or unclear."
+        }
+      }
+    },
+    "objection_handling_plan": {
+      "type": "object",
+      "description": "How the storyboard visually or verbally reduces hesitation.",
+      "additionalProperties": false,
+      "properties": {
+        "main_objection": {
+          "type": "string",
+          "description": "Primary objection being addressed."
+        },
+        "secondary_objections": {
+          "type": "array",
+          "description": "Other relevant hesitations.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handling_scenes": {
+          "type": "array",
+          "description": "Scene numbers or labels where objection handling occurs.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handling_method": {
+          "type": "string",
+          "description": "How the storyboard responds to the objection."
+        }
+      }
+    },
+    "overlay_and_subtitle_plan": {
+      "type": "object",
+      "description": "Plan for text support in the video.",
+      "additionalProperties": false,
+      "properties": {
+        "overlay_strategy": {
+          "type": "string",
+          "description": "How overlays support comprehension, proof, or CTA."
+        },
+        "priority_overlay_moments": {
+          "type": "array",
+          "description": "Scene numbers or messages where text is most important.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "density_note": {
+          "type": "string",
+          "description": "Guidance on how much text should appear at once."
+        },
+        "avoid_note": {
+          "type": "string",
+          "description": "What to avoid in text treatment, such as clutter or repetition."
+        }
+      }
+    },
+    "pacing_and_transition_plan": {
+      "type": "object",
+      "description": "Guidance on energy, rhythm, and scene flow.",
+      "additionalProperties": false,
+      "properties": {
+        "overall_pacing": {
+          "type": "string",
+          "description": "General pacing style.",
+          "enum": [
+            "fast",
+            "moderate",
+            "mixed"
+          ]
+        },
+        "fast_moments": {
+          "type": "array",
+          "description": "Scenes or moments that should move quickly.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "slow_moments": {
+          "type": "array",
+          "description": "Scenes or moments that should breathe for clarity or proof.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "transition_style": {
+          "type": "string",
+          "description": "General transition behavior such as hard cuts, soft continuity, punchy jumps, or proof-led progression."
+        },
+        "momentum_note": {
+          "type": "string",
+          "description": "How pacing supports retention and understanding."
+        }
+      }
+    },
+    "cta_ending_plan": {
+      "type": "object",
+      "description": "How the ending should visually support the CTA.",
+      "additionalProperties": false,
+      "properties": {
+        "ending_scene_number": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Scene number containing the main CTA ending."
+        },
+        "ending_visual": {
+          "type": "string",
+          "description": "What the viewer sees during the CTA moment."
+        },
+        "ending_message": {
+          "type": "string",
+          "description": "Spoken or implied CTA message."
+        },
+        "cta_type": {
+          "type": "string",
+          "description": "CTA style such as direct action, benefit-led, urgency-led, or trust-led."
+        },
+        "action_clarity_note": {
+          "type": "string",
+          "description": "How clearly the viewer understands what to do next."
+        }
+      }
+    },
+    "production_notes": {
+      "type": "object",
+      "description": "Practical notes for filming, editing, or generation.",
+      "additionalProperties": false,
+      "properties": {
+        "must_capture_shots": {
+          "type": "array",
+          "description": "Essential shots that cannot be omitted.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "simplification_opportunities": {
+          "type": "array",
+          "description": "Areas where the storyboard can be simplified if needed.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "creator_direction_note": {
+          "type": "string",
+          "description": "How the creator should perform or appear if relevant."
+        },
+        "editing_note": {
+          "type": "string",
+          "description": "Key note for edit rhythm, structure, or sequence."
+        },
+        "generation_note": {
+          "type": "string",
+          "description": "If AI generation is the next step, note what should remain especially concrete."
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Assumptions made because of incomplete user input.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Risks related to proof, production complexity, or product clarity.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "description": "Suggested follow-up actions such as script refinement, prompt conversion, or asset generation.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "task_type"
+  ]
+}

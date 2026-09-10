@@ -1,0 +1,12 @@
+display-name-zh: "Amazon Trend Risk Monitor"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Amazon"
+  - "趋势风险"
+  - "BSR"
+summary-cn: "Amazon trend, BSR, sales prediction and trademark/risk monitoring."
+desc-cn: "Amazon trend, BSR, sales prediction and trademark/risk monitoring."
+author-cn: "OmniMux"
+source: official

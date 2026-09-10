@@ -1,0 +1,54 @@
+app:
+  name: video-analysis
+  version: 1.0.0
+  description: Gxgen 视频分析 skill 的推荐配置
+
+input:
+  accepted_evidence_levels:
+    - raw-video
+    - transcript-plus-frames
+    - transcript-only
+    - summary-only
+    - url-only
+  locale: zh-CN
+
+analysis:
+  output_sections:
+    - toc
+    - report
+    - scenes
+  include_risk_notes: true
+  unknown_text: 无法确认
+
+segmentation:
+  min_scene_count: 3
+  max_scene_count: 8
+  preferred_labels:
+    - hook
+    - intro
+    - problem
+    - demo_scene
+    - feature_highlight
+    - benefit_highlight
+    - social_proof
+    - objection_handling
+    - offer
+    - cta
+    - outro
+    - unknown
+
+report:
+  title: 视频分析报告
+  include_basic_info: true
+  include_overview: true
+  include_toc: true
+  include_scene_breakdown: true
+  include_key_observations: true
+  include_reusable_framework: true
+  include_actionable_recommendations: true
+  include_risks_and_notes: true
+  include_conclusion: true
+
+export:
+  report_format: markdown
+  structured_scene_format: json

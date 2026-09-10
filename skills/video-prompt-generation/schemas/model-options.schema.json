@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Prompt Model Guidance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["target_model", "emphasis", "recommended_sections"],
+  "properties": {
+    "target_model": {
+      "type": "string",
+      "enum": ["generic", "sora", "veo", "seedance"]
+    },
+    "emphasis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_sections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "common_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "examples": [
+    {
+      "target_model": "seedance",
+      "emphasis": [
+        "Put the hook early.",
+        "Keep each shot concrete and compact."
+      ],
+      "recommended_sections": [
+        "hook",
+        "proof-or-demo",
+        "end-frame-or-cta",
+        "negative-constraints"
+      ],
+      "common_risks": [
+        "The first payoff appears too late.",
+        "The prompt overloads too many shot ideas for a short duration."
+      ]
+    }
+  ]
+}

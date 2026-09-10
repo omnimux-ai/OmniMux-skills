@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/recreate-viral-video/fit-grade.schema.json",
+  "title": "Recreate Viral Video Fit Grade",
+  "description": "Fit grading result for reference-video adaptation.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "fit_grade": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"]
+    },
+    "fit_summary": {
+      "type": "string"
+    },
+    "fit_reasoning": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "preserve": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "replace": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rewrite": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "avoid": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "next_action": {
+      "type": "string"
+    }
+  },
+  "required": ["fit_grade", "fit_summary"]
+}

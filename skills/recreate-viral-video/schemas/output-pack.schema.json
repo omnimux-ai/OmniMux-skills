@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/recreate-viral-video/output-pack.schema.json",
+  "title": "Recreate Viral Video Output Pack",
+  "description": "Final delivery pack for original adaptation output.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "fit_grade": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"]
+    },
+    "recreation_strategy": {
+      "type": "object",
+      "required": ["strategy_summary"],
+      "additionalProperties": true,
+      "properties": {
+        "preserve": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "replace": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rewrite": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "avoid": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "strategy_summary": {
+          "type": "string"
+        }
+      }
+    },
+    "storyboard": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "scene_id": { "type": "string" },
+          "start_second": { "type": "number" },
+          "end_second": { "type": "number" },
+          "scene_goal": { "type": "string" },
+          "visual": { "type": "string" },
+          "product_focus": { "type": "string" },
+          "text_overlay": { "type": "string" },
+          "voiceover": { "type": "string" },
+          "motion": { "type": "string" },
+          "notes": { "type": "string" }
+        },
+        "required": ["scene_id", "scene_goal", "visual"]
+      }
+    },
+    "final_video_prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "negative_constraints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "output_spec": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "language": { "type": "string" },
+        "duration_seconds": { "type": "integer" },
+        "aspect_ratio": { "type": "string" },
+        "market": { "type": "string" },
+        "style": { "type": "string" }
+      }
+    }
+  },
+  "required": ["fit_grade", "recreation_strategy", "final_video_prompt"]
+}

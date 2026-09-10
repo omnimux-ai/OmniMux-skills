@@ -1,0 +1,541 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Content Analysis Schema",
+  "type": "object",
+  "description": "Schema for structured short-form ecommerce video analysis output.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "const": "content_analysis",
+      "description": "Fixed task type for this schema."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Top-level summary of what the video is and what it is trying to do.",
+      "additionalProperties": false,
+      "properties": {
+        "video_objective": {
+          "type": "string",
+          "description": "Likely commercial objective of the video."
+        },
+        "format_type": {
+          "type": "string",
+          "description": "Observed format such as UGC, demo, testimonial, comparison, montage, or showcase."
+        },
+        "product_category": {
+          "type": "string",
+          "description": "Likely product category inferred from the video."
+        },
+        "audience_guess": {
+          "type": "string",
+          "description": "Reasoned estimate of the intended audience if not explicitly known."
+        },
+        "main_promise": {
+          "type": "string",
+          "description": "The primary promise or takeaway the video appears to communicate."
+        },
+        "overall_assessment": {
+          "type": "string",
+          "description": "Short high-level diagnosis of the video's commercial effectiveness."
+        }
+      }
+    },
+    "section_breakdown": {
+      "type": "array",
+      "description": "Commercial function breakdown of the video by section.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "section_id": {
+            "type": "string",
+            "description": "Internal label such as hook, demo_1, proof, or cta."
+          },
+          "section_name": {
+            "type": "string",
+            "description": "Human-readable section name."
+          },
+          "start_time": {
+            "type": "string",
+            "description": "Approximate start timestamp."
+          },
+          "end_time": {
+            "type": "string",
+            "description": "Approximate end timestamp."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Commercial purpose of the section."
+          },
+          "what_is_shown": {
+            "type": "string",
+            "description": "What the viewer sees in this section."
+          },
+          "what_is_said": {
+            "type": "string",
+            "description": "What is spoken, captioned, or strongly implied."
+          },
+          "belief_shift_target": {
+            "type": "string",
+            "description": "What change in viewer understanding or belief this section is trying to create."
+          },
+          "effectiveness_note": {
+            "type": "string",
+            "description": "Why this section likely helps or hurts the video."
+          }
+        },
+        "required": [
+          "section_name",
+          "purpose"
+        ]
+      }
+    },
+    "hook_analysis": {
+      "type": "object",
+      "description": "Detailed diagnosis of the opening 1–3 seconds or opening segment.",
+      "additionalProperties": false,
+      "properties": {
+        "hook_type": {
+          "type": "string",
+          "description": "Observed hook format such as pain-first, result-first, curiosity, comparison, creator reaction, or audience callout."
+        },
+        "opening_visual": {
+          "type": "string",
+          "description": "Key opening visual frame or moment."
+        },
+        "opening_message": {
+          "type": "string",
+          "description": "First spoken line, caption, or implied message."
+        },
+        "attention_mechanisms": {
+          "type": "array",
+          "description": "Mechanisms used to try to stop the scroll.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "clarity_score": {
+          "type": "number",
+          "description": "How quickly the hook becomes understandable.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "relevance_score": {
+          "type": "number",
+          "description": "How strongly the hook signals that the video is for a specific viewer or problem.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "curiosity_or_tension_score": {
+          "type": "number",
+          "description": "How strongly the hook creates curiosity, contrast, or urgency.",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "mute_viewing_strength": {
+          "type": "string",
+          "description": "How well the opening works without audio.",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ]
+        },
+        "strengths": {
+          "type": "array",
+          "description": "Main strengths of the opening.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weaknesses": {
+          "type": "array",
+          "description": "Main weaknesses of the opening.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retention_risk_note": {
+          "type": "string",
+          "description": "Likely retention risk caused by the opening."
+        },
+        "improvement_priority": {
+          "type": "string",
+          "description": "Most important hook improvement direction."
+        }
+      }
+    },
+    "selling_point_analysis": {
+      "type": "object",
+      "description": "Breakdown of what the video is trying to sell and how clearly it does so.",
+      "additionalProperties": false,
+      "properties": {
+        "main_selling_point": {
+          "type": "string",
+          "description": "The dominant promise or benefit."
+        },
+        "supporting_selling_points": {
+          "type": "array",
+          "description": "Secondary benefits or supporting claims.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "feature_statements": {
+          "type": "array",
+          "description": "Features presented explicitly or implicitly.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "benefit_statements": {
+          "type": "array",
+          "description": "Benefits presented explicitly or implicitly.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "emotional_payoffs": {
+          "type": "array",
+          "description": "Emotional or identity-based rewards implied by the video.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "message_hierarchy_quality": {
+          "type": "string",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ],
+          "description": "How clearly the main message dominates over secondary information."
+        },
+        "clarity_note": {
+          "type": "string",
+          "description": "Explanation of whether the message is focused or cluttered."
+        },
+        "memorability_note": {
+          "type": "string",
+          "description": "What a viewer is most likely to remember after watching."
+        }
+      }
+    },
+    "proof_analysis": {
+      "type": "object",
+      "description": "Review of how the video supports its claims with visible or believable evidence.",
+      "additionalProperties": false,
+      "properties": {
+        "proof_types_used": {
+          "type": "array",
+          "description": "Evidence types used in the video.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "live_demo",
+              "before_after",
+              "creator_testimony",
+              "comparison",
+              "reaction",
+              "detail_close_up",
+              "quantified_claim",
+              "social_proof",
+              "use_case_demo",
+              "expert_signal",
+              "other"
+            ]
+          }
+        },
+        "proof_strength": {
+          "type": "string",
+          "description": "Overall strength of the proof.",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ]
+        },
+        "best_proof_moment": {
+          "type": "string",
+          "description": "The single strongest proof moment in the video."
+        },
+        "proof_timing_note": {
+          "type": "string",
+          "description": "Whether proof appears early enough relative to viewer skepticism."
+        },
+        "proof_relevance_note": {
+          "type": "string",
+          "description": "How well the proof supports the main promise."
+        },
+        "proof_gaps": {
+          "type": "array",
+          "description": "Missing or weak areas in the proof chain.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skepticism_risk_note": {
+          "type": "string",
+          "description": "What a skeptical viewer is still unlikely to believe."
+        }
+      }
+    },
+    "objection_handling_analysis": {
+      "type": "object",
+      "description": "Assessment of how well the video addresses likely buyer hesitation.",
+      "additionalProperties": false,
+      "properties": {
+        "likely_objections": {
+          "type": "array",
+          "description": "Most probable audience concerns for this category and product.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "objections_addressed": {
+          "type": "array",
+          "description": "Objections the video appears to address directly or indirectly.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "objections_unaddressed": {
+          "type": "array",
+          "description": "Likely concerns left unresolved.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handling_quality": {
+          "type": "string",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ],
+          "description": "How effectively buyer hesitation is reduced."
+        },
+        "timing_note": {
+          "type": "string",
+          "description": "Whether reassurance appears at the right stage of the video."
+        },
+        "specificity_note": {
+          "type": "string",
+          "description": "Whether reassurance feels concrete or generic."
+        }
+      }
+    },
+    "pacing_and_editing_analysis": {
+      "type": "object",
+      "description": "Assessment of rhythm, scene progression, and editorial support for comprehension and retention.",
+      "additionalProperties": false,
+      "properties": {
+        "pacing_quality": {
+          "type": "string",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ]
+        },
+        "product_reveal_timing": {
+          "type": "string",
+          "description": "Assessment of whether the product appears early enough.",
+          "enum": [
+            "early",
+            "acceptable",
+            "late"
+          ]
+        },
+        "visual_variety_note": {
+          "type": "string",
+          "description": "Whether the video keeps visual interest without becoming confusing."
+        },
+        "redundancy_note": {
+          "type": "string",
+          "description": "Whether repeated scenes or claims hurt momentum."
+        },
+        "subtitle_and_overlay_note": {
+          "type": "string",
+          "description": "Whether text supports or overloads the video."
+        },
+        "comprehension_speed_note": {
+          "type": "string",
+          "description": "How quickly the viewer can understand what is happening and why it matters."
+        },
+        "likely_drop_points": {
+          "type": "array",
+          "description": "Moments where the viewer may lose interest or clarity.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "product_visibility_analysis": {
+      "type": "object",
+      "description": "How clearly and consistently the product is shown.",
+      "additionalProperties": false,
+      "properties": {
+        "visibility_quality": {
+          "type": "string",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ]
+        },
+        "first_clear_product_moment": {
+          "type": "string",
+          "description": "Approximate first moment where the product is clearly understandable."
+        },
+        "usage_clarity_note": {
+          "type": "string",
+          "description": "Whether the viewer can easily understand how the product is used."
+        },
+        "framing_note": {
+          "type": "string",
+          "description": "Whether the camera and composition support product readability."
+        },
+        "visibility_risks": {
+          "type": "array",
+          "description": "Problems such as obscured product, too-small framing, or unclear interaction.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "cta_analysis": {
+      "type": "object",
+      "description": "Review of the video's call to action and how well it fits the persuasion chain.",
+      "additionalProperties": false,
+      "properties": {
+        "cta_present": {
+          "type": "boolean",
+          "description": "Whether a CTA is clearly present."
+        },
+        "cta_type": {
+          "type": "string",
+          "description": "Type of CTA such as direct action, benefit-led, urgency-led, curiosity-led, or trust-led."
+        },
+        "cta_timing": {
+          "type": "string",
+          "description": "Whether the CTA appears too early, appropriately, or too late.",
+          "enum": [
+            "early",
+            "appropriate",
+            "late",
+            "not_clear"
+          ]
+        },
+        "cta_strength": {
+          "type": "string",
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ]
+        },
+        "action_clarity_note": {
+          "type": "string",
+          "description": "Whether the viewer knows what action to take."
+        },
+        "motivation_note": {
+          "type": "string",
+          "description": "Whether the CTA gives a reason to act."
+        },
+        "fit_note": {
+          "type": "string",
+          "description": "Whether the CTA feels earned by the rest of the video."
+        },
+        "improvement_note": {
+          "type": "string",
+          "description": "Most useful CTA improvement direction."
+        }
+      }
+    },
+    "benchmark_review": {
+      "type": "object",
+      "description": "Qualitative comparison against short-form ecommerce best practices.",
+      "additionalProperties": false,
+      "properties": {
+        "benchmark_context": {
+          "type": "string",
+          "description": "What style, platform, or category standard the video is being compared against."
+        },
+        "strength_dimensions": {
+          "type": "array",
+          "description": "Dimensions where the video performs relatively well.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "weak_dimensions": {
+          "type": "array",
+          "description": "Dimensions where the video underperforms.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "overall_competitiveness": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "description": "How competitive the video appears relative to likely category norms."
+        }
+      }
+    },
+    "priority_diagnosis": {
+      "type": "object",
+      "description": "Condensed commercial diagnosis with prioritized action points.",
+      "additionalProperties": false,
+      "properties": {
+        "what_the_video_does_well": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_likely_limits_performance": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "top_fix_priority": {
+          "type": "string",
+          "description": "Single most important issue to improve first."
+        },
+        "improvement_recommendations": {
+          "type": "array",
+          "description": "Specific, actionable improvements prioritized by impact.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Assumptions made due to limited user context or absent data.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "description": "Important limits of the analysis, such as no performance data or unclear source quality.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "task_type"
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Storyboard Shot",
+  "description": "用于描述单个视频分镜镜头的结构化 schema，适用于短视频、电商带货、UGC、产品展示等场景。",
+  "$comment": "JSON Schema draft-07 cannot compare sibling fields. Validate end_time > start_time with tools/validate-input.js.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "shot_id",
+    "start_time",
+    "end_time",
+    "duration",
+    "scene_purpose",
+    "visual_description"
+  ],
+  "properties": {
+    "shot_id": {
+      "type": "string",
+      "description": "镜头编号，例如 01 / 02 / S01",
+      "minLength": 1
+    },
+    "section": {
+      "type": "string",
+      "description": "所属结构分段，例如 Hook / 痛点 / 卖点演示 / CTA"
+    },
+    "start_time": {
+      "type": "number",
+      "description": "镜头开始时间（秒）",
+      "minimum": 0
+    },
+    "end_time": {
+      "type": "number",
+      "description": "镜头结束时间（秒）",
+      "minimum": 0
+    },
+    "duration": {
+      "type": "number",
+      "description": "镜头时长（秒）",
+      "exclusiveMinimum": 0
+    },
+    "scene_purpose": {
+      "type": "string",
+      "description": "该镜头承担的主要任务，例如 抓住注意力 / 展示操作简单 / 引导点击",
+      "minLength": 1
+    },
+    "visual_description": {
+      "type": "string",
+      "description": "镜头中的画面说明，要求可视化、可执行",
+      "minLength": 1
+    },
+    "framing": {
+      "type": "string",
+      "description": "景别，例如 特写 / 近景 / 中景 / 中近景 / 产品特写"
+    },
+    "camera_movement": {
+      "type": "string",
+      "description": "运镜方式，例如 轻推 / 横移 / 跟拍 / 定镜 / 快切"
+    },
+    "camera_angle": {
+      "type": "string",
+      "description": "机位角度，例如 平视 / 俯拍 / 仰拍 / 自拍角度 / 桌面俯视"
+    },
+    "lens_feel": {
+      "type": "string",
+      "description": "镜头感觉，例如 手持感 / 稳定器感 / 自拍感 / 微距感"
+    },
+    "subject": {
+      "type": "string",
+      "description": "镜头主体，例如 年轻女性 / 产品 / 手部动作 / 产品与成品饮品"
+    },
+    "subject_action": {
+      "type": "string",
+      "description": "主体动作描述"
+    },
+    "environment": {
+      "type": "string",
+      "description": "场景环境说明，例如 厨房台面 / 办公桌面 / 健身房外"
+    },
+    "props": {
+      "type": "array",
+      "description": "道具列表",
+      "items": {
+        "type": "string"
+      }
+    },
+    "wardrobe": {
+      "type": "string",
+      "description": "服装建议或角色造型说明"
+    },
+    "expression_emotion": {
+      "type": "string",
+      "description": "表情/情绪，例如 略急 / 满意 / 轻松推荐感"
+    },
+    "dialogue_vo": {
+      "type": "string",
+      "description": "口播、旁白或对镜表达"
+    },
+    "on_screen_text": {
+      "type": "string",
+      "description": "字幕文案"
+    },
+    "selling_point": {
+      "type": "string",
+      "description": "该镜头主要承接的卖点"
+    },
+    "user_pain_point": {
+      "type": "string",
+      "description": "该镜头对应的用户痛点"
+    },
+    "transition": {
+      "type": "string",
+      "description": "与前后镜头的衔接方式，例如 硬切 / 动作连切 / 定格收尾 / match cut"
+    },
+    "audio_notes": {
+      "type": "string",
+      "description": "音频备注，例如 BGM 节奏、环境声、点击音效等"
+    },
+    "lighting": {
+      "type": "string",
+      "description": "光线描述，例如 自然晨光 / 柔和室内光 / 高对比轮廓光"
+    },
+    "composition_notes": {
+      "type": "string",
+      "description": "构图建议，例如 主体居中 / 预留字幕区 / 产品位于中下部"
+    },
+    "continuity_notes": {
+      "type": "string",
+      "description": "连续性说明，例如 保持产品颜色一致 / 与上一镜头同一服装"
+    },
+    "production_notes": {
+      "type": "string",
+      "description": "执行备注，给拍摄、AI 出图或剪辑使用"
+    },
+    "prompt_hint": {
+      "type": "string",
+      "description": "简化提示词，用于快速转成 AI 生成 prompt"
+    },
+    "risk_notes": {
+      "type": "string",
+      "description": "风险提醒，如表达可能过度、动作不清晰、合规风险等"
+    }
+  }
+}

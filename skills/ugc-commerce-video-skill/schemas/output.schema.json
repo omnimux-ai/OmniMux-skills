@@ -1,0 +1,688 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Skill Output Schema",
+  "type": "object",
+  "description": "Output schema for a public UGC commerce video workflow covering analysis, script planning, storyboard planning, prompt conversion, reference adaptation, CTA optimization, hook generation, and creative variation planning.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "content_analysis",
+        "script_planning",
+        "storyboard_planning",
+        "prompt_conversion",
+        "reference_video_adaptation",
+        "cta_optimization",
+        "hook_generation",
+        "variation_planning"
+      ],
+      "description": "Workflow that produced this output."
+    },
+    "summary": {
+      "type": "object",
+      "description": "High-level summary of the output and its intended business role.",
+      "additionalProperties": false,
+      "properties": {
+        "objective": {
+          "type": "string",
+          "description": "Primary commercial objective of the output."
+        },
+        "audience": {
+          "type": "string",
+          "description": "Audience summary used in the output."
+        },
+        "platform": {
+          "type": "string",
+          "description": "Target platform or use environment."
+        },
+        "recommended_format": {
+          "type": "string",
+          "description": "Recommended format such as UGC, demo-led, testimonial, comparison, or premium showcase."
+        },
+        "main_promise": {
+          "type": "string",
+          "description": "Single dominant promise or takeaway."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Short contextual summary or assumptions."
+        }
+      }
+    },
+    "analysis_report": {
+      "type": "object",
+      "description": "Structured analysis output used for content analysis tasks.",
+      "additionalProperties": false,
+      "properties": {
+        "video_objective": {
+          "type": "string",
+          "description": "Likely goal of the analyzed video."
+        },
+        "format_type": {
+          "type": "string",
+          "description": "Observed content format such as UGC, demo, montage, testimonial, comparison, or product showcase."
+        },
+        "section_breakdown": {
+          "type": "array",
+          "description": "Functional section-level breakdown of the analyzed video.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "section_name": {
+                "type": "string",
+                "description": "Commercial section label such as hook, demo, proof, objection, or CTA."
+              },
+              "start_time": {
+                "type": "string",
+                "description": "Approximate start time."
+              },
+              "end_time": {
+                "type": "string",
+                "description": "Approximate end time."
+              },
+              "purpose": {
+                "type": "string",
+                "description": "What this section is trying to accomplish."
+              },
+              "what_is_shown": {
+                "type": "string",
+                "description": "Visual summary."
+              },
+              "what_is_said": {
+                "type": "string",
+                "description": "Spoken, captioned, or implied message."
+              },
+              "effectiveness_note": {
+                "type": "string",
+                "description": "Assessment of how well the section supports the video objective."
+              }
+            },
+            "required": [
+              "section_name",
+              "purpose"
+            ]
+          }
+        },
+        "hook_diagnosis": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "hook_type": {
+              "type": "string",
+              "description": "Observed hook pattern."
+            },
+            "strengths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "weaknesses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "clarity_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "retention_risk_note": {
+              "type": "string"
+            }
+          }
+        },
+        "selling_logic": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "main_selling_point": {
+              "type": "string"
+            },
+            "supporting_points": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "message_hierarchy_quality": {
+              "type": "string",
+              "enum": [
+                "strong",
+                "moderate",
+                "weak"
+              ]
+            },
+            "clarity_note": {
+              "type": "string"
+            }
+          }
+        },
+        "proof_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "proof_types_used": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "proof_strength": {
+              "type": "string",
+              "enum": [
+                "strong",
+                "moderate",
+                "weak"
+              ]
+            },
+            "proof_gaps": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "objection_handling_note": {
+              "type": "string"
+            }
+          }
+        },
+        "pacing_and_visibility_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "product_visibility_quality": {
+              "type": "string",
+              "enum": [
+                "strong",
+                "moderate",
+                "weak"
+              ]
+            },
+            "pacing_quality": {
+              "type": "string",
+              "enum": [
+                "strong",
+                "moderate",
+                "weak"
+              ]
+            },
+            "likely_drop_points": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "editing_note": {
+              "type": "string"
+            }
+          }
+        },
+        "cta_review": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cta_type": {
+              "type": "string"
+            },
+            "cta_strength": {
+              "type": "string",
+              "enum": [
+                "strong",
+                "moderate",
+                "weak"
+              ]
+            },
+            "cta_timing_note": {
+              "type": "string"
+            },
+            "cta_improvement_note": {
+              "type": "string"
+            }
+          }
+        },
+        "priority_recommendations": {
+          "type": "array",
+          "description": "Highest-impact recommended changes.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "script_plan": {
+      "type": "object",
+      "description": "Structured script planning output.",
+      "additionalProperties": false,
+      "properties": {
+        "creative_angle": {
+          "type": "string",
+          "description": "Selected creative angle."
+        },
+        "angle_rationale": {
+          "type": "string",
+          "description": "Why this angle was chosen."
+        },
+        "hook_options": {
+          "type": "array",
+          "description": "Optional hook variations.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "hook_text": {
+                "type": "string"
+              },
+              "hook_type": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "hook_text"
+            ]
+          }
+        },
+        "full_script": {
+          "type": "array",
+          "description": "Script broken into beats or lines.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "beat_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "purpose": {
+                "type": "string",
+                "description": "Commercial function of this beat."
+              },
+              "spoken_line": {
+                "type": "string",
+                "description": "Suggested spoken line or narration."
+              },
+              "visual_support": {
+                "type": "string",
+                "description": "What should be shown while this line is delivered."
+              },
+              "proof_note": {
+                "type": "string",
+                "description": "What makes this beat believable."
+              }
+            },
+            "required": [
+              "beat_number",
+              "purpose"
+            ]
+          }
+        },
+        "subtitle_suggestions": {
+          "type": "array",
+          "description": "Suggested on-screen text overlays or subtitle highlights.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cta_variants": {
+          "type": "array",
+          "description": "Possible CTA lines matched to the script.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "execution_notes": {
+          "type": "array",
+          "description": "Practical guidance for delivery, tone, or proof emphasis.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "storyboard": {
+      "type": "object",
+      "description": "Scene-by-scene storyboard output.",
+      "additionalProperties": false,
+      "properties": {
+        "core_angle": {
+          "type": "string",
+          "description": "Main creative direction for the storyboard."
+        },
+        "proof_strategy": {
+          "type": "string",
+          "description": "How proof is visually delivered."
+        },
+        "scene_breakdown": {
+          "type": "array",
+          "description": "Ordered scene plan.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scene_number": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "duration_seconds": {
+                "type": "number",
+                "minimum": 0
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "visual_description": {
+                "type": "string"
+              },
+              "spoken_line_or_message": {
+                "type": "string"
+              },
+              "product_visibility_note": {
+                "type": "string"
+              },
+              "overlay_text": {
+                "type": "string"
+              },
+              "camera_note": {
+                "type": "string"
+              },
+              "transition_note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "scene_number",
+              "purpose",
+              "visual_description"
+            ]
+          }
+        },
+        "pacing_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "production_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cta_ending_note": {
+          "type": "string",
+          "description": "How the ending frame should support action."
+        }
+      }
+    },
+    "video_prompt_output": {
+      "type": "object",
+      "description": "AI video prompt conversion output.",
+      "additionalProperties": false,
+      "properties": {
+        "prompt_objective": {
+          "type": "string",
+          "description": "What the prompt is intended to generate."
+        },
+        "visual_strategy_summary": {
+          "type": "string",
+          "description": "Short summary of the scene logic and product role."
+        },
+        "main_prompt": {
+          "type": "string",
+          "description": "Primary generation-ready video prompt."
+        },
+        "constraints": {
+          "type": "array",
+          "description": "Product consistency, motion, composition, or realism constraints.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negative_constraints": {
+          "type": "array",
+          "description": "Things the generation should avoid.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "variant_prompts": {
+          "type": "array",
+          "description": "Optional alternate prompt directions.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "adaptation_plan": {
+      "type": "object",
+      "description": "Reference-video adaptation or recreation strategy output.",
+      "additionalProperties": false,
+      "properties": {
+        "reference_summary": {
+          "type": "string",
+          "description": "Short explanation of what the reference is doing."
+        },
+        "strategic_engine": {
+          "type": "string",
+          "description": "Core selling logic extracted from the reference."
+        },
+        "product_fit_assessment": {
+          "type": "string",
+          "description": "How well the reference structure maps to the user's product."
+        },
+        "transferable_elements": {
+          "type": "array",
+          "description": "Parts of the reference that can be strategically reused.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_change_elements": {
+          "type": "array",
+          "description": "Parts that should be changed for originality or product fit.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "concept_variants": {
+          "type": "array",
+          "description": "Original adaptation directions.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "variant_name": {
+                "type": "string"
+              },
+              "hook_style": {
+                "type": "string"
+              },
+              "proof_method": {
+                "type": "string"
+              },
+              "creator_or_visual_tone": {
+                "type": "string"
+              },
+              "cta_style": {
+                "type": "string"
+              },
+              "difference_note": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "variant_name"
+            ]
+          }
+        },
+        "recommended_direction": {
+          "type": "string",
+          "description": "Best-fit adaptation direction."
+        },
+        "next_step_note": {
+          "type": "string",
+          "description": "Suggested handoff into script, storyboard, or prompt generation."
+        }
+      }
+    },
+    "cta_output": {
+      "type": "object",
+      "description": "CTA development output.",
+      "additionalProperties": false,
+      "properties": {
+        "cta_objective": {
+          "type": "string",
+          "description": "Desired action or conversion step."
+        },
+        "cta_strategy": {
+          "type": "string",
+          "description": "Logic behind the CTA recommendation."
+        },
+        "primary_cta": {
+          "type": "string",
+          "description": "Primary recommended CTA."
+        },
+        "cta_variants": {
+          "type": "array",
+          "description": "Alternative CTA options.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "usage_note": {
+          "type": "string",
+          "description": "When or why each CTA approach is useful."
+        }
+      }
+    },
+    "hook_output": {
+      "type": "object",
+      "description": "Hook generation output.",
+      "additionalProperties": false,
+      "properties": {
+        "hook_strategy": {
+          "type": "string",
+          "description": "Main hook logic recommended."
+        },
+        "hook_options": {
+          "type": "array",
+          "description": "Possible opening lines or hook structures.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "hook_text": {
+                "type": "string"
+              },
+              "hook_type": {
+                "type": "string"
+              },
+              "reason_it_works": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "hook_text"
+            ]
+          }
+        },
+        "recommended_hook": {
+          "type": "string",
+          "description": "Best overall hook choice."
+        }
+      }
+    },
+    "variation_plan": {
+      "type": "object",
+      "description": "Creative testing or variation planning output.",
+      "additionalProperties": false,
+      "properties": {
+        "testing_goal": {
+          "type": "string",
+          "description": "What the variants are intended to test."
+        },
+        "shared_core": {
+          "type": "string",
+          "description": "What stays consistent across all variants."
+        },
+        "variant_axes": {
+          "type": "array",
+          "description": "Dimensions of variation such as hook, proof order, tone, or CTA.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "variants": {
+          "type": "array",
+          "description": "Structured variation set.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "variant_name": {
+                "type": "string"
+              },
+              "change_focus": {
+                "type": "string"
+              },
+              "hook_difference": {
+                "type": "string"
+              },
+              "proof_difference": {
+                "type": "string"
+              },
+              "cta_difference": {
+                "type": "string"
+              },
+              "hypothesis": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "variant_name",
+              "change_focus"
+            ]
+          }
+        },
+        "recommended_test_order": {
+          "type": "array",
+          "description": "Suggested order for trying variants.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Assumptions made due to missing user information.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Important cautions, proof gaps, fit issues, or production limitations.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "description": "Suggested follow-up actions after this output.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "task_type"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "task_type": "content_analysis",
+  "reference_video": {
+    "url": "https://example.com/sample-tiktok-video.mp4",
+    "summary": "A short UGC-style skincare video where a creator opens with a frustration about dull skin, shows the product in hand, applies it on camera, reacts positively, and ends with a direct shop CTA.",
+    "what_to_keep": [
+      "fast hook",
+      "creator-led authenticity",
+      "visible product demo",
+      "simple CTA"
+    ],
+    "what_to_avoid": [
+      "overly polished commercial feel",
+      "generic beauty ad language"
+    ]
+  },
+  "product_info": {
+    "name": "GlowMist Hydration Serum",
+    "category": "beauty_skincare",
+    "description": "A lightweight facial serum designed to improve hydration and give the skin a brighter, dewier appearance.",
+    "main_benefit": "Makes skin look more hydrated and fresh quickly",
+    "secondary_benefits": [
+      "lightweight feel",
+      "easy daily use",
+      "glowy finish"
+    ],
+    "features": [
+      "fast-absorbing serum texture",
+      "dropper bottle",
+      "daily skincare use"
+    ],
+    "use_cases": [
+      "morning skincare routine",
+      "pre-makeup hydration",
+      "quick glow boost before going out"
+    ],
+    "price_positioning": "mid_range",
+    "offer_details": "Buy one, get 20% off the second bottle this week",
+    "objection_notes": [
+      "Will it feel greasy?",
+      "Will it actually make a visible difference?"
+    ],
+    "proof_assets_available": [
+      "demo",
+      "creator_reaction",
+      "close_up_detail"
+    ]
+  },
+  "target_audience": {
+    "segment_name": "young skincare shoppers",
+    "demographics": "Women ages 18-30 interested in everyday skincare and visible glow results",
+    "pain_points": [
+      "skin looks dull",
+      "makeup looks dry",
+      "products feel too heavy"
+    ],
+    "desires": [
+      "fresh glow",
+      "easy routine",
+      "healthy-looking skin"
+    ],
+    "awareness_level": "solution_aware",
+    "skepticism_level": "medium",
+    "buying_temperature": "warm"
+  },
+  "creative_goal": "Understand what makes this UGC skincare video effective and identify improvements for a similar product video.",
+  "video_goal": "direct_conversion",
+  "platform": "tiktok",
+  "region": "US",
+  "video_length_seconds": 18,
+  "format_specs": {
+    "aspect_ratio": "9:16",
+    "orientation": "vertical",
+    "style": "ugc",
+    "creator_presence": "required"
+  },
+  "creator_style": "natural, relatable, lightly excited, not overly scripted",
+  "brand_tone": "fresh, helpful, modern",
+  "desired_cta": "Tap to check it out",
+  "notes": "This is a sample input for analyzing a creator-led ecommerce skincare video with visible demo and direct-response intent."
+}

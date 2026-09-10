@@ -1,0 +1,12 @@
+display-name-zh: "Amazon Product Analysis"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Amazon"
+  - "竞品研究"
+  - "精选"
+summary-cn: "Amazon ASIN, SKU and competitor product research using amazon-mcp and files."
+desc-cn: "Amazon ASIN, SKU and competitor product research using amazon-mcp and files."
+author-cn: "OmniMux"
+source: official

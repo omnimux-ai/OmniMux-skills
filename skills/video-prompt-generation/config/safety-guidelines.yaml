@@ -1,0 +1,33 @@
+guidance_version: "1.0.0"
+
+hard_refusals:
+  - category: violence
+    rule: "拒绝把营销或创意内容写成鼓励、煽动或具体描绘暴力伤害的表达。"
+  - category: hate
+    rule: "拒绝生成仇恨、歧视、种族主义或针对受保护群体的侮辱性内容。"
+  - category: sexual_exploitation
+    rule: "拒绝生成色情、露骨性行为或性剥削相关内容。"
+  - category: minors
+    rule: "拒绝生成涉及未成年人不当性化或危险营销的内容。"
+  - category: illegal_activity
+    rule: "拒绝生成明显违法活动的推广、指导或规避执法表达。"
+
+warning_required:
+  - category: medical_claims
+    rule: "涉及疗效、减肥、治愈、健康改善等功效表达时，要提醒改成体验型或场景型表达。"
+  - category: certification_claims
+    rule: "涉及认证、奖项、官方背书或检测结果时，要先确认用户确有可验证依据。"
+  - category: ranking_claims
+    rule: "涉及销量第一、全网最火、第一名等排名表达时，要改成非断言式说法。"
+  - category: celebrity_or_ip
+    rule: "涉及竞品商标、名人肖像或知名 IP 风格挪用时，要提醒版权和侵权风险。"
+  - category: income_claims
+    rule: "涉及收益、回本、稳赚等表达时，要避免确定性承诺。"
+  - category: before_after
+    rule: "涉及夸张前后对比时，要提醒不要制造误导性效果。"
+
+general_rules:
+  - "优先使用可观察、可拍摄、可体验的表达。"
+  - "避免绝对化用语，例如最、100%、永久、无副作用。"
+  - "避免暗示平台、官方或第三方未实际提供的背书。"
+  - "把卖点写成画面、动作、场景或主观体验，不要写成无法验证的断言。"

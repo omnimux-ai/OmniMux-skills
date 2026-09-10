@@ -1,0 +1,349 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Variant Plan Schema",
+  "type": "object",
+  "description": "Schema for structured creative variation planning in a short-form ecommerce video workflow.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "const": "variation_planning",
+      "description": "Fixed task type for this schema."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Top-level summary of the testing goal and variation strategy.",
+      "additionalProperties": false,
+      "properties": {
+        "testing_goal": {
+          "type": "string",
+          "description": "Main business or creative question the variants are designed to test."
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "Audience segment the variants are built for."
+        },
+        "product_category": {
+          "type": "string",
+          "description": "Product category or vertical."
+        },
+        "main_promise": {
+          "type": "string",
+          "description": "Core product promise that stays central across variants."
+        },
+        "platform": {
+          "type": "string",
+          "description": "Target platform or distribution environment."
+        },
+        "recommended_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300,
+          "description": "Recommended runtime target shared across variants where relevant."
+        }
+      }
+    },
+    "shared_core": {
+      "type": "object",
+      "description": "Elements that remain consistent across all creative variants.",
+      "additionalProperties": false,
+      "properties": {
+        "fixed_product_truths": {
+          "type": "array",
+          "description": "Product realities or benefits that should remain unchanged.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fixed_brand_or_tone_rules": {
+          "type": "array",
+          "description": "Brand or voice constraints that should remain stable.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fixed_proof_requirements": {
+          "type": "array",
+          "description": "Proof elements that must appear in all or most variants.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fixed_cta_goal": {
+          "type": "string",
+          "description": "Desired viewer action shared across variants."
+        },
+        "consistency_note": {
+          "type": "string",
+          "description": "Why these shared elements should remain stable for testing fairness."
+        }
+      }
+    },
+    "test_axes": {
+      "type": "array",
+      "description": "Dimensions of creative variation being tested.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "axis_name": {
+            "type": "string",
+            "description": "Name of the variation axis such as hook, proof order, tone, creator style, CTA, or pacing."
+          },
+          "axis_purpose": {
+            "type": "string",
+            "description": "What this variation dimension is intended to reveal."
+          },
+          "test_hypothesis": {
+            "type": "string",
+            "description": "Prediction about what changing this dimension may improve."
+          },
+          "risk_note": {
+            "type": "string",
+            "description": "What tradeoff or ambiguity this test axis might create."
+          }
+        },
+        "required": [
+          "axis_name"
+        ]
+      }
+    },
+    "variant_set": {
+      "type": "array",
+      "description": "Detailed set of creative variants.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "variant_name": {
+            "type": "string",
+            "description": "Short internal name for the variant."
+          },
+          "variant_role": {
+            "type": "string",
+            "description": "What this variant is testing relative to the others."
+          },
+          "creative_angle": {
+            "type": "string",
+            "description": "Main angle of the variant."
+          },
+          "hook_difference": {
+            "type": "string",
+            "description": "How the opening differs from the control or other variants."
+          },
+          "message_hierarchy_difference": {
+            "type": "string",
+            "description": "How benefit emphasis or sequence changes."
+          },
+          "proof_difference": {
+            "type": "string",
+            "description": "How the proof method or proof timing differs."
+          },
+          "objection_difference": {
+            "type": "string",
+            "description": "How objection handling differs, if applicable."
+          },
+          "cta_difference": {
+            "type": "string",
+            "description": "How the CTA differs from other variants."
+          },
+          "tone_difference": {
+            "type": "string",
+            "description": "How tone, delivery, or creator energy differs."
+          },
+          "visual_difference": {
+            "type": "string",
+            "description": "How the visual execution or scene structure differs."
+          },
+          "predicted_strength": {
+            "type": "string",
+            "description": "Best reason this variant might outperform.",
+            "enum": [
+              "strong_scroll_stop",
+              "stronger_relevance",
+              "stronger_proof",
+              "higher_trust",
+              "clearer_product_understanding",
+              "stronger_cta_fit",
+              "broader_appeal",
+              "other"
+            ]
+          },
+          "risk_note": {
+            "type": "string",
+            "description": "Likely downside or failure risk of this version."
+          },
+          "test_hypothesis": {
+            "type": "string",
+            "description": "What performance difference this variant is expected to reveal."
+          }
+        },
+        "required": [
+          "variant_name",
+          "variant_role"
+        ]
+      }
+    },
+    "control_definition": {
+      "type": "object",
+      "description": "Reference or baseline version used for comparison when applicable.",
+      "additionalProperties": false,
+      "properties": {
+        "control_exists": {
+          "type": "boolean",
+          "description": "Whether there is a baseline or control variant."
+        },
+        "control_name": {
+          "type": "string",
+          "description": "Name of the baseline or control version."
+        },
+        "control_logic": {
+          "type": "string",
+          "description": "What the baseline represents."
+        }
+      }
+    },
+    "testing_matrix": {
+      "type": "object",
+      "description": "Structured comparison view across variants.",
+      "additionalProperties": false,
+      "properties": {
+        "primary_metric_focus": {
+          "type": "string",
+          "description": "Main performance signal the variants are trying to influence."
+        },
+        "secondary_metric_focus": {
+          "type": "array",
+          "description": "Supporting metrics or behaviors to observe.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "comparison_notes": {
+          "type": "array",
+          "description": "How variants should be compared fairly.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fair_test_constraints": {
+          "type": "array",
+          "description": "Conditions that should remain stable during testing.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "asset_or_output_plan": {
+      "type": "object",
+      "description": "What each variant should eventually become in downstream production.",
+      "additionalProperties": false,
+      "properties": {
+        "output_type": {
+          "type": "string",
+          "description": "Expected downstream deliverable type.",
+          "enum": [
+            "script_only",
+            "storyboard",
+            "video_prompt",
+            "full_video_concept",
+            "creator_brief",
+            "mixed"
+          ]
+        },
+        "shared_asset_requirements": {
+          "type": "array",
+          "description": "Assets needed for all variants, such as product shots, demo clips, or creator footage.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "variant_specific_requirements": {
+          "type": "array",
+          "description": "Assets or execution needs that differ by variant.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recommended_test_order": {
+      "type": "array",
+      "description": "Suggested order for evaluating or producing the variants.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "variant_name": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why this variant should be tested at this stage."
+          }
+        },
+        "required": [
+          "sequence",
+          "variant_name"
+        ]
+      }
+    },
+    "decision_guidance": {
+      "type": "object",
+      "description": "Rules for deciding what to do after testing or review.",
+      "additionalProperties": false,
+      "properties": {
+        "what_winning_might_mean": {
+          "type": "array",
+          "description": "Interpretation cues for what a stronger-performing variant may indicate.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_losing_might_mean": {
+          "type": "array",
+          "description": "Interpretation cues for underperforming variants.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "follow_up_actions": {
+          "type": "array",
+          "description": "What to do after learning from the test, such as combining winning elements or refining proof.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Assumptions made due to incomplete information.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Potential interpretation risks, proof limitations, or testing caveats.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "description": "Recommended next workflow steps such as script writing, storyboard conversion, or prompt generation.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "task_type"
+  ]
+}

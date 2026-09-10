@@ -1,0 +1,98 @@
+{
+  "project_name": "Portable Blender TikTok Storyboard",
+  "platform": "TikTok",
+  "format": "9:16",
+  "duration_seconds": 24,
+  "language": "en-US",
+  "product": {
+    "name": "Portable Blender",
+    "category": "Kitchen Gadget",
+    "brand": "BlendGo",
+    "price_range": "Affordable",
+    "variants": [
+      "white",
+      "light pink",
+      "mint green"
+    ],
+    "materials": [
+      "clear plastic cup body",
+      "white base",
+      "stainless steel blades"
+    ],
+    "package_includes": [
+      "portable blender cup",
+      "charging cable",
+      "lid"
+    ],
+    "usage": "Add soft fruit and liquid, then press one button to blend a single-serving drink.",
+    "core_selling_points": [
+      "Portable and convenient for busy routines",
+      "Quick smoothie prep without using a full-size blender",
+      "Simple one-button operation"
+    ],
+    "functional_claims": [
+      "Suitable for smoothies, protein shakes, and soft fruit drinks"
+    ],
+    "visual_highlights": [
+      "Clear cup body",
+      "Compact cylindrical base",
+      "Clean white colorway"
+    ],
+    "usage_scenarios": [
+      "Morning smoothie before commuting",
+      "Protein shake after gym",
+      "Quick fruit drink at office desk"
+    ],
+    "target_use_moment": "Busy morning or post-workout drink prep"
+  },
+  "audience": {
+    "primary": "Busy women aged 22-35 interested in fitness, wellness, and convenient routines",
+    "secondary": "Office workers, commuters, gym-goers, and students",
+    "pain_points": [
+      "Full-size blenders are bulky",
+      "Fresh drinks feel hard to make during busy routines"
+    ],
+    "motivations": [
+      "Save time",
+      "Carry the product easily",
+      "Make healthy drinks without a complex setup"
+    ],
+    "objections": [
+      "May worry the product is hard to clean",
+      "May doubt whether the small size is useful"
+    ]
+  },
+  "content_goal": {
+    "objective": "Drive product clicks and purchase interest through a creator-native TikTok Shop demo.",
+    "cta": "Tap to view the product",
+    "priority_metric": "CTR"
+  },
+  "creative_direction": {
+    "style": "Creator-native UGC demo",
+    "tone": "Relatable and practical",
+    "with_voiceover": true,
+    "with_subtitles": true,
+    "show_face": true,
+    "creator_type": "Fitness or busy office lifestyle creator"
+  },
+  "scene_preferences": [
+    "Kitchen counter",
+    "Car cup holder",
+    "Gym bag",
+    "Office desk"
+  ],
+  "constraints": {
+    "avoid": [
+      "Medical, detox, or weight-loss outcomes",
+      "Hard ice or frozen chunk claims unless shown",
+      "Professional-grade power claims"
+    ]
+  },
+  "deliverables": {
+    "need_storyboard": true,
+    "need_shotlist": true,
+    "need_prompts": true,
+    "need_production_notes": true
+  },
+  "notes": "Keep cup shape, lid design, and base silhouette consistent across scenes."
+}

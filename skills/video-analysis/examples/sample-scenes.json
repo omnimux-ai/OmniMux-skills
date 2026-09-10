@@ -1,0 +1,55 @@
+{
+  "evidence_level": "transcript-plus-frames",
+  "video_duration_seconds": 8,
+  "language": "zh-CN",
+  "scenes": [
+    {
+      "index": 1,
+      "start": "00:00",
+      "end": "00:02",
+      "section": "hook",
+      "summary": "开场用强视觉或痛点信息快速抓住注意力",
+      "signals": [
+        "结果先展示",
+        "大字字幕",
+        "快速切镜"
+      ]
+    },
+    {
+      "index": 2,
+      "start": "00:02",
+      "end": "00:05",
+      "section": "demo_scene",
+      "summary": "展示产品或核心动作，让用户快速理解用途",
+      "signals": [
+        "手部操作",
+        "产品近景",
+        "使用过程"
+      ]
+    },
+    {
+      "index": 3,
+      "start": "00:05",
+      "end": "00:07",
+      "section": "benefit_highlight",
+      "summary": "集中表达最重要的卖点或利益点",
+      "signals": [
+        "卖点字幕",
+        "结果反馈",
+        "对比表达"
+      ]
+    },
+    {
+      "index": 4,
+      "start": "00:07",
+      "end": "00:08",
+      "section": "cta",
+      "summary": "用简洁明确的动作引导完成收口",
+      "signals": [
+        "行动号召",
+        "产品停留",
+        "品牌识别"
+      ]
+    }
+  ]
+}

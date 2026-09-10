@@ -1,0 +1,10 @@
+display-name-zh: "recreate-viral-video"
+version: 1.0.0
+tag-cn: "视频生产"
+complete-tags-cn:
+  - "video"
+  - "多模态"
+summary-cn: "recreate-viral-video 通用创作技能，支持多模态自动化工作流。"
+desc-cn: "recreate-viral-video 通用创作技能，支持多模态自动化工作流。"
+author-cn: "OmniMux"
+source: official

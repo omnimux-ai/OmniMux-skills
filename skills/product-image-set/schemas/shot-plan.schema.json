@@ -1,0 +1,333 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Shot Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "plan_name",
+    "objective",
+    "set_strategy",
+    "global_constraints",
+    "shots"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "方案版本号，例如 1.0"
+    },
+    "plan_name": {
+      "type": "string",
+      "description": "套图拍摄/生成方案名称。"
+    },
+    "objective": {
+      "type": "string",
+      "description": "整套图片的商业目标，如提升点击率、说明卖点、建立高端感。"
+    },
+    "set_strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "set_size",
+        "channel",
+        "narrative_flow"
+      ],
+      "properties": {
+        "set_size": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "整套图片张数。"
+        },
+        "channel": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "适用渠道，如 Amazon、TikTok Shop、独立站。"
+        },
+        "narrative_flow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "套图叙事顺序，如主图→功能→细节→场景→参数→对比。"
+        },
+        "priority_message_order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "卖点优先级排序。"
+        }
+      }
+    },
+    "global_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consistency_rules",
+        "compliance_rules",
+        "visual_risks_to_avoid"
+      ],
+      "properties": {
+        "consistency_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "整套图必须统一遵守的稳定性规则。"
+        },
+        "compliance_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "平台、电商、广告合规限制。"
+        },
+        "visual_risks_to_avoid": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "需要全局规避的视觉问题。"
+        },
+        "copy_overlay_policy": {
+          "type": "string",
+          "description": "文案叠加策略，如主图禁字、卖点图预留文案区等。"
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "description": "逐张定义的拍摄/生成计划。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "shot_id",
+          "shot_type",
+          "purpose",
+          "priority",
+          "composition",
+          "subject_requirements",
+          "background_requirements",
+          "lighting_requirements",
+          "deliverables"
+        ],
+        "properties": {
+          "shot_id": {
+            "type": "string",
+            "description": "唯一镜头ID，如 shot_01。"
+          },
+          "shot_type": {
+            "type": "string",
+            "description": "图片类型，如 hero、benefit、detail、lifestyle、comparison、spec。"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "该张图承担的转化任务。"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "优先级，数字越小越重要。"
+          },
+          "composition": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "angle",
+              "framing",
+              "product_scale"
+            ],
+            "properties": {
+              "angle": {
+                "type": "string",
+                "description": "镜头角度，如正视、45度、俯拍、微距。"
+              },
+              "framing": {
+                "type": "string",
+                "description": "构图方式。"
+              },
+              "product_scale": {
+                "type": "string",
+                "description": "主体占画面比例。"
+              },
+              "focus_strategy": {
+                "type": "string",
+                "description": "焦点/景深策略。"
+              },
+              "copy_space": {
+                "type": "string",
+                "description": "文案留白位置。"
+              }
+            }
+          },
+          "subject_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "must_show",
+              "must_preserve"
+            ],
+            "properties": {
+              "must_show": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "该图必须展示的内容。"
+              },
+              "must_preserve": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "该图中必须保持一致的产品身份特征。"
+              },
+              "optional_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "forbidden_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "background_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "background_type",
+              "complexity"
+            ],
+            "properties": {
+              "background_type": {
+                "type": "string"
+              },
+              "complexity": {
+                "type": "string",
+                "enum": [
+                  "minimal",
+                  "moderate",
+                  "rich"
+                ]
+              },
+              "allowed_props": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "forbidden_props": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "lighting_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "light_style",
+              "shadow_style"
+            ],
+            "properties": {
+              "light_style": {
+                "type": "string"
+              },
+              "shadow_style": {
+                "type": "string"
+              },
+              "highlight_policy": {
+                "type": "string"
+              },
+              "reflection_policy": {
+                "type": "string"
+              }
+            }
+          },
+          "message_layer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "headline_goal": {
+                "type": "string",
+                "description": "若有叠字，该图主标题想表达什么。"
+              },
+              "supporting_points": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "proof_elements": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "用于支撑卖点可信度的视觉证据。"
+              }
+            }
+          },
+          "generation_guidance": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "prompt_focus": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "negative_prompt_focus": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "consistency_with_shots": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "与哪些镜头需要强一致。"
+              }
+            }
+          },
+          "deliverables": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "asset_role",
+              "must_pass_checklist"
+            ],
+            "properties": {
+              "asset_role": {
+                "type": "string",
+                "description": "交付角色，如主图、详情图2、A+模块1。"
+              },
+              "must_pass_checklist": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "export_notes": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

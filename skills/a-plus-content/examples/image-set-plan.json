@@ -1,0 +1,167 @@
+{
+  "summary": {
+    "product_name": "焕亮修护精华油",
+    "brand_name": "LUMERA",
+    "market": "US",
+    "positioning": "premium minimalist skincare",
+    "strategy": "通过高端极简视觉、轻润肤感表达与日夜双场景叙事，建立产品的高级感、安心感与多场景使用价值。",
+    "key_messages": [
+      "轻盈不黏腻，适合日常高频使用",
+      "妆前与夜间都适用，兼顾肤感与护理体验",
+      "以精简步骤实现高愉悦度护肤"
+    ],
+    "compliance_notes": [
+      "避免医疗承诺与绝对化表述",
+      "成分卖点仅限日常护理层面的描述"
+    ]
+  },
+  "style_bible": {
+    "tone": "clean, premium, reassuring",
+    "visual_keywords": [
+      "soft glow",
+      "minimal luxury",
+      "editorial skincare",
+      "warm neutral palette"
+    ],
+    "color_direction": "奶油白、浅香槟金、柔和米色为主，辅以低饱和肤色光泽",
+    "typography_direction": "现代无衬线字体，留白充足，排版克制整洁",
+    "composition_rules": [
+      "产品主体必须清晰可辨且比例一致",
+      "单张画面只强调一个核心信息",
+      "文案区与主体区明确分离，避免遮挡产品"
+    ],
+    "dos": [
+      "使用柔光与玻璃反射突出高级感",
+      "通过油滴、肤感或台面陈列体现产品质感",
+      "保持整套图片统一色调与构图语言"
+    ],
+    "donts": [
+      "不要使用过强特效导致产品失真",
+      "不要加入医学符号或临床暗示",
+      "不要使用过度拥挤的信息排版"
+    ]
+  },
+  "modules": [
+    {
+      "id": "m1",
+      "type": "hero_banner",
+      "goal": "建立高端第一印象并快速传达核心卖点",
+      "copy": {
+        "headline": "一滴润泽，焕现柔亮肤感",
+        "subheadline": "轻盈修护精华油，妆前与夜间都适用",
+        "body_points": [
+          "轻润包裹，肤感不厚重",
+          "适合精简护肤人群"
+        ],
+        "cta": "探索你的发光护肤一步"
+      },
+      "visual_plan": {
+        "scene": "产品悬浮于柔和奶油白背景中央，周围有轻微油滴与玻璃折射高光",
+        "composition": "竖版居中构图，产品位于视觉中心偏下，左上保留标题留白",
+        "focus": "瓶身质感、精华油通透感、高级柔光氛围",
+        "background": "奶油白到浅香槟金渐变背景",
+        "props": [
+          "半透明玻璃片",
+          "微光油滴"
+        ],
+        "text_overlay_notes": "标题放左上，副标题置于其下，避免遮挡瓶身标签"
+      },
+      "image_prompt": "Premium skincare hero banner, a luxurious face oil bottle floating at center against a creamy white and soft champagne gradient background, subtle glossy oil droplets, elegant glass reflections, soft diffused lighting, editorial beauty photography, minimal composition, high-end skincare advertising, sharp product label, clean negative space for copy, realistic materials, refined glow",
+      "asset_requirements": [
+        "产品正面参考图",
+        "品牌Logo"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "m2",
+      "type": "feature_highlights",
+      "goal": "解释产品核心成分与使用收益",
+      "copy": {
+        "headline": "轻润配方，兼顾肤感与护理体验",
+        "body_points": [
+          "角鲨烷帮助提升柔润感",
+          "霍霍巴籽油带来轻薄包裹感",
+          "维生素E帮助日常护理"
+        ]
+      },
+      "visual_plan": {
+        "scene": "成分意象与产品局部细节组合画面",
+        "composition": "三栏或三分区布局，每个分区对应一个成分卖点",
+        "focus": "成分感知、轻透油感、产品细节",
+        "background": "柔和米白底，局部加入淡金色层次",
+        "props": [
+          "植物叶片抽象元素",
+          "精华油涟漪纹理"
+        ],
+        "text_overlay_notes": "每个卖点对应独立小标题，整体信息层级清晰"
+      },
+      "image_prompt": "Skincare feature highlight panel for a premium face oil, split layout showing ingredient-inspired visuals, translucent oil texture, jojoba seed botanical cues, vitamin E inspired golden capsule aesthetic, macro beauty detail, clean beige and soft gold palette, modern ecommerce infographic style, elegant product close-up, premium editorial lighting",
+      "asset_requirements": [
+        "产品局部特写参考图",
+        "成分说明"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "m3",
+      "type": "lifestyle_scene",
+      "goal": "展示妆前与夜间护理场景，增强用户代入感",
+      "copy": {
+        "headline": "从清晨到底夜，一瓶都适合",
+        "subheadline": "妆前轻润打底，夜间柔和修护"
+      },
+      "visual_plan": {
+        "scene": "晨间浴室台面与夜间床头护肤场景双拼",
+        "composition": "左右双场景，中间或前景用产品作连接",
+        "focus": "使用场景、生活方式氛围、产品多场景适配性",
+        "background": "左侧明亮自然晨光，右侧柔暖夜灯光",
+        "props": [
+          "浴室镜面",
+          "床头书籍",
+          "亚麻织物"
+        ],
+        "text_overlay_notes": "左右分区各自承载一句场景文案，中间保留产品视觉锚点"
+      },
+      "image_prompt": "Lifestyle skincare diptych showing a premium face oil used in morning vanity and nighttime bedside routine, left side bright natural bathroom counter, right side warm intimate evening skincare scene, elegant bottle visually connecting both scenes, soft editorial lighting, aspirational feminine lifestyle, realistic product placement, premium ecommerce storytelling image",
+      "asset_requirements": [
+        "产品主图",
+        "品牌风格参考"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "m4",
+      "type": "specifications",
+      "goal": "补充产品规格与购买决策信息",
+      "copy": {
+        "headline": "你关心的细节，一目了然",
+        "body_points": [
+          "容量：30ml",
+          "适合多场景护肤使用",
+          "建议避光保存"
+        ]
+      },
+      "visual_plan": {
+        "scene": "产品与规格信息卡片化组合",
+        "composition": "左图右文或上图下文的简洁信息版式",
+        "focus": "容量、包装与使用信息的清晰表达",
+        "background": "纯净浅米色背景",
+        "props": [
+          "简约图标",
+          "细线信息分隔"
+        ],
+        "text_overlay_notes": "用图标增强可读性，避免信息过密"
+      },
+      "image_prompt": "Minimal premium skincare specification panel, clean product shot with elegant infographic layout, soft beige background, modern icons, clear spacing, ecommerce detail page aesthetic, sharp bottle rendering, refined and trustworthy visual design",
+      "asset_requirements": [
+        "产品尺寸与包装信息"
+      ],
+      "priority": 4
+    }
+  ],
+  "export_notes": [
+    "建议按 4:5 优先出图，用于兼容大多数电商详情模块。",
+    "生成前需再次校对所有文案是否含有绝对化或医疗暗示表达。"
+  ]
+}

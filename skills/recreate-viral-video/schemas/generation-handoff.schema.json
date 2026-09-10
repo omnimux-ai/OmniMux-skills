@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/recreate-viral-video/generation-handoff.schema.json",
+  "title": "Recreate Viral Video Generation Handoff",
+  "description": "Structured handoff for downstream video-creation work.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "task": {
+      "type": "string",
+      "const": "recreate-viral-video"
+    },
+    "fit_grade": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"]
+    },
+    "reference_summary": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "hook": { "type": "string" },
+        "pace": { "type": "string" },
+        "borrowable_mechanisms": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "product_summary": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "target_audience": { "type": "string" },
+        "selling_points": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "storyboard": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "final_prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "safety_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "delivery_notes": {
+      "type": "string"
+    }
+  },
+  "required": ["task", "fit_grade", "final_prompt"]
+}

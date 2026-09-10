@@ -1,0 +1,428 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Style Bible",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "product_identity",
+    "visual_direction",
+    "composition_rules",
+    "lighting_rules",
+    "background_rules",
+    "color_rules",
+    "material_surface_rules",
+    "branding_rules",
+    "consistency_rules",
+    "negative_rules",
+    "shot_modules",
+    "output_notes"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "样式规范版本号，例如 1.0"
+    },
+    "product_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "product_name",
+        "category",
+        "core_shape",
+        "key_features_to_preserve"
+      ],
+      "properties": {
+        "product_name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "core_shape": {
+          "type": "string",
+          "description": "产品核心外形特征，需在所有画面中保持一致。"
+        },
+        "key_features_to_preserve": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "必须稳定保留的识别点，如按钮布局、瓶身比例、接口位置、包装结构等。"
+        },
+        "forbidden_identity_drifts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "明确禁止出现的身份漂移，如颜色乱变、结构缺失、logo位置变化等。"
+        }
+      }
+    },
+    "visual_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "style_keywords",
+        "market_level",
+        "mood",
+        "commercial_intent"
+      ],
+      "properties": {
+        "style_keywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "market_level": {
+          "type": "string",
+          "enum": [
+            "mass",
+            "premium",
+            "luxury"
+          ]
+        },
+        "mood": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "commercial_intent": {
+          "type": "string",
+          "description": "例如：提升点击率、突出质感、强化礼赠感、强调功能可信度。"
+        }
+      }
+    },
+    "composition_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "camera_language",
+        "framing",
+        "product_scale",
+        "safe_margins"
+      ],
+      "properties": {
+        "camera_language": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "镜头语言，如正视、45度、俯拍、微距等。"
+        },
+        "framing": {
+          "type": "string",
+          "description": "构图倾向，如居中、对称、偏置留白、杂志感排版。"
+        },
+        "product_scale": {
+          "type": "string",
+          "description": "主体在画面中的占比规则。"
+        },
+        "safe_margins": {
+          "type": "string",
+          "description": "给文案、边缘裁切、平台适配预留的安全边距规则。"
+        },
+        "depth_of_field": {
+          "type": "string",
+          "description": "景深倾向，如全清晰、浅景深、重点区域清晰。"
+        }
+      }
+    },
+    "lighting_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "light_style",
+        "shadow_style",
+        "highlight_control"
+      ],
+      "properties": {
+        "light_style": {
+          "type": "string",
+          "description": "主光风格，如柔光棚拍、高级硬光、自然窗光等。"
+        },
+        "shadow_style": {
+          "type": "string",
+          "description": "阴影控制，如柔和浅阴影、干净落影、戏剧化阴影。"
+        },
+        "highlight_control": {
+          "type": "string",
+          "description": "高光控制规则，避免塑料感、爆点、高反失真。"
+        },
+        "reflection_policy": {
+          "type": "string",
+          "description": "适用于金属、玻璃、亮面包装时的反射处理规则。"
+        }
+      }
+    },
+    "background_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background_type",
+        "complexity",
+        "allowed_elements"
+      ],
+      "properties": {
+        "background_type": {
+          "type": "string",
+          "description": "如纯白、渐变、场景化、纸感、石材、浴室、厨房等。"
+        },
+        "complexity": {
+          "type": "string",
+          "enum": [
+            "minimal",
+            "moderate",
+            "rich"
+          ]
+        },
+        "allowed_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "color_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_palette",
+        "accent_palette",
+        "temperature"
+      ],
+      "properties": {
+        "primary_palette": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "主色板，可用颜色名、HEX 或语义描述。"
+        },
+        "accent_palette": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "temperature": {
+          "type": "string",
+          "enum": [
+            "warm",
+            "neutral",
+            "cool",
+            "mixed"
+          ]
+        },
+        "saturation_policy": {
+          "type": "string",
+          "description": "饱和度控制规则。"
+        },
+        "contrast_policy": {
+          "type": "string",
+          "description": "对比度控制规则。"
+        }
+      }
+    },
+    "material_surface_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "texture_priority",
+        "retouch_level"
+      ],
+      "properties": {
+        "texture_priority": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "优先呈现的材质细节，如磨砂、玻璃、金属拉丝、水珠、织物纹理。"
+        },
+        "retouch_level": {
+          "type": "string",
+          "enum": [
+            "natural",
+            "clean_commercial",
+            "high_polish"
+          ]
+        },
+        "imperfection_policy": {
+          "type": "string",
+          "description": "瑕疵保留/清理原则。"
+        }
+      }
+    },
+    "branding_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logo_visibility",
+        "text_overlay_policy"
+      ],
+      "properties": {
+        "logo_visibility": {
+          "type": "string",
+          "description": "logo/品牌字样是否必须清晰可见，以及出现优先级。"
+        },
+        "text_overlay_policy": {
+          "type": "string",
+          "description": "是否允许后期文字叠加，以及留白策略。"
+        },
+        "packaging_presence": {
+          "type": "string",
+          "description": "包装是否需要同框、哪些场景需要出现包装。"
+        }
+      }
+    },
+    "consistency_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "must_remain_constant_across_set",
+        "allowed_variations"
+      ],
+      "properties": {
+        "must_remain_constant_across_set": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "整套图片中必须恒定的元素。"
+        },
+        "allowed_variations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "允许变化的元素，如背景层次、道具轻微变化、角度变化。"
+        },
+        "set_cohesion_note": {
+          "type": "string",
+          "description": "整套图统一感的执行说明。"
+        }
+      }
+    },
+    "negative_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "avoid_visual_problems",
+        "avoid_ecommerce_risks"
+      ],
+      "properties": {
+        "avoid_visual_problems": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "如畸形透视、手部错乱、标签乱码、结构不一致、漂浮感、脏污反光等。"
+        },
+        "avoid_ecommerce_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "如夸大功效、不可验证对比、侵权元素、误导性赠品展示等。"
+        }
+      }
+    },
+    "shot_modules": {
+      "type": "array",
+      "description": "套图模块定义，可用于主图、卖点图、细节图、场景图、对比图等。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "module_name",
+          "purpose",
+          "composition",
+          "background",
+          "lighting",
+          "must_show"
+        ],
+        "properties": {
+          "module_name": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "该张图的商业目的。"
+          },
+          "composition": {
+            "type": "string"
+          },
+          "background": {
+            "type": "string"
+          },
+          "lighting": {
+            "type": "string"
+          },
+          "must_show": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "optional_props": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "copy_space": {
+            "type": "string",
+            "description": "文案留白说明。"
+          },
+          "negative_prompt_focus": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "output_notes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "platform",
+        "asset_types",
+        "final_checklist"
+      ],
+      "properties": {
+        "platform": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "适用平台，如 Amazon、TikTok Shop、独立站等。"
+        },
+        "asset_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "如主图、详情图、A+模块、广告图。"
+        },
+        "final_checklist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "交付前检查项。"
+        }
+      }
+    }
+  }
+}

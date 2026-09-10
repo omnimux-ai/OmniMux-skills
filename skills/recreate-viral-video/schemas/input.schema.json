@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/recreate-viral-video/input.schema.json",
+  "title": "Recreate Viral Video Input",
+  "description": "Input fields for reference-video adaptation tasks.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "reference_video_url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reference_video_file": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reference_frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "reference_script": {
+      "type": "string",
+      "minLength": 1
+    },
+    "product": {
+      "type": "object",
+      "required": ["name", "category"],
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_audience": {
+          "type": "string"
+        },
+        "selling_points": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "brand_tone": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "detail_page_url": {
+          "type": "string"
+        }
+      }
+    },
+    "language": {
+      "type": "string",
+      "default": "zh-CN"
+    },
+    "market": {
+      "type": "string",
+      "default": "US"
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "enum": [10, 15, 20, 30, 45, 60],
+      "default": 15
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "enum": ["9:16", "1:1", "16:9", "4:5"],
+      "default": "9:16"
+    },
+    "style_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "preserve_voiceover": {
+      "type": "boolean",
+      "default": false
+    },
+    "ugc_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "default": "medium"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "request_id": { "type": "string" },
+        "batch_id": { "type": "string" },
+        "variant_id": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    }
+  },
+  "required": ["product"],
+  "anyOf": [
+    { "required": ["reference_video_url", "product"] },
+    { "required": ["reference_video_file", "product"] },
+    { "required": ["reference_frames", "product"] },
+    { "required": ["reference_script", "product"] }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "policy_scope": "商品套图与电商视觉生成",
+  "hard_blocks": [
+    {
+      "category": "illegal_content",
+      "rules": [
+        "禁止生成明确违法内容",
+        "禁止生成用于违法用途的商品展示内容"
+      ]
+    },
+    {
+      "category": "minors",
+      "rules": [
+        "禁止生成涉及未成年人的不当或成人化商业内容"
+      ]
+    },
+    {
+      "category": "explicit_sexual_content",
+      "rules": [
+        "禁止生成露骨色情内容或性暗示过强的不适宜商业图像"
+      ]
+    },
+    {
+      "category": "hate_or_extremism",
+      "rules": [
+        "禁止生成仇恨、歧视、极端主义相关内容"
+      ]
+    },
+    {
+      "category": "violence",
+      "rules": [
+        "禁止生成血腥暴力、伤害或残酷场景作为商业卖货素材"
+      ]
+    }
+  ],
+  "warning_categories": [
+    {
+      "category": "unverifiable_claims",
+      "rules": [
+        "避免生成无法验证的功效暗示",
+        "避免使用绝对化表达，如‘最强’、‘第一’、‘唯一最佳’",
+        "避免以视觉方式暗示未经证实的治疗、医疗、减肥、增高等结果"
+      ]
+    },
+    {
+      "category": "before_after_or_comparison_claims",
+      "rules": [
+        "谨慎使用前后对比图，避免夸张或误导性结果",
+        "避免无依据地贬低竞品或制造压倒性对比"
+      ]
+    },
+    {
+      "category": "certifications_awards_rankings",
+      "rules": [
+        "不要生成未经验证的认证、奖项、排名、销量冠军等元素"
+      ]
+    },
+    {
+      "category": "ip_or_brand_risk",
+      "rules": [
+        "避免未经授权使用他人品牌、logo、受保护包装设计、名人形象",
+        "避免生成明显可识别的竞品品牌元素用于商业宣传"
+      ]
+    },
+    {
+      "category": "misleading_packaging_or_bundle",
+      "rules": [
+        "避免展示实际不包含的配件、赠品或包装内容",
+        "避免通过视觉误导产品尺寸、数量或材质"
+      ]
+    }
+  ],
+  "visual_integrity_rules": [
+    "保持产品结构、比例、材质与真实商品一致",
+    "避免标签乱码、按钮错位、接口错误、手部异常等生成失真问题",
+    "避免通过夸张光效、液体、烟雾、爆炸等元素制造不真实卖点暗示"
+  ],
+  "ecommerce_compliance_principles": [
+    "优先使用真实、克制、可理解的商业视觉表达",
+    "所有卖点表达应尽量由可视化证据支持",
+    "涉及功能、效果、认证、排名的表达应保持审慎",
+    "图片应帮助用户理解商品，而不是误导用户"
+  ]
+}

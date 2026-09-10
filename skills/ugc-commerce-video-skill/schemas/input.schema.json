@@ -1,0 +1,589 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Skill Input Schema",
+  "type": "object",
+  "description": "Input schema for a public UGC commerce video workflow covering analysis, script planning, storyboard planning, prompt conversion, reference adaptation, and creative variation tasks.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "description": "Primary workflow requested by the user.",
+      "enum": [
+        "content_analysis",
+        "script_planning",
+        "storyboard_planning",
+        "prompt_conversion",
+        "reference_video_adaptation",
+        "cta_optimization",
+        "hook_generation",
+        "variation_planning"
+      ]
+    },
+    "product_info": {
+      "type": "object",
+      "description": "Structured information about the product being sold or discussed.",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Product name or working title."
+        },
+        "category": {
+          "type": "string",
+          "description": "Product category or vertical."
+        },
+        "description": {
+          "type": "string",
+          "description": "Plain-language product description."
+        },
+        "main_benefit": {
+          "type": "string",
+          "description": "Primary customer-facing benefit."
+        },
+        "secondary_benefits": {
+          "type": "array",
+          "description": "Supporting benefits that may reinforce the main promise.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "features": {
+          "type": "array",
+          "description": "Functional product features.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "use_cases": {
+          "type": "array",
+          "description": "Typical situations where the product is used.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price_positioning": {
+          "type": "string",
+          "description": "Broad price perception of the product.",
+          "enum": [
+            "budget",
+            "mid_range",
+            "premium",
+            "luxury",
+            "unknown"
+          ]
+        },
+        "offer_details": {
+          "type": "string",
+          "description": "Discounts, bundles, promotions, or timing incentives."
+        },
+        "objection_notes": {
+          "type": "array",
+          "description": "Known customer hesitations or sales objections.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proof_assets_available": {
+          "type": "array",
+          "description": "Types of proof the user can actually show.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "demo",
+              "before_after",
+              "testimonial",
+              "comparison",
+              "ugc_review",
+              "close_up_detail",
+              "packaging",
+              "creator_reaction",
+              "none",
+              "other"
+            ]
+          }
+        }
+      },
+      "required": [
+        "description"
+      ]
+    },
+    "target_audience": {
+      "type": "object",
+      "description": "Target audience profile for the video.",
+      "additionalProperties": false,
+      "properties": {
+        "segment_name": {
+          "type": "string",
+          "description": "Short label for the intended audience."
+        },
+        "demographics": {
+          "type": "string",
+          "description": "Age, gender, region, or broad demographic notes if relevant."
+        },
+        "pain_points": {
+          "type": "array",
+          "description": "Known frustrations or unmet needs.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "desires": {
+          "type": "array",
+          "description": "Desired outcomes, emotional wins, or aspirations.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "awareness_level": {
+          "type": "string",
+          "description": "How familiar the audience is with the product category or solution.",
+          "enum": [
+            "unaware",
+            "problem_aware",
+            "solution_aware",
+            "product_aware",
+            "most_aware",
+            "unknown"
+          ]
+        },
+        "skepticism_level": {
+          "type": "string",
+          "description": "Expected level of hesitation or disbelief.",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "unknown"
+          ]
+        },
+        "buying_temperature": {
+          "type": "string",
+          "description": "How ready the audience is to take action.",
+          "enum": [
+            "cold",
+            "warm",
+            "hot",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "creative_goal": {
+      "type": "string",
+      "description": "Main purpose of the requested content."
+    },
+    "video_goal": {
+      "type": "string",
+      "description": "More specific business objective for the video.",
+      "enum": [
+        "direct_conversion",
+        "awareness",
+        "product_education",
+        "objection_reduction",
+        "creator_recommendation",
+        "comparison",
+        "offer_activation",
+        "retargeting",
+        "testing",
+        "other"
+      ]
+    },
+    "platform": {
+      "type": "string",
+      "description": "Target distribution platform.",
+      "enum": [
+        "tiktok",
+        "instagram_reels",
+        "youtube_shorts",
+        "tiktok_shop",
+        "marketplace_ads",
+        "shopify_pdp",
+        "other"
+      ]
+    },
+    "region": {
+      "type": "string",
+      "description": "Target geographic market or region."
+    },
+    "video_length_seconds": {
+      "type": "integer",
+      "description": "Target video length in seconds.",
+      "minimum": 1,
+      "maximum": 300
+    },
+    "format_specs": {
+      "type": "object",
+      "description": "Technical or production format preferences.",
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": {
+          "type": "string",
+          "description": "Target aspect ratio.",
+          "enum": [
+            "9:16",
+            "1:1",
+            "16:9",
+            "4:5",
+            "other"
+          ]
+        },
+        "orientation": {
+          "type": "string",
+          "description": "Screen orientation.",
+          "enum": [
+            "vertical",
+            "square",
+            "horizontal",
+            "other"
+          ]
+        },
+        "style": {
+          "type": "string",
+          "description": "Preferred visual treatment, e.g. UGC, polished, demo-led, premium, raw."
+        },
+        "creator_presence": {
+          "type": "string",
+          "description": "Whether a person/creator should appear.",
+          "enum": [
+            "required",
+            "preferred",
+            "optional",
+            "not_needed"
+          ]
+        }
+      }
+    },
+    "reference_video": {
+      "type": "object",
+      "description": "Reference video information used for analysis or adaptation.",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Public URL to the reference video if available."
+        },
+        "summary": {
+          "type": "string",
+          "description": "Short user-provided summary of the reference video."
+        },
+        "what_to_keep": {
+          "type": "array",
+          "description": "What the user specifically wants to preserve from the reference.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_to_avoid": {
+          "type": "array",
+          "description": "What the user does not want copied or retained.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reference_script": {
+      "type": "string",
+      "description": "Existing script, draft lines, or spoken structure to analyze or convert."
+    },
+    "reference_storyboard": {
+      "type": "array",
+      "description": "Existing storyboard or scene list to refine or convert.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scene_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "dialogue": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene_number",
+          "description"
+        ]
+      }
+    },
+    "creator_style": {
+      "type": "string",
+      "description": "Preferred creator tone or delivery style."
+    },
+    "brand_tone": {
+      "type": "string",
+      "description": "Brand voice or communication style."
+    },
+    "competitor_examples": {
+      "type": "array",
+      "description": "Competitor references, examples, or inspiration notes.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "product_images": {
+      "type": "array",
+      "description": "Links or identifiers for product images if visuals are available.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviews_or_testimonials": {
+      "type": "array",
+      "description": "Customer comments, proof snippets, or creator reactions that may be used in messaging.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "desired_cta": {
+      "type": "string",
+      "description": "Preferred CTA wording or CTA goal, if the user already has one."
+    },
+    "desired_hooks": {
+      "type": "array",
+      "description": "Optional hook ideas or patterns the user wants to explore.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "Restrictions or requirements the workflow must respect.",
+      "additionalProperties": false,
+      "properties": {
+        "must_include": {
+          "type": "array",
+          "description": "Elements that must appear in the output.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_avoid": {
+          "type": "array",
+          "description": "Elements, claims, styles, or scenes that should not appear.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compliance_notes": {
+          "type": "array",
+          "description": "Compliance or claim restrictions.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "production_limits": {
+          "type": "array",
+          "description": "Practical shooting or generation limits such as no actors, no outdoor shoot, no water scenes.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "target_model": {
+      "type": "string",
+      "description": "AI video model target if the request includes prompt conversion or generation planning."
+    },
+    "variant_count": {
+      "type": "integer",
+      "description": "How many alternative outputs or creative variants are desired.",
+      "minimum": 1,
+      "maximum": 20
+    },
+    "past_performance_context": {
+      "type": "string",
+      "description": "Optional performance notes about previous creatives, winners, losers, or audience response."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Any extra user context not captured elsewhere."
+    }
+  },
+  "required": [
+    "task_type"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "content_analysis"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "reference_video"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "script_planning"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "product_info"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "storyboard_planning"
+          }
+        }
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "reference_script"
+            ]
+          },
+          {
+            "required": [
+              "product_info"
+            ]
+          },
+          {
+            "required": [
+              "reference_storyboard"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "prompt_conversion"
+          }
+        }
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "reference_script"
+            ]
+          },
+          {
+            "required": [
+              "reference_storyboard"
+            ]
+          },
+          {
+            "required": [
+              "creative_goal"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "reference_video_adaptation"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "reference_video",
+          "product_info"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "cta_optimization"
+          }
+        }
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "reference_script"
+            ]
+          },
+          {
+            "required": [
+              "creative_goal"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "hook_generation"
+          }
+        }
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "product_info"
+            ]
+          },
+          {
+            "required": [
+              "creative_goal"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "task_type": {
+            "const": "variation_planning"
+          }
+        }
+      },
+      "then": {
+        "anyOf": [
+          {
+            "required": [
+              "product_info"
+            ]
+          },
+          {
+            "required": [
+              "reference_video"
+            ]
+          },
+          {
+            "required": [
+              "reference_script"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

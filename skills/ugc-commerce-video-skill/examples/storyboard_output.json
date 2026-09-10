@@ -1,0 +1,202 @@
+{
+  "task_type": "storyboard_planning",
+  "summary": {
+    "storyboard_objective": "direct_conversion",
+    "target_audience": "Women ages 18-30 who want fresh-looking skin, easy glow, and lightweight skincare that fits into a simple routine.",
+    "product_category": "beauty_skincare",
+    "core_angle": "dull-skin-to-fresh-glow UGC demo",
+    "recommended_format": "ugc_testimonial_demo",
+    "recommended_runtime_seconds": 18,
+    "main_promise": "This serum makes skin look more hydrated, fresher, and glowier quickly without feeling heavy.",
+    "proof_strategy": "Show visible application, fast-absorbing texture, and a clear post-application glow close-up with natural creator reaction.",
+    "cta_goal": "Encourage the viewer to tap and check out the product."
+  },
+  "structure_overview": {
+    "structure_type": "hook_product_demo_result_cta",
+    "flow_summary": "The storyboard opens with a relatable dull-skin problem, introduces the serum quickly, shows easy application and lightweight feel, delivers a visible glow payoff, then closes with a benefit-linked CTA.",
+    "product_reveal_timing": "early",
+    "proof_timing": "mid",
+    "cta_position": "closing"
+  },
+  "scene_breakdown": [
+    {
+      "scene_number": 1,
+      "scene_name": "Dull Skin Hook",
+      "duration_seconds": 2.5,
+      "purpose": "hook",
+      "viewer_takeaway": "This video is about fixing dull-looking skin in a simple, relatable way.",
+      "visual_description": "Creator faces camera in a simple bathroom or bedroom vanity setting with natural light, lightly touching cheek or looking at skin in the mirror before using the product.",
+      "product_visibility_note": "Product is not yet visible; focus stays on the problem state.",
+      "spoken_line_or_message": "If your skin has been looking so dull lately, this is the one thing that’s been helping mine.",
+      "overlay_text": "Skin looking dull?",
+      "proof_role": "No major proof yet; this scene establishes pain and relevance.",
+      "objection_role": "None yet.",
+      "camera_framing": "medium close-up selfie-style framing",
+      "camera_motion": "light handheld natural movement",
+      "transition_note": "Quick cut to product reveal so the viewer gets the answer fast."
+    },
+    {
+      "scene_number": 2,
+      "scene_name": "Product Reveal",
+      "duration_seconds": 2.5,
+      "purpose": "product_intro",
+      "viewer_takeaway": "This is the product being recommended, and it fits into a normal daily routine.",
+      "visual_description": "Creator holds the serum bottle close to camera, slightly turning it so the product is clear and recognizable.",
+      "product_visibility_note": "Product should be centered and clearly readable enough to register brand/product type.",
+      "spoken_line_or_message": "It’s this lightweight serum, and I’ve been using it right before makeup or anytime my skin looks tired.",
+      "overlay_text": "Lightweight glow serum",
+      "proof_role": "Begins credibility by framing the product as part of real-life use, not an abstract recommendation.",
+      "objection_role": "Starts reducing the idea that the product is inconvenient or unnecessary.",
+      "camera_framing": "tight product close-up moving into medium creator-plus-product frame",
+      "camera_motion": "small hand-driven motion, natural and casual",
+      "transition_note": "Cut into application while the bottle is still fresh in the viewer’s mind."
+    },
+    {
+      "scene_number": 3,
+      "scene_name": "Application Demo",
+      "duration_seconds": 4.0,
+      "purpose": "demo",
+      "viewer_takeaway": "The serum is easy to apply, sinks in fast, and does not look heavy or sticky.",
+      "visual_description": "Close-up of creator applying the serum to cheek or face, with visible product texture and smooth blending into skin.",
+      "product_visibility_note": "Product should either appear in the hand just before application or remain implied through close-up texture use.",
+      "spoken_line_or_message": "It sinks in really fast and doesn’t leave my skin feeling heavy or sticky.",
+      "overlay_text": "Fast-absorbing • not sticky",
+      "proof_role": "This is the first strong proof scene because it shows texture, routine ease, and sensory payoff.",
+      "objection_role": "Directly addresses concern about greasy or uncomfortable feel.",
+      "camera_framing": "tight beauty close-up on skin and product application",
+      "camera_motion": "mostly static or very slight push-in for clarity",
+      "transition_note": "Hold long enough to register texture, then cut to the result reveal."
+    },
+    {
+      "scene_number": 4,
+      "scene_name": "Glow Result Reveal",
+      "duration_seconds": 4.0,
+      "purpose": "proof",
+      "viewer_takeaway": "The product creates a visible fresh, hydrated glow almost right away.",
+      "visual_description": "Closer post-application skin shot with creator turning slightly toward light so skin looks naturally glowy, followed by a positive but natural creator expression.",
+      "product_visibility_note": "Product itself can be secondary here; the result on skin is the hero.",
+      "spoken_line_or_message": "It just makes my skin look way more fresh and hydrated almost right away.",
+      "overlay_text": "Fresh glow in seconds",
+      "proof_role": "This is the core proof scene showing the benefit the script promises.",
+      "objection_role": "Helps answer whether the product makes a visible enough difference to matter.",
+      "camera_framing": "beauty close-up / slight angle shift to catch skin finish",
+      "camera_motion": "subtle natural movement or micro push-in",
+      "transition_note": "Move from result close-up into final recommendation and CTA."
+    },
+    {
+      "scene_number": 5,
+      "scene_name": "CTA Close",
+      "duration_seconds": 3.0,
+      "purpose": "cta",
+      "viewer_takeaway": "If the viewer wants this same easy glow payoff without a heavy feel, they should click now.",
+      "visual_description": "Creator holds the serum near face or in front of chest while skin result remains visible, finishing with a clean end frame where the product and creator are both readable.",
+      "product_visibility_note": "Product should be clearly visible again in the final shot to reconnect the result to the item being sold.",
+      "spoken_line_or_message": "If you want that easy glow without the heavy feel, tap to check it out.",
+      "overlay_text": "Tap to check it out",
+      "proof_role": "The CTA references the exact benefit that was just visually shown, making the ask feel earned.",
+      "objection_role": "Reinforces that the benefit comes without the main downside of heaviness or stickiness.",
+      "camera_framing": "medium close-up with product in frame",
+      "camera_motion": "stable handheld or lightly locked ending frame",
+      "transition_note": "End cleanly on product-plus-result with no unnecessary extra scene."
+    }
+  ],
+  "hook_scene_plan": {
+    "hook_scene_number": 1,
+    "hook_type": "pain",
+    "hook_visual_strategy": "Start with a relatable direct-to-camera skin concern in a natural home setting so the viewer immediately understands the problem and feels addressed.",
+    "hook_message": "Your skin looks dull, and this is what’s been helping.",
+    "mute_viewing_support": "The creator’s expression plus the overlay text 'Skin looking dull?' helps the opening remain understandable even with sound off."
+  },
+  "product_visibility_plan": {
+    "first_clear_product_scene": 2,
+    "visibility_priority_note": "The viewer must clearly understand that the product is a facial serum and connect it to the glow result.",
+    "usage_clarity_note": "The application scene should show how little effort is required and how naturally the serum fits into a routine.",
+    "repeat_visibility_strategy": "Show the product clearly at reveal, imply it through application, then bring it back into the final CTA frame so the product-result link stays strong."
+  },
+  "proof_plan": {
+    "primary_proof_method": "creator demo plus visible result close-up",
+    "proof_scenes": [
+      "Scene 3",
+      "Scene 4"
+    ],
+    "proof_priority_note": "The audience must see both the lightweight application and the visible skin finish for the concept to feel believable.",
+    "proof_risk_note": "If the post-application skin result is too subtle or badly lit, the core promise may feel under-proven."
+  },
+  "objection_handling_plan": {
+    "main_objection": "Will it actually make a visible difference without feeling heavy?",
+    "secondary_objections": [
+      "Do I really need another serum?",
+      "Will it feel sticky or greasy?"
+    ],
+    "handling_scenes": [
+      "Scene 3",
+      "Scene 4",
+      "Scene 5"
+    ],
+    "handling_method": "Use application texture and creator wording to reduce heaviness concerns, then use the glow result to answer efficacy concerns and reinforce both in the CTA."
+  },
+  "overlay_and_subtitle_plan": {
+    "overlay_strategy": "Keep overlays short, benefit-led, and timed to reinforce the most important selling beats without cluttering the frame.",
+    "priority_overlay_moments": [
+      "Scene 1: Skin looking dull?",
+      "Scene 2: Lightweight glow serum",
+      "Scene 3: Fast-absorbing • not sticky",
+      "Scene 4: Fresh glow in seconds",
+      "Scene 5: Tap to check it out"
+    ],
+    "density_note": "Use one key overlay per scene when possible to keep mobile readability high.",
+    "avoid_note": "Avoid covering the face or product with dense subtitles, and avoid repeating every spoken sentence word-for-word."
+  },
+  "pacing_and_transition_plan": {
+    "overall_pacing": "mixed",
+    "fast_moments": [
+      "Scene 1 to Scene 2 transition",
+      "Product reveal timing",
+      "Opening movement from pain to solution"
+    ],
+    "slow_moments": [
+      "Scene 3 application texture moment",
+      "Scene 4 result close-up"
+    ],
+    "transition_style": "quick, clean cuts with slightly longer holds on proof scenes",
+    "momentum_note": "The pacing should move quickly enough to keep retention high, but slow down just enough during demo and result scenes so the viewer can actually register proof."
+  },
+  "cta_ending_plan": {
+    "ending_scene_number": 5,
+    "ending_visual": "Creator with visible glow result holding the serum in a clean, readable end frame.",
+    "ending_message": "If you want that easy glow without the heavy feel, tap to check it out.",
+    "cta_type": "benefit_led_direct_action",
+    "action_clarity_note": "The viewer should know both what to do and why: tap because the product offers easy glow without the downside of heaviness."
+  },
+  "production_notes": {
+    "must_capture_shots": [
+      "Natural direct-to-camera dull-skin hook shot",
+      "Clear bottle close-up",
+      "Visible serum application on skin",
+      "Strong post-application glow close-up",
+      "Final creator-plus-product CTA frame"
+    ],
+    "simplification_opportunities": [
+      "If runtime gets too tight, shorten the product intro line while keeping the bottle reveal.",
+      "If production is minimal, use one consistent vanity location and vary only framing, not environments."
+    ],
+    "creator_direction_note": "The creator should sound like she is sharing something genuinely useful, not delivering a polished ad read. Light positive surprise is helpful, but avoid overacting.",
+    "editing_note": "Use quick cuts early, then let the proof scenes breathe slightly. Prioritize skin clarity, product readability, and clean scene progression over flashy transitions.",
+    "generation_note": "If this storyboard is later converted to AI generation, keep Scene 3 and Scene 4 especially concrete because they carry the main proof."
+  },
+  "assumptions": [
+    "The creator can film in natural light with enough skin clarity for the result to register on camera.",
+    "The serum visually produces enough glow to be noticeable in a short-form beauty close-up.",
+    "The product bottle is visually clean and recognizable enough to read well in a close shot."
+  ],
+  "warnings": [
+    "If lighting is too flat or too harsh, the result scene may fail to prove the main promise.",
+    "If the creator delivery feels too scripted, the UGC credibility of the storyboard will drop.",
+    "If the bottle is not shown clearly enough in Scene 2 and Scene 5, product memory may be weaker than benefit memory."
+  ],
+  "next_steps": [
+    "Convert this storyboard into a generation-ready AI video prompt.",
+    "Create an alternate result-first storyboard version for testing.",
+    "Turn the scene breakdown into a creator shooting checklist."
+  ]
+}

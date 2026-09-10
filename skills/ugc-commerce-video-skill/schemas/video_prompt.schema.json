@@ -1,0 +1,440 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Prompt Schema",
+  "type": "object",
+  "description": "Schema for structured AI video prompt conversion output in a short-form ecommerce workflow.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "const": "prompt_conversion",
+      "description": "Fixed task type for this schema."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Top-level summary of the prompt objective and generation intent.",
+      "additionalProperties": false,
+      "properties": {
+        "prompt_objective": {
+          "type": "string",
+          "description": "Primary generation goal of the prompt."
+        },
+        "target_platform": {
+          "type": "string",
+          "description": "Target use platform such as TikTok, Reels, Shorts, or ecommerce ads."
+        },
+        "target_model": {
+          "type": "string",
+          "description": "AI video model target if specified."
+        },
+        "video_style": {
+          "type": "string",
+          "description": "Desired output style such as UGC, demo-led, premium, comparison, testimonial, or showcase."
+        },
+        "main_promise": {
+          "type": "string",
+          "description": "Primary product promise the generated video should communicate."
+        },
+        "runtime_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300,
+          "description": "Target video runtime."
+        },
+        "orientation": {
+          "type": "string",
+          "description": "Target orientation or aspect ratio intent."
+        }
+      }
+    },
+    "source_interpretation": {
+      "type": "object",
+      "description": "Interpretation of the source material being converted into a prompt.",
+      "additionalProperties": false,
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "description": "Input type being converted.",
+          "enum": [
+            "script",
+            "storyboard",
+            "shot_list",
+            "rough_concept",
+            "reference_video_summary",
+            "mixed"
+          ]
+        },
+        "core_scene_logic": {
+          "type": "string",
+          "description": "Summary of the visual or persuasion flow extracted from the input."
+        },
+        "proof_requirement": {
+          "type": "string",
+          "description": "What must be visibly shown to support the product claim."
+        },
+        "creator_presence": {
+          "type": "string",
+          "description": "Whether the concept depends on a visible person or creator.",
+          "enum": [
+            "required",
+            "preferred",
+            "optional",
+            "not_needed"
+          ]
+        },
+        "cta_goal": {
+          "type": "string",
+          "description": "What action or viewer outcome the prompt should support."
+        }
+      }
+    },
+    "visual_strategy": {
+      "type": "object",
+      "description": "High-level visual plan before the final prompt is written.",
+      "additionalProperties": false,
+      "properties": {
+        "structure_type": {
+          "type": "string",
+          "description": "Visual sequence logic such as hook-demo-proof-cta, result-first, comparison, or testimonial flow."
+        },
+        "opening_strategy": {
+          "type": "string",
+          "description": "How the prompt should visually open to establish attention or clarity."
+        },
+        "product_role": {
+          "type": "string",
+          "description": "How the product should function visually in the sequence."
+        },
+        "proof_strategy": {
+          "type": "string",
+          "description": "How the product claim should be made believable on screen."
+        },
+        "ending_strategy": {
+          "type": "string",
+          "description": "How the final beat should visually resolve and support action."
+        }
+      }
+    },
+    "product_definition": {
+      "type": "object",
+      "description": "Product identity guidance for stable generation.",
+      "additionalProperties": false,
+      "properties": {
+        "product_category": {
+          "type": "string",
+          "description": "Product category or type."
+        },
+        "product_description": {
+          "type": "string",
+          "description": "Visual description of the hero product."
+        },
+        "shape_and_form_note": {
+          "type": "string",
+          "description": "Key product shape or silhouette constraints."
+        },
+        "color_note": {
+          "type": "string",
+          "description": "Critical color consistency guidance."
+        },
+        "material_note": {
+          "type": "string",
+          "description": "Material or texture guidance."
+        },
+        "packaging_note": {
+          "type": "string",
+          "description": "Packaging visibility or fidelity guidance if relevant."
+        },
+        "product_consistency_requirements": {
+          "type": "array",
+          "description": "Rules for keeping the product stable across shots.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "subject_definition": {
+      "type": "object",
+      "description": "Human subject or creator behavior guidance if applicable.",
+      "additionalProperties": false,
+      "properties": {
+        "subject_role": {
+          "type": "string",
+          "description": "General role such as creator, customer, demonstrator, or narrator."
+        },
+        "appearance_note": {
+          "type": "string",
+          "description": "Broad appearance or styling note if needed."
+        },
+        "behavior_note": {
+          "type": "string",
+          "description": "How the person should behave on camera."
+        },
+        "interaction_note": {
+          "type": "string",
+          "description": "How the subject should interact with the product."
+        },
+        "authenticity_level": {
+          "type": "string",
+          "description": "Desired realism of human performance.",
+          "enum": [
+            "raw_ugc",
+            "natural_polished",
+            "highly_polished",
+            "neutral"
+          ]
+        }
+      }
+    },
+    "environment_definition": {
+      "type": "object",
+      "description": "Setting and scene environment guidance.",
+      "additionalProperties": false,
+      "properties": {
+        "primary_setting": {
+          "type": "string",
+          "description": "Main location or setting."
+        },
+        "environment_purpose": {
+          "type": "string",
+          "description": "Why this setting helps the product or message."
+        },
+        "background_control_note": {
+          "type": "string",
+          "description": "How clean, minimal, or detailed the environment should be."
+        },
+        "lighting_style": {
+          "type": "string",
+          "description": "Preferred lighting feel."
+        },
+        "color_palette_note": {
+          "type": "string",
+          "description": "Background or overall palette guidance."
+        }
+      }
+    },
+    "scene_sequence": {
+      "type": "array",
+      "description": "Ordered visual beat plan that the final prompt should encode.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "scene_number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Commercial job of the scene."
+          },
+          "visual_action": {
+            "type": "string",
+            "description": "What happens on screen."
+          },
+          "product_visibility_note": {
+            "type": "string",
+            "description": "How clearly the product appears in this scene."
+          },
+          "proof_role": {
+            "type": "string",
+            "description": "How this scene supports belief."
+          },
+          "camera_note": {
+            "type": "string",
+            "description": "Suggested framing or movement."
+          },
+          "timing_note": {
+            "type": "string",
+            "description": "Approximate position or pacing note."
+          }
+        },
+        "required": [
+          "scene_number",
+          "purpose",
+          "visual_action"
+        ]
+      }
+    },
+    "camera_and_motion_plan": {
+      "type": "object",
+      "description": "General camera language for the prompt.",
+      "additionalProperties": false,
+      "properties": {
+        "framing_style": {
+          "type": "string",
+          "description": "General framing approach such as close-up heavy, creator-facing, mixed, or product-led."
+        },
+        "motion_style": {
+          "type": "string",
+          "description": "General motion style such as handheld, smooth, static, or mixed."
+        },
+        "pace_note": {
+          "type": "string",
+          "description": "How quickly the sequence should unfold."
+        },
+        "clarity_priority_note": {
+          "type": "string",
+          "description": "How camera behavior should support product readability."
+        }
+      }
+    },
+    "style_and_quality_constraints": {
+      "type": "object",
+      "description": "Visual style and quality expectations for the generated result.",
+      "additionalProperties": false,
+      "properties": {
+        "style_keywords": {
+          "type": "array",
+          "description": "Useful style descriptors for the final prompt.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "realism_level": {
+          "type": "string",
+          "description": "Target realism level.",
+          "enum": [
+            "photorealistic",
+            "commercial_realistic",
+            "stylized_realistic",
+            "other"
+          ]
+        },
+        "quality_requirements": {
+          "type": "array",
+          "description": "Desired quality and coherence standards.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "avoid_visual_tone": {
+          "type": "array",
+          "description": "Visual tones or treatments to avoid.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "negative_constraints": {
+      "type": "array",
+      "description": "Prompt-level negative constraints to reduce likely generation errors.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "main_prompt_output": {
+      "type": "object",
+      "description": "Primary generation-ready prompt package.",
+      "additionalProperties": false,
+      "properties": {
+        "prompt_format": {
+          "type": "string",
+          "description": "Prompt packaging style such as paragraph, scene_block, or hybrid.",
+          "enum": [
+            "paragraph",
+            "scene_block",
+            "hybrid"
+          ]
+        },
+        "main_prompt": {
+          "type": "string",
+          "description": "Primary generation-ready prompt text."
+        },
+        "compressed_prompt": {
+          "type": "string",
+          "description": "Optional shorter version of the prompt for compact workflows."
+        },
+        "model_adaptation_note": {
+          "type": "string",
+          "description": "How this prompt was adapted for the named or assumed model."
+        }
+      },
+      "required": [
+        "main_prompt"
+      ]
+    },
+    "variant_prompts": {
+      "type": "array",
+      "description": "Optional alternate prompt directions for testing or style adjustments.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "variant_name": {
+            "type": "string"
+          },
+          "variant_focus": {
+            "type": "string",
+            "description": "What changes in this variant, such as stronger hook, softer UGC tone, or cleaner product showcase."
+          },
+          "prompt_text": {
+            "type": "string"
+          },
+          "use_case_note": {
+            "type": "string",
+            "description": "When this variant is most useful."
+          }
+        },
+        "required": [
+          "variant_name",
+          "prompt_text"
+        ]
+      }
+    },
+    "execution_notes": {
+      "type": "object",
+      "description": "Guidance for practical downstream use of the prompt.",
+      "additionalProperties": false,
+      "properties": {
+        "rerun_guidance": {
+          "type": "string",
+          "description": "What to strengthen or simplify if the first generation fails."
+        },
+        "most_critical_elements": {
+          "type": "array",
+          "description": "Elements that must be preserved in any rerun or rewrite.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "likely_failure_modes": {
+          "type": "array",
+          "description": "Common risks such as product drift, unclear action, or overly cinematic output.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handoff_note": {
+          "type": "string",
+          "description": "How this prompt should be used next in the workflow."
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Assumptions made because the source material or constraints were incomplete.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Important limitations, proof risks, or generation concerns.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "description": "Suggested follow-up actions after prompt creation.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "task_type"
+  ]
+}

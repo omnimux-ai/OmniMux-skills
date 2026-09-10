@@ -1,0 +1,227 @@
+version: "1.0"
+name: "commercial-image-recreation"
+display_name: "Commercial Image Recreation"
+description: >
+  商业图片参考改编的静态配置。
+  用于约束电商主图、详情图、广告图、品牌视觉延展等场景中的
+  风格统一、主体一致、Prompt 结构与导出规则。
+language_default: "zh"
+supported_languages:
+  - zh
+  - en
+
+project_defaults:
+  use_case: "ecommerce"
+  output_format: "json"
+  export_markdown: true
+  export_text: true
+  batch_mode: true
+  review_required: true
+  compliance_review_required: true
+
+input:
+  accepted_image_extensions:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".webp"
+  accepted_analysis_files:
+    - "ref_analysis.json"
+    - "style_bible.json"
+    - "prompts.json"
+    - "recreation_plan.json"
+  min_reference_images: 1
+  max_reference_images: 50
+  allow_single_reference: true
+  allow_mixed_aspect_ratios: true
+
+analysis:
+  enabled: true
+  extract:
+    subject: true
+    product_category: true
+    visible_elements: true
+    composition: true
+    lighting: true
+    color_palette: true
+    texture_keywords: true
+    mood: true
+    must_keep: true
+    can_change: true
+    consistency_anchors: true
+  heuristics:
+    infer_background_type: true
+    infer_shot_type: true
+    infer_palette_labels: true
+    infer_material_keywords_from_name: true
+  output:
+    include_raw_notes: true
+    include_group_summary: true
+    include_prompt_keywords: true
+
+style_bible:
+  enabled: true
+  include_sections:
+    overview: true
+    brand_positioning: true
+    subject_rules: true
+    composition_rules: true
+    lighting_rules: true
+    color_rules: true
+    material_rules: true
+    background_prop_rules: true
+    text_overlay_rules: true
+    variation_rules: true
+    do_not_rules: true
+    prompt_baseline: true
+  defaults:
+    title: "Style Bible"
+    include_markdown_export: true
+
+prompting:
+  enabled: true
+  prompt_format_default: "generic"
+  supported_formats:
+    - "generic"
+    - "sdxl"
+    - "flux"
+    - "ecommerce"
+  include_negative_prompt: true
+  include_master_prompt: true
+  include_per_image_prompt: true
+  max_keywords_per_prompt: 24
+  style_strength_default: "balanced"
+  preserve:
+    identity: true
+    product_details: true
+    layout: true
+  output_requirements:
+    zh:
+      - "商业感强"
+      - "画面干净"
+      - "材质真实"
+      - "细节清晰"
+      - "适合电商与广告使用"
+    en:
+      - "commercially polished"
+      - "clean composition"
+      - "realistic materials"
+      - "sharp details"
+      - "suitable for ecommerce and advertising"
+
+recreation_plan:
+  enabled: true
+  generate_shot_cards: true
+  include_risk_control: true
+  include_review_checklist: true
+  include_delivery_recommendations: true
+  default_project_name: "Image Recreation Plan"
+  success_criteria:
+    zh:
+      - "主体识别稳定"
+      - "风格统一"
+      - "材质可信"
+      - "商业可用"
+    en:
+      - "stable subject recognition"
+      - "cohesive style"
+      - "believable materials"
+      - "commercial usability"
+
+quality_control:
+  enabled: true
+  checks:
+    subject_recognition: true
+    structure_proportion: true
+    material_texture: true
+    composition_hierarchy: true
+    lighting_consistency: true
+    color_consistency: true
+    background_props: true
+    branding_text: true
+    commercial_usability: true
+  thresholds:
+    minimum_review_score: 3.5
+    recommended_publish_score: 4.5
+  revision_triggers:
+    - "subject_drift"
+    - "structure_error"
+    - "material_distortion"
+    - "lighting_conflict"
+    - "branding_error"
+    - "commercial_unusable"
+
+compliance:
+  enabled: true
+  require_manual_review_for:
+    - "real_brand_logo"
+    - "recognizable_person"
+    - "celebrity_or_kol_reference"
+    - "protected_packaging"
+    - "medical_or_health_claims"
+    - "income_or_results_claims"
+    - "before_after_visuals"
+  public_guidance_only: true
+  forbid_secrets_in_exports: true
+  notes:
+    zh:
+      - "正式发布前请确认参考图授权与品牌使用权"
+      - "涉及人物肖像、商标、包装设计时应进行人工复核"
+      - "广告文案需真实、可证明、不过度承诺"
+    en:
+      - "Confirm asset rights and brand usage before publication"
+      - "Run manual review for likeness, trademark, and packaging usage"
+      - "Advertising claims should be truthful, supportable, and non-exaggerated"
+
+exports:
+  enabled: true
+  package_name: "results"
+  include_summary: true
+  include_raw_sections: true
+  formats:
+    json: true
+    markdown: true
+    text: true
+    csv_manifest: true
+  default_paths:
+    analysis: "outputs/ref_analysis.json"
+    style_bible_json: "outputs/style_bible.json"
+    style_bible_md: "outputs/style_bible.md"
+    prompts_json: "outputs/prompts.json"
+    prompts_txt: "outputs/prompts.txt"
+    prompts_md: "outputs/prompts.md"
+    recreation_plan_json: "outputs/recreation_plan.json"
+    recreation_plan_md: "outputs/recreation_plan.md"
+    results_json: "outputs/results.json"
+    results_md: "outputs/results.md"
+    results_txt: "outputs/results.txt"
+    batch_manifest_csv: "templates/batch_manifest.csv"
+
+naming:
+  reference_prefix: "ref_"
+  shot_prefix: "S"
+  batch_prefix: "BATCH"
+  export_prefix: "EXP"
+
+placeholders:
+  brand_name: "{{ brand_name }}"
+  series_name: "{{ series_name }}"
+  project_name: "{{ project_name }}"
+  owner: "{{ owner }}"
+  updated_at: "{{ updated_at }}"
+  objective: "{{ objective }}"
+
+security:
+  expose_internal_prompts: false
+  expose_private_credentials: false
+  expose_system_instructions: false
+  expose_internal_paths: false
+  expose_api_keys: false
+
+metadata:
+  template_type: "public-reusable"
+  intended_audience:
+    - "ecommerce teams"
+    - "creative operations"
+    - "ai image workflow builders"
+  last_updated: "2026-01-01"

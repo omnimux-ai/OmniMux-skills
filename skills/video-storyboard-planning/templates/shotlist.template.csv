@@ -1,0 +1,5 @@
+shot_id,start_time,end_time,duration,section,scene_purpose,visual_description,framing,camera_movement,subject_action,dialogue_vo,on_screen_text,selling_point,transition,production_notes,prompt_hint
+01,0,3,3,Hook,{scene_purpose_1},{visual_description_1},{framing_1},{camera_movement_1},{subject_action_1},{dialogue_vo_1},{on_screen_text_1},{selling_point_1},{transition_1},{production_notes_1},{prompt_hint_1}
+02,3,6,3,Demo,{scene_purpose_2},{visual_description_2},{framing_2},{camera_movement_2},{subject_action_2},{dialogue_vo_2},{on_screen_text_2},{selling_point_2},{transition_2},{production_notes_2},{prompt_hint_2}
+03,6,9,3,Proof,{scene_purpose_3},{visual_description_3},{framing_3},{camera_movement_3},{subject_action_3},{dialogue_vo_3},{on_screen_text_3},{selling_point_3},{transition_3},{production_notes_3},{prompt_hint_3}
+04,9,12,3,CTA,{scene_purpose_4},{visual_description_4},{framing_4},{camera_movement_4},{subject_action_4},{dialogue_vo_4},{on_screen_text_4},{selling_point_4},{transition_4},{production_notes_4},{prompt_hint_4}

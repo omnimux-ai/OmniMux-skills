@@ -1,0 +1,107 @@
+labels:
+  - key: hook
+    name: 开场吸引
+    description: 用于在视频前段快速抓取注意力的片段。
+    common_signals:
+      - 强视觉刺激
+      - 结果先展示
+      - 痛点提问
+      - 大字字幕
+
+  - key: intro
+    name: 引入说明
+    description: 用于交代主题、人物、场景或视频主旨。
+    common_signals:
+      - 主题说明
+      - 场景铺垫
+      - 人物出场
+      - 背景介绍
+
+  - key: problem
+    name: 痛点提出
+    description: 用于明确用户问题、困扰或旧方案缺陷。
+    common_signals:
+      - 提出烦恼
+      - 使用障碍
+      - 旧方案不好用
+      - 问题句开场
+
+  - key: demo_scene
+    name: 演示场景
+    description: 用于展示产品使用过程、操作步骤或关键动作。
+    common_signals:
+      - 手部操作
+      - 产品近景
+      - 使用过程
+      - 场景实拍
+
+  - key: feature_highlight
+    name: 功能强调
+    description: 用于强调产品具体功能、结构、材质或配置。
+    common_signals:
+      - 参数说明
+      - 细节特写
+      - 材质展示
+      - 结构说明
+
+  - key: benefit_highlight
+    name: 利益点强调
+    description: 用于表达用户可以获得的结果、好处或价值。
+    common_signals:
+      - 更方便
+      - 更省时
+      - 更舒适
+      - 更适合某类人群
+
+  - key: social_proof
+    name: 社证建立
+    description: 用于通过他人反馈、评价、销量或口碑建立信任。
+    common_signals:
+      - 用户评价
+      - 评论截图
+      - 销量信息
+      - 达人推荐
+
+  - key: objection_handling
+    name: 异议处理
+    description: 用于回应用户犹豫点、顾虑或购买障碍。
+    common_signals:
+      - 回答值不值
+      - 回答适不适合
+      - 回答难不难用
+      - 回答是否踩雷
+
+  - key: offer
+    name: 优惠信息
+    description: 用于传达价格、折扣、赠品、限时活动等交易条件。
+    common_signals:
+      - 折扣说明
+      - 限时活动
+      - 套装信息
+      - 赠品说明
+
+  - key: cta
+    name: 行动引导
+    description: 用于推动用户采取下一步动作。
+    common_signals:
+      - 立即查看
+      - 现在入手
+      - 点击主页
+      - 收藏关注
+
+  - key: outro
+    name: 结尾收束
+    description: 用于视频结束时的收尾，不一定承担强转化功能。
+    common_signals:
+      - 结束语
+      - 品牌露出
+      - 情绪收尾
+      - 画面停留
+
+  - key: unknown
+    name: 无法确认
+    description: 用于内容信息不足或片段作用无法稳定判断的情况。
+    common_signals:
+      - 语音不清晰
+      - 字幕不可辨认
+      - 画面意图不明确

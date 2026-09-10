@@ -1,0 +1,452 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UGC Commerce Video Script Plan Schema",
+  "type": "object",
+  "description": "Schema for structured short-form ecommerce script planning output.",
+  "additionalProperties": false,
+  "properties": {
+    "task_type": {
+      "type": "string",
+      "const": "script_planning",
+      "description": "Fixed task type for this schema."
+    },
+    "summary": {
+      "type": "object",
+      "description": "Top-level planning summary for the script.",
+      "additionalProperties": false,
+      "properties": {
+        "script_objective": {
+          "type": "string",
+          "description": "Primary business goal of the script."
+        },
+        "target_audience": {
+          "type": "string",
+          "description": "Audience summary used for message shaping."
+        },
+        "product_category": {
+          "type": "string",
+          "description": "Product category or vertical."
+        },
+        "main_promise": {
+          "type": "string",
+          "description": "Single dominant message the viewer should remember."
+        },
+        "primary_friction_point": {
+          "type": "string",
+          "description": "Main objection, skepticism point, or buying hesitation the script should address."
+        },
+        "recommended_format": {
+          "type": "string",
+          "description": "Recommended style such as UGC testimonial, demo-led, comparison, creator recommendation, or routine integration."
+        },
+        "tone_note": {
+          "type": "string",
+          "description": "Guidance on voice, creator delivery, or overall message tone."
+        }
+      }
+    },
+    "angle_development": {
+      "type": "object",
+      "description": "Creative angle generation and selection layer.",
+      "additionalProperties": false,
+      "properties": {
+        "candidate_angles": {
+          "type": "array",
+          "description": "Possible angle directions considered before choosing the final route.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "angle_name": {
+                "type": "string",
+                "description": "Short angle label."
+              },
+              "angle_type": {
+                "type": "string",
+                "description": "Angle category such as pain-first, result-first, comparison, testimonial, or routine."
+              },
+              "description": {
+                "type": "string",
+                "description": "What this angle would communicate and how."
+              },
+              "why_it_could_work": {
+                "type": "string",
+                "description": "Reason this angle fits the audience, product, or platform."
+              },
+              "visual_proof_fit": {
+                "type": "string",
+                "description": "Whether the benefit can be shown clearly in a short video."
+              },
+              "risk_note": {
+                "type": "string",
+                "description": "Potential weakness or tradeoff of this angle."
+              }
+            },
+            "required": [
+              "angle_name",
+              "description"
+            ]
+          }
+        },
+        "selected_angle": {
+          "type": "string",
+          "description": "Chosen creative angle."
+        },
+        "selection_rationale": {
+          "type": "string",
+          "description": "Why this angle was selected over others."
+        }
+      }
+    },
+    "message_hierarchy": {
+      "type": "object",
+      "description": "Hierarchy of what the viewer should understand and believe in sequence.",
+      "additionalProperties": false,
+      "properties": {
+        "attention_trigger": {
+          "type": "string",
+          "description": "What should make the viewer stop scrolling."
+        },
+        "relevance_signal": {
+          "type": "string",
+          "description": "Why the viewer should feel the video is for them."
+        },
+        "main_benefit": {
+          "type": "string",
+          "description": "Primary product payoff emphasized in the script."
+        },
+        "supporting_benefits": {
+          "type": "array",
+          "description": "Secondary points that support the main message.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proof_target": {
+          "type": "string",
+          "description": "What claim or belief must be proven in the script."
+        },
+        "objection_target": {
+          "type": "string",
+          "description": "Main hesitation the script should reduce."
+        },
+        "cta_goal": {
+          "type": "string",
+          "description": "Desired next action from the viewer."
+        }
+      }
+    },
+    "hook_options": {
+      "type": "array",
+      "description": "Candidate openings designed for short-form retention.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "hook_text": {
+            "type": "string",
+            "description": "Suggested opening line or caption."
+          },
+          "hook_type": {
+            "type": "string",
+            "description": "Hook category such as pain, result, mistake, curiosity, comparison, or identity."
+          },
+          "visual_pairing": {
+            "type": "string",
+            "description": "Recommended opening visual that should accompany the hook."
+          },
+          "reason_it_works": {
+            "type": "string",
+            "description": "Why this hook is likely to stop the right viewer."
+          },
+          "tradeoff_note": {
+            "type": "string",
+            "description": "Possible downside or context where this hook is weaker."
+          }
+        },
+        "required": [
+          "hook_text"
+        ]
+      }
+    },
+    "selected_hook": {
+      "type": "object",
+      "description": "Chosen opening direction for the final script.",
+      "additionalProperties": false,
+      "properties": {
+        "hook_text": {
+          "type": "string"
+        },
+        "hook_type": {
+          "type": "string"
+        },
+        "selection_reason": {
+          "type": "string"
+        }
+      }
+    },
+    "script_structure": {
+      "type": "object",
+      "description": "Macro-level structure of the video.",
+      "additionalProperties": false,
+      "properties": {
+        "structure_type": {
+          "type": "string",
+          "description": "Framework such as pain-product-proof-cta, result-explain-demo-cta, or testimonial-demo-cta."
+        },
+        "structure_rationale": {
+          "type": "string",
+          "description": "Why this structure is appropriate for the product and audience."
+        },
+        "estimated_runtime_seconds": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 300,
+          "description": "Target runtime for the planned script."
+        }
+      }
+    },
+    "script_beats": {
+      "type": "array",
+      "description": "Detailed beat-by-beat script plan.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "beat_number": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Ordered beat number."
+          },
+          "beat_name": {
+            "type": "string",
+            "description": "Short label such as hook, reveal, demo, proof, objection, or CTA."
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Commercial function of the beat."
+          },
+          "spoken_line": {
+            "type": "string",
+            "description": "Suggested spoken script line."
+          },
+          "message_goal": {
+            "type": "string",
+            "description": "What the viewer should understand, feel, or believe after this beat."
+          },
+          "visual_support": {
+            "type": "string",
+            "description": "What should be shown during this beat."
+          },
+          "proof_role": {
+            "type": "string",
+            "description": "How this beat contributes proof, reassurance, or credibility."
+          },
+          "objection_role": {
+            "type": "string",
+            "description": "If relevant, what hesitation this beat reduces."
+          },
+          "overlay_text": {
+            "type": "string",
+            "description": "Optional suggested on-screen text."
+          },
+          "timing_note": {
+            "type": "string",
+            "description": "Optional note about pacing or compression."
+          }
+        },
+        "required": [
+          "beat_number",
+          "purpose"
+        ]
+      }
+    },
+    "proof_plan": {
+      "type": "object",
+      "description": "How the script intends to make claims believable.",
+      "additionalProperties": false,
+      "properties": {
+        "proof_method": {
+          "type": "string",
+          "description": "Primary proof strategy such as demo, before/after, creator experience, comparison, or close-up detail."
+        },
+        "proof_moments": {
+          "type": "array",
+          "description": "Key moments where proof should appear.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proof_priority_note": {
+          "type": "string",
+          "description": "What absolutely must be shown for the script to work."
+        },
+        "proof_risk_note": {
+          "type": "string",
+          "description": "What claim may feel weak if proof is missing or unclear."
+        }
+      }
+    },
+    "objection_handling_plan": {
+      "type": "object",
+      "description": "How likely hesitation is addressed in the script.",
+      "additionalProperties": false,
+      "properties": {
+        "main_objection": {
+          "type": "string",
+          "description": "Primary objection being handled."
+        },
+        "secondary_objections": {
+          "type": "array",
+          "description": "Other relevant hesitations.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handling_method": {
+          "type": "string",
+          "description": "How the script responds to the main objection."
+        },
+        "handling_beats": {
+          "type": "array",
+          "description": "Beat numbers or beat labels where objection handling happens.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "specificity_note": {
+          "type": "string",
+          "description": "How to make the reassurance feel concrete rather than generic."
+        }
+      }
+    },
+    "subtitle_and_overlay_plan": {
+      "type": "object",
+      "description": "Suggested text support plan for mobile-first viewing.",
+      "additionalProperties": false,
+      "properties": {
+        "subtitle_style_note": {
+          "type": "string",
+          "description": "General note on subtitle density, tone, or emphasis style."
+        },
+        "overlay_priorities": {
+          "type": "array",
+          "description": "Most important phrases that should be visually reinforced.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "do_not_repeat_note": {
+          "type": "string",
+          "description": "Guidance on avoiding redundant overlays."
+        }
+      }
+    },
+    "cta_plan": {
+      "type": "object",
+      "description": "Primary CTA strategy for the script.",
+      "additionalProperties": false,
+      "properties": {
+        "cta_goal": {
+          "type": "string",
+          "description": "Desired viewer action."
+        },
+        "cta_type": {
+          "type": "string",
+          "description": "CTA style such as direct action, benefit-led, urgency-led, or trust-led."
+        },
+        "primary_cta": {
+          "type": "string",
+          "description": "Best-fit CTA line."
+        },
+        "cta_variants": {
+          "type": "array",
+          "description": "Alternative CTA options.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cta_fit_note": {
+          "type": "string",
+          "description": "Why this CTA is matched to the persuasion level of the script."
+        }
+      }
+    },
+    "execution_notes": {
+      "type": "object",
+      "description": "Practical guidance for bringing the script to life.",
+      "additionalProperties": false,
+      "properties": {
+        "delivery_style": {
+          "type": "string",
+          "description": "How the creator or voice should sound."
+        },
+        "visual_style": {
+          "type": "string",
+          "description": "How polished, raw, premium, or natural the visuals should feel."
+        },
+        "pacing_note": {
+          "type": "string",
+          "description": "How tightly the lines should be delivered."
+        },
+        "must_capture_shots": {
+          "type": "array",
+          "description": "Essential footage or proof shots needed for the script to work.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "editing_note": {
+          "type": "string",
+          "description": "Any important post-production or sequence note."
+        }
+      }
+    },
+    "testing_variants": {
+      "type": "array",
+      "description": "Optional structured variations for testing different angles or openings.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "variant_name": {
+            "type": "string"
+          },
+          "what_changes": {
+            "type": "string"
+          },
+          "why_test_it": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "variant_name"
+        ]
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "description": "Assumptions made due to missing information.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Important cautions about proof gaps, product fit, or execution risks.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_steps": {
+      "type": "array",
+      "description": "Suggested follow-up steps such as storyboard creation, prompt conversion, or variant testing.",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "task_type"
+  ]
+}

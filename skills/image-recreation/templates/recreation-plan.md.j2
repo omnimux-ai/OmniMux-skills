@@ -1,0 +1,250 @@
+# {{ project_name }}
+
+> 用途：本模板用于整理“图片复刻执行方案（Recreation Plan）”，将参考图分析、风格约束、提示词与审核要求整合为可直接执行的交付文档。
+
+---
+
+## 1. 项目概览
+
+- **品牌名**：{{ brand_name }}
+- **系列名**：{{ series_name }}
+- **项目类型**：{{ series_type }}
+- **适用场景**：{{ use_case }}
+- **语言**：{{ language }}
+- **参考图数量**：{{ reference_count }}
+- **执行卡片数量**：{{ shot_card_count }}
+
+### 项目目标
+{{ primary_goal }}
+
+### 成功标准
+- {{ success_criteria_1 }}
+- {{ success_criteria_2 }}
+- {{ success_criteria_3 }}
+- {{ success_criteria_4 }}
+
+---
+
+## 2. 复刻总目标（Recreation Objective）
+
+### 核心目标
+{{ objective }}
+
+### 最终希望达到的效果
+- {{ target_effect_1 }}
+- {{ target_effect_2 }}
+- {{ target_effect_3 }}
+
+### 优先级排序
+1. 主体识别稳定
+2. 风格统一
+3. 材质真实
+4. 商业可用
+5. 批量可扩展
+
+---
+
+## 3. 一致性约束（Consistency Constraints）
+
+### 主体一致性
+- {{ subject_consistency_1 }}
+- {{ subject_consistency_2 }}
+- {{ subject_consistency_3 }}
+
+### 风格一致性
+- {{ style_consistency_1 }}
+- {{ style_consistency_2 }}
+- {{ style_consistency_3 }}
+
+### 构图一致性
+- {{ composition_consistency_1 }}
+- {{ composition_consistency_2 }}
+- {{ composition_consistency_3 }}
+
+### 色彩一致性
+- {{ color_consistency_1 }}
+- {{ color_consistency_2 }}
+- {{ color_consistency_3 }}
+
+### 材质一致性
+- {{ material_consistency_1 }}
+- {{ material_consistency_2 }}
+- {{ material_consistency_3 }}
+
+### 必须保留
+- {{ must_preserve_1 }}
+- {{ must_preserve_2 }}
+- {{ must_preserve_3 }}
+- {{ must_preserve_4 }}
+- {{ must_preserve_5 }}
+
+### 执行原则
+- {{ principle_1 }}
+- {{ principle_2 }}
+- {{ principle_3 }}
+- {{ principle_4 }}
+
+---
+
+## 4. 允许变化项（Allowed Variations）
+
+### 可变化维度
+- {{ allowed_change_1 }}
+- {{ allowed_change_2 }}
+- {{ allowed_change_3 }}
+- {{ allowed_change_4 }}
+- {{ allowed_change_5 }}
+
+### 变化前提
+{{ variation_guideline }}
+
+### 建议变化方式
+- 优先变化背景层次与空间关系
+- 其次变化局部构图、镜头远近、道具数量
+- 若有人物，可变化手势、姿态、视线
+- 不要同时大幅改变多个关键维度
+
+---
+
+## 5. 执行流程建议（Recommended Workflow）
+
+1. 先生成 1–2 张基准图，确认主体识别与整体风格
+2. 基于基准图扩展系列变体
+3. 对每张图进行结构、材质、色彩与商业可用性审核
+4. 根据审核结果集中修正，再统一导出最终版本
+
+### 批量执行建议
+- 每批建议控制在 {{ batch_size }} 张以内
+- 每轮修改只引入少量变化，避免风格漂移
+- 保留每轮版本号与修改说明
+
+---
+
+## 6. Shot Cards / 单图执行卡片
+
+{{#each shot_cards}}
+### Shot {{ index }} — {{ name }}
+
+**意图 / Intent**
+{{ intent }}
+
+#### 主体焦点
+- {{ subject_focus_1 }}
+- {{ subject_focus_2 }}
+- {{ subject_focus_3 }}
+
+#### 风格焦点
+- {{ style_focus_1 }}
+- {{ style_focus_2 }}
+- {{ style_focus_3 }}
+
+#### 构图焦点
+- {{ composition_focus_1 }}
+- {{ composition_focus_2 }}
+- {{ composition_focus_3 }}
+
+#### 必须保留
+- {{ must_keep_1 }}
+- {{ must_keep_2 }}
+- {{ must_keep_3 }}
+
+#### 可变化
+- {{ can_change_1 }}
+- {{ can_change_2 }}
+- {{ can_change_3 }}
+
+#### 执行说明
+- {{ execution_note_1 }}
+- {{ execution_note_2 }}
+- {{ execution_note_3 }}
+
+#### Short Prompt
+```text
+{{ prompt_short }}
+```
+
+#### Long Prompt
+```text
+{{ prompt_long }}
+```
+
+#### Negative Prompt
+```text
+{{ negative_prompt }}
+```
+
+#### 审核点
+- [ ] {{ review_point_1 }}
+- [ ] {{ review_point_2 }}
+- [ ] {{ review_point_3 }}
+- [ ] {{ review_point_4 }}
+
+---
+
+{{/each}}
+
+## 7. 风险控制（Risk Control）
+
+### 主要风险
+- {{ main_risk_1 }}
+- {{ main_risk_2 }}
+- {{ main_risk_3 }}
+- {{ main_risk_4 }}
+
+### 控制措施
+- {{ control_action_1 }}
+- {{ control_action_2 }}
+- {{ control_action_3 }}
+- {{ control_action_4 }}
+
+### 常见返工原因
+- 主体识别下降
+- 产品结构或比例错误
+- 材质失真、反射错误
+- 色彩偏差过大
+- 背景元素喧宾夺主
+- 文案遮挡产品卖点
+
+---
+
+## 8. 审核清单（Review Checklist）
+
+- [ ] 主体是否稳定且可一眼识别
+- [ ] 产品结构、比例、材质是否准确可信
+- [ ] 风格、光线、色彩是否属于同一系列
+- [ ] 变化项是否仍处于允许范围内
+- [ ] 背景、道具、文字是否服务于主体
+- [ ] 是否存在多余元素、畸形细节或错误品牌信息
+- [ ] 是否符合实际投放 / 上架 / 广告使用需求
+
+---
+
+## 9. 交付建议（Delivery Recommendations）
+
+### 推荐交付顺序
+1. 基准图
+2. 变体图
+3. Prompt 包
+4. 审核记录
+5. 最终定稿导出
+
+### 推荐交付物
+- 复刻结果图
+- Prompt JSON / TXT
+- Style Bible
+- Recreation Plan
+- 修改意见与版本记录
+
+### 协作提示
+{{ team_handoff_tip }}
+
+---
+
+## 10. 版本与备注（Version / Notes）
+
+- **版本号**：{{ version }}
+- **更新时间**：{{ updated_at }}
+- **负责人**：{{ owner }}
+
+### 备注
+{{ notes }}

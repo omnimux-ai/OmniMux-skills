@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Outfit Change Internal Review Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "riskLevel",
+    "promptDraft",
+    "qaChecklist"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string"
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": [
+        "reject",
+        "confirm_before_continue",
+        "allow_with_care",
+        "allow"
+      ]
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "promptDraft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "goal",
+        "subjectPreservation",
+        "garmentPreservation",
+        "negativeConstraints"
+      ],
+      "properties": {
+        "goal": {
+          "type": "string"
+        },
+        "subjectPreservation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "garmentPreservation": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "negativeConstraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "qaChecklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "manualReviewPoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

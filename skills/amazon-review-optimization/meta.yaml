@@ -1,0 +1,12 @@
+display-name-zh: "Amazon Review Optimization"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Amazon"
+  - "评论优化"
+  - "VOC"
+summary-cn: "Amazon review, VOC, QA and pain-point optimization."
+desc-cn: "Amazon review, VOC, QA and pain-point optimization."
+author-cn: "OmniMux"
+source: official

@@ -1,0 +1,354 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A+内容输入",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product",
+    "brand",
+    "target_market",
+    "modules"
+  ],
+  "properties": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "category"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "商品名称"
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "description": "商品类目"
+        },
+        "sub_category": {
+          "type": "string",
+          "description": "商品子类目"
+        },
+        "selling_points": {
+          "type": "array",
+          "description": "核心卖点",
+          "items": {
+            "type": "string"
+          }
+        },
+        "materials": {
+          "type": "array",
+          "description": "材质/成分",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "length": { "type": "number" },
+            "width": { "type": "number" },
+            "height": { "type": "number" },
+            "unit": {
+              "type": "string",
+              "enum": ["mm", "cm", "m", "in", "ft"]
+            }
+          }
+        },
+        "weight": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "value": { "type": "number" },
+            "unit": {
+              "type": "string",
+              "enum": ["g", "kg", "oz", "lb"]
+            }
+          }
+        },
+        "package_includes": {
+          "type": "array",
+          "description": "包装清单",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warranty": {
+          "type": "string",
+          "description": "质保信息"
+        },
+        "compliance_notes": {
+          "type": "array",
+          "description": "合规注意事项",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "品牌名称"
+        },
+        "tagline": {
+          "type": "string",
+          "description": "品牌标语"
+        },
+        "story": {
+          "type": "string",
+          "description": "品牌故事"
+        },
+        "tone": {
+          "type": "string",
+          "description": "品牌语气，如专业、温暖、极简"
+        },
+        "visual_style": {
+          "type": "array",
+          "description": "视觉风格关键词",
+          "items": {
+            "type": "string"
+          }
+        },
+        "logo_usage_notes": {
+          "type": "string",
+          "description": "Logo 使用说明"
+        }
+      }
+    },
+    "target_market": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locale",
+        "audience"
+      ],
+      "properties": {
+        "locale": {
+          "type": "string",
+          "description": "目标市场，如 US、JP、DE"
+        },
+        "language": {
+          "type": "string",
+          "description": "文案语言，如 zh-CN、en-US"
+        },
+        "audience": {
+          "type": "string",
+          "description": "目标人群描述"
+        },
+        "price_positioning": {
+          "type": "string",
+          "enum": ["budget", "mass", "premium", "luxury"],
+          "description": "价格带定位"
+        },
+        "use_cases": {
+          "type": "array",
+          "description": "典型使用场景",
+          "items": {
+            "type": "string"
+          }
+        },
+        "competitors": {
+          "type": "array",
+          "description": "参考竞品",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "product_images": {
+          "type": "array",
+          "description": "商品图资源",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label"],
+            "properties": {
+              "label": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "object_key": { "type": "string" },
+              "notes": { "type": "string" }
+            },
+            "anyOf": [
+              { "required": ["url"] },
+              { "required": ["object_key"] }
+            ]
+          }
+        },
+        "brand_assets": {
+          "type": "array",
+          "description": "品牌素材",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["label"],
+            "properties": {
+              "label": { "type": "string" },
+              "url": { "type": "string", "format": "uri" },
+              "object_key": { "type": "string" },
+              "notes": { "type": "string" }
+            },
+            "anyOf": [
+              { "required": ["url"] },
+              { "required": ["object_key"] }
+            ]
+          }
+        },
+        "reference_pages": {
+          "type": "array",
+          "description": "参考链接",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "must_include": {
+          "type": "array",
+          "description": "必须出现的信息",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_avoid": {
+          "type": "array",
+          "description": "必须避免的表达或元素",
+          "items": {
+            "type": "string"
+          }
+        },
+        "claim_policy": {
+          "type": "string",
+          "description": "功效/认证/排名等声明限制说明"
+        },
+        "image_ratio_preferences": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["1:1", "4:5", "16:9", "3:4", "auto"]
+          }
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "description": "A+ 模块配置",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "objective"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "模块唯一标识"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "hero_banner",
+              "brand_story",
+              "feature_highlights",
+              "comparison_chart",
+              "how_to_use",
+              "specifications",
+              "lifestyle_scene",
+              "materials_detail",
+              "faq",
+              "closing_banner"
+            ],
+            "description": "模块类型"
+          },
+          "objective": {
+            "type": "string",
+            "description": "该模块的主要目标"
+          },
+          "headline": {
+            "type": "string",
+            "description": "主标题"
+          },
+          "subheadline": {
+            "type": "string",
+            "description": "副标题"
+          },
+          "body_points": {
+            "type": "array",
+            "description": "正文要点",
+            "items": {
+              "type": "string"
+            }
+          },
+          "image_direction": {
+            "type": "string",
+            "description": "画面方向说明"
+          },
+          "layout_notes": {
+            "type": "string",
+            "description": "版式说明"
+          },
+          "cta": {
+            "type": "string",
+            "description": "行动号召"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "优先级，1 为最高"
+          }
+        }
+      }
+    },
+    "output_preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "deliverables": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "copy_only",
+              "module_plan",
+              "image_prompts",
+              "full_aplus_package"
+            ]
+          }
+        },
+        "image_generation": {
+          "type": "boolean",
+          "description": "是否需要继续生成图片"
+        },
+        "notes": {
+          "type": "string",
+          "description": "其他输出要求"
+        }
+      }
+    }
+  }
+}

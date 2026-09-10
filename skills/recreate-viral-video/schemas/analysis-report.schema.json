@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/recreate-viral-video/analysis-report.schema.json",
+  "title": "Recreate Viral Video Analysis Report",
+  "description": "Structured analysis for reference-video adaptation.",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "reference_analysis": {
+      "type": "object",
+      "required": ["summary"],
+      "additionalProperties": true,
+      "properties": {
+        "summary": { "type": "string" },
+        "hook": { "type": "string" },
+        "hook_type": { "type": "string" },
+        "pace": { "type": "string" },
+        "scene_flow": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "selling_flow": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_types": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "borrowable_mechanisms": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "non_transferable_elements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "risk_flags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "product_analysis": {
+      "type": "object",
+      "required": ["summary"],
+      "additionalProperties": true,
+      "properties": {
+        "summary": { "type": "string" },
+        "product_name": { "type": "string" },
+        "category": { "type": "string" },
+        "audience": { "type": "string" },
+        "core_selling_points": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "best_demo_angles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "use_scenarios": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "fit_notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "opportunity_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risk_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "required": ["reference_analysis", "product_analysis"]
+}

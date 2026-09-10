@@ -1,0 +1,305 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Storyboard Product Info",
+  "description": "用于视频分镜项目的产品级结构化输入，适用于电商带货、UGC 演示、产品展示等内容生成场景。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "product",
+    "audience",
+    "content_goal"
+  ],
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "description": "项目名称"
+    },
+    "platform": {
+      "type": "string",
+      "description": "目标平台",
+      "enum": ["TikTok", "Instagram Reels", "YouTube Shorts", "Amazon", "Other"]
+    },
+    "format": {
+      "type": "string",
+      "description": "视频画幅",
+      "enum": ["9:16", "1:1", "16:9", "4:5", "Other"]
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "目标时长（秒）",
+      "minimum": 3,
+      "maximum": 180
+    },
+    "language": {
+      "type": "string",
+      "description": "语言标识，例如 zh-CN / en-US"
+    },
+    "product": {
+      "type": "object",
+      "description": "产品信息主体",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "category",
+        "usage",
+        "core_selling_points"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "产品名称",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "description": "产品品类",
+          "minLength": 1
+        },
+        "brand": {
+          "type": "string",
+          "description": "品牌名"
+        },
+        "price_range": {
+          "type": "string",
+          "description": "价格带，例如 低客单 / 中客单 / 高客单"
+        },
+        "variants": {
+          "type": "array",
+          "description": "规格、颜色或型号变体",
+          "items": {
+            "type": "string"
+          }
+        },
+        "materials": {
+          "type": "array",
+          "description": "材质信息",
+          "items": {
+            "type": "string"
+          }
+        },
+        "package_includes": {
+          "type": "array",
+          "description": "包装包含物",
+          "items": {
+            "type": "string"
+          }
+        },
+        "usage": {
+          "type": "string",
+          "description": "核心使用方式或主要功能动作",
+          "minLength": 1
+        },
+        "core_selling_points": {
+          "type": "array",
+          "description": "核心卖点，建议 1~5 条",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "functional_claims": {
+          "type": "array",
+          "description": "功能性描述，避免包含无法证实的极限承诺",
+          "items": {
+            "type": "string"
+          }
+        },
+        "visual_highlights": {
+          "type": "array",
+          "description": "适合在镜头中突出展示的视觉亮点",
+          "items": {
+            "type": "string"
+          }
+        },
+        "usage_scenarios": {
+          "type": "array",
+          "description": "适用使用场景",
+          "items": {
+            "type": "string"
+          }
+        },
+        "target_use_moment": {
+          "type": "string",
+          "description": "最适合切入视频的使用时刻，例如 早晨赶时间 / 通勤前 / 健身后"
+        }
+      }
+    },
+    "audience": {
+      "type": "object",
+      "description": "目标受众信息",
+      "additionalProperties": false,
+      "required": [
+        "primary"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "核心受众"
+        },
+        "secondary": {
+          "type": "string",
+          "description": "次级受众"
+        },
+        "pain_points": {
+          "type": "array",
+          "description": "目标受众痛点",
+          "items": {
+            "type": "string"
+          }
+        },
+        "motivations": {
+          "type": "array",
+          "description": "目标受众动机",
+          "items": {
+            "type": "string"
+          }
+        },
+        "objections": {
+          "type": "array",
+          "description": "购买或点击阻力点",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "content_goal": {
+      "type": "object",
+      "description": "内容目标与 CTA",
+      "additionalProperties": false,
+      "required": [
+        "objective"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string",
+          "description": "视频核心目标，例如 提升点击 / 促进下单 / 做种草"
+        },
+        "cta": {
+          "type": "string",
+          "description": "希望用户执行的动作"
+        },
+        "priority_metric": {
+          "type": "string",
+          "description": "优先关注指标，例如 CTR / CVR / 停留时长 / 完播率"
+        }
+      }
+    },
+    "creative_direction": {
+      "type": "object",
+      "description": "创意方向",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "description": "表达风格，例如 快节奏UGC / 高级感广告 / 对比测评"
+        },
+        "tone": {
+          "type": "string",
+          "description": "内容语气，例如 直接 / 轻松 / 专业 / 真实种草"
+        },
+        "with_voiceover": {
+          "type": "boolean",
+          "description": "是否包含口播"
+        },
+        "with_subtitles": {
+          "type": "boolean",
+          "description": "是否包含字幕"
+        },
+        "show_face": {
+          "type": "boolean",
+          "description": "是否需要人物出镜"
+        },
+        "creator_type": {
+          "type": "string",
+          "description": "如需 UGC 表达，可描述出镜人类型，例如 健身女生 / 办公室白领 / 宝妈 / 专业测评感"
+        }
+      }
+    },
+    "scene_preferences": {
+      "type": "array",
+      "description": "偏好场景",
+      "items": {
+        "type": "string"
+      }
+    },
+    "props_preferences": {
+      "type": "array",
+      "description": "偏好道具",
+      "items": {
+        "type": "string"
+      }
+    },
+    "camera_preferences": {
+      "type": "array",
+      "description": "镜头/机位偏好",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references": {
+      "type": "array",
+      "description": "参考链接或描述",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "限制项与合规边界",
+      "additionalProperties": false,
+      "properties": {
+        "avoid": {
+          "type": "array",
+          "description": "需规避表达",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_include": {
+          "type": "array",
+          "description": "必须包含的画面/卖点/动作",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_not_show": {
+          "type": "array",
+          "description": "不能出现在画面中的元素",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deliverables": {
+      "type": "object",
+      "description": "需要输出的交付物",
+      "additionalProperties": false,
+      "properties": {
+        "need_storyboard": {
+          "type": "boolean"
+        },
+        "need_shotlist": {
+          "type": "boolean"
+        },
+        "need_prompts": {
+          "type": "boolean"
+        },
+        "need_production_notes": {
+          "type": "boolean"
+        },
+        "need_voiceover": {
+          "type": "boolean"
+        },
+        "need_subtitle_script": {
+          "type": "boolean"
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "其他补充说明"
+    }
+  }
+}

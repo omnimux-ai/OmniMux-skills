@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Outfit Change Internal Review Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taskType",
+    "usageScenario",
+    "subject",
+    "garment",
+    "output"
+  ],
+  "properties": {
+    "taskType": {
+      "type": "string",
+      "enum": [
+        "single_tryon_plan",
+        "variant_plan",
+        "qa_review"
+      ]
+    },
+    "taskGoal": {
+      "type": "string"
+    },
+    "usageScenario": {
+      "type": "string",
+      "enum": [
+        "ecommerce_main_image",
+        "ecommerce_detail_page",
+        "social_media",
+        "advertising",
+        "internal_review",
+        "other"
+      ]
+    },
+    "subject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceType"
+      ],
+      "properties": {
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "user_photo",
+            "multiple_people",
+            "generic_direction"
+          ]
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/imageRef"
+          }
+        },
+        "keepFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authorizationStatus": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "unknown",
+            "needs_review"
+          ]
+        }
+      }
+    },
+    "garment": {
+      "$ref": "garment.schema.json"
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aspectRatio",
+        "deliverable"
+      ],
+      "properties": {
+        "aspectRatio": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "1:1",
+            "4:5",
+            "3:4",
+            "9:16",
+            "16:9"
+          ]
+        },
+        "deliverable": {
+          "type": "string",
+          "enum": [
+            "prompt_draft",
+            "review_notes",
+            "variant_brief",
+            "qa_summary"
+          ]
+        },
+        "variantCount": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "riskHints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "imageRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Storyboard Brief",
+  "description": "用于描述视频分镜项目级 brief 的结构化输入规范，适用于 TikTok 电商短视频、UGC 演示视频、产品展示视频等场景。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_name",
+    "platform",
+    "format",
+    "duration_seconds",
+    "objective"
+  ],
+  "properties": {
+    "project_name": {
+      "type": "string",
+      "description": "项目名称",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "description": "目标平台",
+      "enum": ["TikTok", "Instagram Reels", "YouTube Shorts", "Amazon", "Other"]
+    },
+    "format": {
+      "type": "string",
+      "description": "画幅比例",
+      "enum": ["9:16", "1:1", "16:9", "4:5", "Other"]
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "视频目标时长（秒）",
+      "minimum": 3,
+      "maximum": 180
+    },
+    "language": {
+      "type": "string",
+      "description": "视频语言或输出语言，如 zh-CN / en-US",
+      "minLength": 2
+    },
+    "objective": {
+      "type": "string",
+      "description": "视频核心目标",
+      "minLength": 1
+    },
+    "cta": {
+      "type": "string",
+      "description": "希望用户执行的动作，例如 立即点击查看 / 立即下单 / 关注账号"
+    },
+    "video_type": {
+      "type": "string",
+      "description": "视频类型",
+      "enum": [
+        "ecommerce_conversion",
+        "ugc_demo",
+        "product_showcase",
+        "comparison_review",
+        "brand_story",
+        "creator_explainer",
+        "other"
+      ]
+    },
+    "target_audience": {
+      "type": "object",
+      "description": "目标受众信息",
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "核心受众"
+        },
+        "secondary": {
+          "type": "string",
+          "description": "次级受众"
+        },
+        "pain_points": {
+          "type": "array",
+          "description": "核心痛点",
+          "items": {
+            "type": "string"
+          }
+        },
+        "motivations": {
+          "type": "array",
+          "description": "核心动机",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "creative_direction": {
+      "type": "object",
+      "description": "创意与表达方向",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "description": "风格方向，例如 快节奏UGC / 高级感广告 / 口播讲解"
+        },
+        "tone": {
+          "type": "string",
+          "description": "语气方向，例如 直接 / 轻松 / 专业 / 真实分享"
+        },
+        "with_voiceover": {
+          "type": "boolean",
+          "description": "是否包含口播"
+        },
+        "with_subtitles": {
+          "type": "boolean",
+          "description": "是否包含字幕"
+        },
+        "show_face": {
+          "type": "boolean",
+          "description": "是否需要人物正脸出镜"
+        }
+      }
+    },
+    "key_messages": {
+      "type": "array",
+      "description": "关键传达信息",
+      "items": {
+        "type": "string"
+      }
+    },
+    "core_selling_points": {
+      "type": "array",
+      "description": "核心卖点",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "scene_preferences": {
+      "type": "array",
+      "description": "偏好场景",
+      "items": {
+        "type": "string"
+      }
+    },
+    "references": {
+      "type": "array",
+      "description": "参考内容，可为链接、标题或描述",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "表达限制与强制要求",
+      "additionalProperties": false,
+      "properties": {
+        "avoid": {
+          "type": "array",
+          "description": "需规避内容",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_include": {
+          "type": "array",
+          "description": "必须包含内容",
+          "items": {
+            "type": "string"
+          }
+        },
+        "must_not_show": {
+          "type": "array",
+          "description": "不可出现在画面中的内容",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deliverables": {
+      "type": "object",
+      "description": "期望交付项",
+      "additionalProperties": false,
+      "properties": {
+        "need_storyboard": {
+          "type": "boolean"
+        },
+        "need_shotlist": {
+          "type": "boolean"
+        },
+        "need_prompts": {
+          "type": "boolean"
+        },
+        "need_production_notes": {
+          "type": "boolean"
+        },
+        "need_voiceover": {
+          "type": "boolean"
+        },
+        "need_subtitle_script": {
+          "type": "boolean"
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "其他补充说明"
+    }
+  }
+}

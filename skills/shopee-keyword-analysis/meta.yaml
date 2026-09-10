@@ -1,0 +1,12 @@
+display-name-zh: "Shopee Keyword Analysis"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Shopee"
+  - "关键词分析"
+  - "精选"
+summary-cn: "Shopee hot-search word ranking, detail, trend and related items using shopee-mcp."
+desc-cn: "Shopee hot-search word ranking, detail, trend and related items using shopee-mcp."
+author-cn: "OmniMux"
+source: official

@@ -1,0 +1,12 @@
+display-name-zh: "video-generate-canvas"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "视频"
+  - "画布"
+  - "视频生成"
+  - "精选"
+summary-cn: "Trigger this skill whenever the user expresses any intent to create video content, such as generating videos or editing on canvas."
+desc-cn: "Trigger this skill whenever the user expresses any intent to create video content, such as generating videos or editing on canvas."
+author-cn: "OmniMux"
+source: official

@@ -1,0 +1,11 @@
+display-name-zh: "2D动画半解说短剧"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "短剧漫剧"
+  - "动画"
+  - "精选"
+summary-cn: "结合2D二次元画风与解说旁白的短剧生成器，支持分镜画面、情绪旁白与节奏剪辑一键输出"
+desc-cn: "结合2D二次元画风与解说旁白的短剧生成器，支持分镜画面、情绪旁白与节奏剪辑一键输出"
+author-cn: "OmniMux"
+source: official

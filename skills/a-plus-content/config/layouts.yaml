@@ -1,0 +1,83 @@
+meta:
+  name: "a-plus-content-layouts"
+  version: "1.0.0"
+  public: true
+  description: "A+ 内容模块顺序与页面布局建议。"
+
+module_sequences:
+  standard:
+    recommended_module_count: 6
+    order:
+      - "hero"
+      - "core_selling_points"
+      - "details_materials"
+      - "usage_scenarios"
+      - "comparison_or_advantage"
+      - "specs_or_trust_close"
+  low_info:
+    recommended_module_count: 4
+    order:
+      - "hero"
+      - "core_selling_points"
+      - "details_materials"
+      - "basic_specs_or_scene"
+  rich_storytelling:
+    recommended_module_count: 8
+    order:
+      - "hero"
+      - "brand_story"
+      - "core_selling_points"
+      - "details_materials"
+      - "usage_scenarios"
+      - "comparison_or_advantage"
+      - "specs"
+      - "trust_or_brand_close"
+
+platform_overrides:
+  amazon:
+    emphasize:
+      - "clarity"
+      - "evidence"
+      - "specs"
+      - "benefit-proof mapping"
+    module_bias:
+      - "hero"
+      - "feature_highlights"
+      - "comparison_or_advantage"
+      - "specs"
+  tiktok_shop:
+    emphasize:
+      - "fast grasp"
+      - "mobile readability"
+      - "scene value"
+      - "short headlines"
+    module_bias:
+      - "hero"
+      - "core_selling_points"
+      - "usage_scenarios"
+      - "trust_close"
+  independent_site:
+    emphasize:
+      - "brand story"
+      - "premium tone"
+      - "narrative flow"
+      - "lifestyle continuity"
+    module_bias:
+      - "hero"
+      - "brand_story"
+      - "usage_scenarios"
+      - "comparison_or_advantage"
+
+layout_rules:
+  hero:
+    copy_space: "left or top"
+    focus: "single primary claim"
+  feature_highlights:
+    copy_space: "split panels or stacked cards"
+    focus: "one proof area per subclaim"
+  comparison_or_advantage:
+    copy_space: "grid or card layout"
+    focus: "neutral dimension-based contrast"
+  specs:
+    copy_space: "structured label area"
+    focus: "scan-friendly factual details"

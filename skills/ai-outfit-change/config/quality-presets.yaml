@@ -1,0 +1,40 @@
+presets:
+  fast_preview:
+    intent: 快速看方向
+    outputCount: 4
+    aspectRatio: auto
+    priorities:
+      identity: medium
+      garment: medium
+      realism: medium
+      commerce: low
+
+  balanced_standard:
+    intent: 常规内部评审
+    outputCount: 4
+    aspectRatio: auto
+    priorities:
+      identity: high
+      garment: high
+      realism: high
+      commerce: medium
+
+  ecommerce_focus:
+    intent: 电商素材评审
+    outputCount: 4
+    aspectRatio: 4:5
+    priorities:
+      identity: high
+      garment: very_high
+      realism: high
+      commerce: very_high
+
+  identity_strict:
+    intent: 人物一致性优先
+    outputCount: 4
+    aspectRatio: auto
+    priorities:
+      identity: very_high
+      garment: high
+      realism: high
+      commerce: medium

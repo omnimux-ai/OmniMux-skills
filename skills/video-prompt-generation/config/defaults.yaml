@@ -1,0 +1,38 @@
+guidance_version: "1.0.0"
+
+suggested_assumptions:
+  target_model: generic
+  output_language: zh-CN
+  duration_seconds: 8
+  aspect_ratio: "9:16"
+
+assumption_rule:
+  principle: "Only apply an assumption when the user did not specify the field and the assumption will not change the business intent."
+  reporting: "If an assumption is used, surface it in the final prompt package."
+
+allowed_values:
+  target_model:
+    - sora
+    - veo
+    - seedance
+    - generic
+  aspect_ratio:
+    - "9:16"
+    - "16:9"
+    - "1:1"
+    - "4:5"
+
+normalization_aliases:
+  target_model:
+    openai sora: sora
+    veo2: veo
+    veo3: veo
+    veo-3: veo
+    veo-3.1-fast-exp: veo
+
+field_guidance:
+  source_material: "用户已经写好的脚本、分镜、镜头清单或粗糙 prompt。"
+  input_type: "输入类型可为 script、storyboard、shot-list、rough-prompt 或 mixed。"
+  must_keep: "必须保留的动作、画面、物件、台词或产品卖点。"
+  avoid: "不希望出现的镜头、表达、画面错误或合规风险。"
+  continuity_rules: "跨镜头需要保持一致的主体、产品、场景或动作逻辑。"

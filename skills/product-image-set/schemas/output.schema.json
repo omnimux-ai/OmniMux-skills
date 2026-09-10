@@ -1,0 +1,244 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Output Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "request_summary",
+    "style_bible",
+    "shot_plan",
+    "generation_plan",
+    "qa_checklist",
+    "deliverables"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "输出包版本号，例如 1.0"
+    },
+    "request_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "product_name",
+        "category",
+        "goal",
+        "target_platforms"
+      ],
+      "properties": {
+        "product_name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string",
+          "description": "本次套图任务目标。"
+        },
+        "target_platforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "input_assets_summary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "用户提供素材概览。"
+        }
+      }
+    },
+    "style_bible": {
+      "type": "object",
+      "description": "风格圣经，结构应与 style_bible.schema.json 对齐。",
+      "additionalProperties": true
+    },
+    "shot_plan": {
+      "type": "object",
+      "description": "镜头计划，结构应与 shot_plan.schema.json 对齐。",
+      "additionalProperties": true
+    },
+    "generation_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prompting_principles",
+        "consistency_strategy",
+        "planned_asset_order"
+      ],
+      "properties": {
+        "prompting_principles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "生成提示词或设计说明时必须遵守的原则。"
+        },
+        "consistency_strategy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "用于保持整套产品一致性的策略。"
+        },
+        "planned_asset_order": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "order",
+              "shot_id",
+              "depends_on"
+            ],
+            "properties": {
+              "order": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "shot_id": {
+                "type": "string"
+              },
+              "depends_on": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "handoff_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "交给设计或图像工具执行前的补充说明。"
+        }
+      }
+    },
+    "qa_checklist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_checks",
+        "commercial_checks",
+        "technical_checks",
+        "compliance_checks"
+      ],
+      "properties": {
+        "identity_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "commercial_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "technical_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compliance_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "deliverables": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "planned_assets",
+        "export_targets"
+      ],
+      "properties": {
+        "planned_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "shot_id",
+              "asset_role",
+              "purpose"
+            ],
+            "properties": {
+              "shot_id": {
+                "type": "string"
+              },
+              "asset_role": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "planned",
+                  "generated",
+                  "approved",
+                  "rework_needed"
+                ]
+              }
+            }
+          }
+        },
+        "export_targets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "platform",
+              "asset_types"
+            ],
+            "properties": {
+              "platform": {
+                "type": "string"
+              },
+              "asset_types": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "handoff_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "交付给设计/生成执行阶段的补充说明。"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "task_type": "script_planning",
+  "summary": {
+    "script_objective": "direct_conversion",
+    "target_audience": "Women ages 18-30 who want fresh-looking skin, easy glow, and lightweight skincare that fits into a simple routine.",
+    "product_category": "beauty_skincare",
+    "main_promise": "This serum quickly makes skin look more hydrated, fresher, and glowier without feeling heavy.",
+    "primary_friction_point": "The viewer may doubt whether the serum makes a visible difference without feeling greasy or unnecessary.",
+    "recommended_format": "ugc_testimonial_demo",
+    "tone_note": "Natural, relatable, lightly excited, creator-native, and commercially clear without sounding like polished brand copy."
+  },
+  "angle_development": {
+    "candidate_angles": [
+      {
+        "angle_name": "Dull Skin Fix",
+        "angle_type": "pain_first",
+        "description": "Open with the frustration of skin looking dull or tired, then reveal the serum as a quick glow solution.",
+        "why_it_could_work": "This angle matches a familiar beauty pain point and creates fast relevance for the target audience.",
+        "visual_proof_fit": "Strong, because the serum can be applied on camera and the result can be shown immediately after use.",
+        "risk_note": "If the visible glow result is too subtle, the promise may feel softer than the hook suggests."
+      },
+      {
+        "angle_name": "Dry Makeup Rescue",
+        "angle_type": "problem_solution",
+        "description": "Position the serum as a pre-makeup step that helps skin look less dry and more alive.",
+        "why_it_could_work": "This angle ties directly to a practical everyday use case, which helps with relevance and routine fit.",
+        "visual_proof_fit": "Moderate to strong, especially if skin texture and pre-makeup finish can be shown clearly.",
+        "risk_note": "This angle may feel slightly narrower if the audience is not currently makeup-focused."
+      },
+      {
+        "angle_name": "I Didn’t Expect This to Work",
+        "angle_type": "skeptical_testimonial",
+        "description": "Use a creator-honesty opening where the speaker sounds mildly surprised by how visible the glow result is.",
+        "why_it_could_work": "This lowers ad resistance and creates trust by avoiding an overly polished recommendation tone.",
+        "visual_proof_fit": "Strong if creator reaction and result close-up are both believable.",
+        "risk_note": "Without good delivery, this angle can sound generic because it is common in UGC content."
+      }
+    ],
+    "selected_angle": "Dull Skin Fix",
+    "selection_rationale": "This angle gives the clearest and fastest relevance signal for the target audience, supports a strong short-form hook, and allows the product benefit to be shown visually with minimal explanation."
+  },
+  "message_hierarchy": {
+    "attention_trigger": "Call out dull, tired-looking skin in a familiar, personal way.",
+    "relevance_signal": "Connect the product to a problem the target viewer likely experiences in daily skincare or makeup prep.",
+    "main_benefit": "Skin looks more hydrated and fresh quickly.",
+    "supporting_benefits": [
+      "The formula feels lightweight.",
+      "It is easy to fit into a quick routine.",
+      "It gives a glow payoff without looking heavy."
+    ],
+    "proof_target": "The viewer should believe that the serum creates a visible fresh-skin glow without feeling greasy.",
+    "objection_target": "The viewer may think the serum is unnecessary, too heavy, or not visibly effective enough to matter.",
+    "cta_goal": "Encourage the viewer to tap and check out the product."
+  },
+  "hook_options": [
+    {
+      "hook_text": "If your skin has been looking so dull lately, this is the one thing that’s been helping mine.",
+      "hook_type": "pain",
+      "visual_pairing": "Direct-to-camera creator framing with bare skin or natural skin before application.",
+      "reason_it_works": "It creates immediate relevance and feels personal rather than brand-scripted.",
+      "tradeoff_note": "Depends on the viewer identifying with the dull-skin pain point right away."
+    },
+    {
+      "hook_text": "If your makeup has been looking dry, you need to try this before you put anything on.",
+      "hook_type": "problem_solution",
+      "visual_pairing": "Creator in a casual home setting, touching skin or showing a dry-looking skin moment before the product appears.",
+      "reason_it_works": "Strong practical use case and easy routine framing.",
+      "tradeoff_note": "Most effective for viewers who actively wear makeup or care about makeup prep."
+    },
+    {
+      "hook_text": "I honestly didn’t expect this serum to make my skin look this fresh.",
+      "hook_type": "skeptical_testimonial",
+      "visual_pairing": "Creator showing the product in hand, then cutting quickly to a closer post-application skin look.",
+      "reason_it_works": "Softens ad resistance and uses a mild surprise mechanism to increase trust.",
+      "tradeoff_note": "Needs believable delivery to avoid sounding like a common generic UGC phrase."
+    }
+  ],
+  "selected_hook": {
+    "hook_text": "If your skin has been looking so dull lately, this is the one thing that’s been helping mine.",
+    "hook_type": "pain",
+    "selection_reason": "It is the clearest combination of fast relevance, natural delivery, and visual support for the product’s main promise."
+  },
+  "script_structure": {
+    "structure_type": "pain_product_demo_result_cta",
+    "structure_rationale": "This structure works well because the product solves a visible everyday beauty frustration and can be demonstrated quickly in a creator-led format.",
+    "estimated_runtime_seconds": 18
+  },
+  "script_beats": [
+    {
+      "beat_number": 1,
+      "beat_name": "hook",
+      "purpose": "Stop the scroll with a relatable skincare pain point.",
+      "spoken_line": "If your skin has been looking so dull lately, this is the one thing that’s been helping mine.",
+      "message_goal": "The viewer should immediately feel that the content may solve a familiar beauty problem.",
+      "visual_support": "Creator on camera in a simple home setting with natural skin visible before using the product.",
+      "proof_role": "Light setup only; the role here is relevance, not full proof.",
+      "objection_role": "None yet; this beat mainly opens the problem.",
+      "overlay_text": "Skin looking dull?",
+      "timing_note": "Keep this short and direct so the product can appear quickly."
+    },
+    {
+      "beat_number": 2,
+      "beat_name": "product_reveal",
+      "purpose": "Introduce the serum as the solution clearly and early.",
+      "spoken_line": "It’s this lightweight serum, and I’ve been using it right before makeup or anytime my skin looks tired.",
+      "message_goal": "The viewer should understand what the product is and why it fits into a normal routine.",
+      "visual_support": "Creator holds the serum bottle close to camera and opens it naturally.",
+      "proof_role": "Begins credibility by placing the product in an actual use context.",
+      "objection_role": "Starts reducing the idea that the product is extra work or too complicated.",
+      "overlay_text": "Lightweight glow serum",
+      "timing_note": "Get the bottle clearly into frame fast."
+    },
+    {
+      "beat_number": 3,
+      "beat_name": "demo",
+      "purpose": "Show how the product is used and how it feels.",
+      "spoken_line": "It sinks in really fast and doesn’t leave my skin feeling heavy or sticky.",
+      "message_goal": "The viewer should believe the product is easy to use and comfortable on skin.",
+      "visual_support": "Close-up application on the face or cheek with visible texture and blending.",
+      "proof_role": "Demonstrates texture, ease, and routine fit visually.",
+      "objection_role": "Addresses the concern that the serum might feel greasy or uncomfortable.",
+      "overlay_text": "Fast-absorbing, not sticky",
+      "timing_note": "This should be one of the clearest visual proof beats."
+    },
+    {
+      "beat_number": 4,
+      "beat_name": "result",
+      "purpose": "Deliver the visible payoff and emotional benefit.",
+      "spoken_line": "It just makes my skin look way more fresh and hydrated almost right away.",
+      "message_goal": "The viewer should see the product’s main benefit and connect it to a visible outcome.",
+      "visual_support": "Closer post-application skin shot with natural glow and a positive creator reaction.",
+      "proof_role": "This is the core proof beat for the main promise.",
+      "objection_role": "Helps answer whether the product actually makes a visible difference.",
+      "overlay_text": "Fresh glow in seconds",
+      "timing_note": "Hold just long enough for the result to register visually."
+    },
+    {
+      "beat_number": 5,
+      "beat_name": "cta",
+      "purpose": "Turn interest into action while reinforcing the main benefit.",
+      "spoken_line": "If you want that easy glow without the heavy feel, tap to check it out.",
+      "message_goal": "The viewer should know what to do next and why it is worth doing.",
+      "visual_support": "Product visible in hand or near face, with a final clean shot of skin finish.",
+      "proof_role": "References the main benefit that has just been shown.",
+      "objection_role": "Reinforces that the payoff is easy and comfortable, which reduces final hesitation.",
+      "overlay_text": "Tap to check it out",
+      "timing_note": "Keep it simple and benefit-linked rather than overly salesy."
+    }
+  ],
+  "proof_plan": {
+    "proof_method": "creator demo plus visible result close-up",
+    "proof_moments": [
+      "Texture and application on skin",
+      "Creator reaction after use",
+      "Post-application glow close-up"
+    ],
+    "proof_priority_note": "The most important proof is a clear visible finish after application that looks fresh and hydrated rather than greasy.",
+    "proof_risk_note": "If the result is too subtle or the close-up is weak, the entire script may feel more claim-led than proof-led."
+  },
+  "objection_handling_plan": {
+    "main_objection": "Will this actually make a visible difference without feeling heavy?",
+    "secondary_objections": [
+      "Do I really need another serum?",
+      "Will it feel sticky or greasy?"
+    ],
+    "handling_method": "Answer the heaviness concern during demo, then answer the efficacy concern with a visible glow result and natural creator reaction.",
+    "handling_beats": [
+      "Beat 3",
+      "Beat 4"
+    ],
+    "specificity_note": "Use clear sensory language like light, fast, and not sticky, then immediately support it with visual application and result."
+  },
+  "subtitle_and_overlay_plan": {
+    "subtitle_style_note": "Keep overlays short, benefit-led, and easy to read quickly on mobile.",
+    "overlay_priorities": [
+      "Skin looking dull?",
+      "Lightweight glow serum",
+      "Fast-absorbing, not sticky",
+      "Fresh glow in seconds",
+      "Tap to check it out"
+    ],
+    "do_not_repeat_note": "Do not subtitle every spoken word in a heavy way if it makes the screen feel crowded. Prioritize only the clearest benefit moments."
+  },
+  "cta_plan": {
+    "cta_goal": "Drive product clicks",
+    "cta_type": "benefit_led_direct_action",
+    "primary_cta": "If you want that easy glow without the heavy feel, tap to check it out.",
+    "cta_variants": [
+      "If your skin’s been needing this kind of glow, tap to check it out.",
+      "If you want a quick glow that still feels light, go take a look.",
+      "Tap to check it out if you want that fresh-skin finish without the sticky feel."
+    ],
+    "cta_fit_note": "The CTA works because it connects the action to the exact benefit the script just proved: visible glow plus lightweight feel."
+  },
+  "execution_notes": {
+    "delivery_style": "Casual and natural, like a creator sharing a product that actually helped rather than performing a hard ad read.",
+    "visual_style": "Simple home-setting UGC with clean natural light and visible skin texture.",
+    "pacing_note": "Move quickly from hook to product reveal, but leave enough breathing room during application and result shots for proof to register.",
+    "must_capture_shots": [
+      "Clean product-in-hand shot",
+      "Visible serum application close-up",
+      "Post-application glow close-up",
+      "Natural creator reaction shot"
+    ],
+    "editing_note": "Use quick cuts early for retention, then slightly slower pacing during the result shot so the viewer can register the payoff."
+  },
+  "testing_variants": [
+    {
+      "variant_name": "Makeup Prep Version",
+      "what_changes": "Shift the hook and body slightly toward the pre-makeup use case.",
+      "why_test_it": "Could perform better with viewers who care specifically about dry-looking makeup or skin prep."
+    },
+    {
+      "variant_name": "Skeptical Creator Version",
+      "what_changes": "Use the \"I didn’t expect this to work\" opening instead of the pain-first line.",
+      "why_test_it": "Could increase trust by reducing ad resistance and sounding more personally surprising."
+    },
+    {
+      "variant_name": "Result-First Version",
+      "what_changes": "Open with the visible glow result first, then explain the product after.",
+      "why_test_it": "Could improve scroll-stop performance if the visual payoff is strong enough immediately."
+    }
+  ],
+  "assumptions": [
+    "The creator can show natural skin clearly enough for viewers to perceive a visible post-application difference.",
+    "The product can be used in a normal at-home beauty setting without special props or complicated setup."
+  ],
+  "warnings": [
+    "If the glow result is too subtle on camera, the script will need stronger close-up proof or more contrast in the before-state.",
+    "Avoid overstating instant transformation if the product mostly creates a finish improvement rather than a dramatic skin change.",
+    "The script depends on natural delivery. If performed too stiffly, it may lose UGC credibility."
+  ],
+  "next_steps": [
+    "Convert this script into a shot-by-shot storyboard.",
+    "Turn the strongest version into an AI video prompt.",
+    "Test the skeptical testimonial hook against the pain-first hook."
+  ]
+}

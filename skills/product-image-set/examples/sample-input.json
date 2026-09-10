@@ -1,0 +1,62 @@
+{
+  "request_type": "plan_plus_prompt_pack",
+  "product_name": "示例产品名",
+  "category": "示例类目",
+  "goal": "为电商平台规划一套高转化商品套图，覆盖主图、卖点图、细节图与场景图。",
+  "target_platforms": [
+    "Amazon",
+    "TikTok Shop"
+  ],
+  "brand_name": "示例品牌",
+  "target_audience": [
+    "18-34岁线上消费人群",
+    "关注质感与实用性的用户"
+  ],
+  "core_selling_points": [
+    "核心卖点1",
+    "核心卖点2",
+    "核心卖点3"
+  ],
+  "must_preserve_product_identity": [
+    "产品整体外形比例",
+    "关键结构位置",
+    "包装主视觉元素"
+  ],
+  "preferred_visual_style": [
+    "简洁商业感",
+    "高级棚拍质感",
+    "真实可转化"
+  ],
+  "required_asset_types": [
+    "hero",
+    "benefit",
+    "detail",
+    "lifestyle",
+    "comparison",
+    "spec"
+  ],
+  "constraints": [
+    "避免夸大功效",
+    "避免改变产品真实结构",
+    "主图保持干净高点击"
+  ],
+  "reference_notes": [
+    "参考同类头部品牌的极简白底主图风格",
+    "卖点图强调功能与材质细节",
+    "场景图突出真实使用氛围"
+  ],
+  "input_assets": [
+    {
+      "type": "product_image",
+      "description": "正面产品图"
+    },
+    {
+      "type": "product_image",
+      "description": "侧面产品图"
+    },
+    {
+      "type": "packaging_image",
+      "description": "包装图"
+    }
+  ]
+}

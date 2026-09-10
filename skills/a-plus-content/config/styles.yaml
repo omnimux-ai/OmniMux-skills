@@ -1,0 +1,163 @@
+meta:
+  name: "a-plus-content-style-presets"
+  version: "1.0.0"
+  public: true
+  description: "A+ 内容与电商详情页的视觉风格预设。"
+
+style_fields_definition:
+  required:
+    - "style_id"
+    - "display_name"
+    - "summary"
+    - "best_for"
+    - "tone_keywords"
+    - "palette"
+    - "lighting"
+    - "background"
+    - "composition"
+    - "texture_handling"
+    - "copy_space"
+    - "negative_elements"
+
+presets:
+  - style_id: "clean_minimal"
+    display_name: "干净极简"
+    summary: "以简洁留白、清晰主体和高可读性为核心，适合大多数电商详情页与 A+ 模块。"
+    best_for:
+      - "amazon"
+      - "general_ecommerce"
+      - "electronics"
+      - "home_goods"
+      - "beauty"
+    tone_keywords:
+      - "clean"
+      - "minimal"
+      - "precise"
+      - "premium"
+      - "readable"
+    palette:
+      primary:
+        - "white"
+        - "light gray"
+      secondary:
+        - "soft neutral accent"
+    lighting:
+      type: "soft commercial studio lighting"
+      contrast: "medium_low"
+      highlights: "controlled"
+      shadows: "soft and tidy"
+    background:
+      type: "plain or lightly graded background"
+      density: "low"
+      visual_noise: "minimal"
+    composition:
+      direction: "product-centered with balanced negative space"
+      framing: "front or three-quarter view"
+      layering: "simple"
+    texture_handling:
+      emphasis:
+        - "surface clarity"
+        - "edge definition"
+        - "real material finish"
+    copy_space:
+      default: "medium"
+    negative_elements:
+      - "messy environment"
+      - "dark moody lighting"
+      - "excess decorative props"
+
+  - style_id: "premium_lifestyle"
+    display_name: "高端生活方式"
+    summary: "强调高级感、生活场景与质感统一，适合独立站、高客单产品和品牌故事模块。"
+    best_for:
+      - "independent_site"
+      - "brand_story"
+      - "home_living"
+      - "fashion_accessories"
+      - "beauty_premium"
+    tone_keywords:
+      - "premium"
+      - "lifestyle"
+      - "elevated"
+      - "warm"
+      - "curated"
+    palette:
+      primary:
+        - "warm white"
+        - "beige"
+        - "stone"
+      secondary:
+        - "muted brown"
+        - "sage"
+        - "soft gold"
+    lighting:
+      type: "soft directional natural-feel lighting"
+      contrast: "medium"
+      highlights: "gentle"
+      shadows: "layered but soft"
+    background:
+      type: "curated interior or tactile backdrop"
+      density: "medium_low"
+      visual_noise: "controlled"
+    composition:
+      direction: "story-led product focus"
+      framing: "medium shot or styled close-up"
+      layering: "intentional and elegant"
+    texture_handling:
+      emphasis:
+        - "material warmth"
+        - "fabric, wood, stone, matte surfaces"
+        - "premium detailing"
+    copy_space:
+      default: "medium"
+    negative_elements:
+      - "cheap colorful props"
+      - "overcrowded room styling"
+      - "harsh flash look"
+
+  - style_id: "modern_tech"
+    display_name: "现代科技"
+    summary: "强调结构、性能感和整洁科技气质，适合电子产品、工具和功能型设备。"
+    best_for:
+      - "electronics"
+      - "gadgets"
+      - "smart_home"
+      - "tools"
+    tone_keywords:
+      - "modern"
+      - "tech"
+      - "precise"
+      - "functional"
+      - "sleek"
+    palette:
+      primary:
+        - "white"
+        - "cool gray"
+        - "charcoal"
+      secondary:
+        - "electric blue accent"
+        - "silver"
+    lighting:
+      type: "controlled studio lighting"
+      contrast: "medium"
+      highlights: "crisp"
+      shadows: "clean"
+    background:
+      type: "plain tech backdrop or subtle gradient"
+      density: "low"
+      visual_noise: "low"
+    composition:
+      direction: "feature-led product framing"
+      framing: "front or three-quarter view"
+      layering: "ordered"
+    texture_handling:
+      emphasis:
+        - "edge precision"
+        - "surface finish"
+        - "mechanical details"
+    copy_space:
+      default: "medium"
+    negative_elements:
+      - "neon overload"
+      - "gamer aesthetic"
+      - "messy desk clutter"

@@ -1,0 +1,37 @@
+package:
+  id: ai-outfit-change
+  publicationStatus: internal
+  purpose: internal_review
+
+modes:
+  - intake
+  - single_tryon_plan
+  - variant_plan
+  - qa_review
+
+requiredInputs:
+  - subject
+  - garment
+  - usageScenario
+
+reviewFocus:
+  subject:
+    - identity consistency
+    - pose stability
+    - authorization status
+  garment:
+    - silhouette
+    - material
+    - color
+    - visible details
+  business:
+    - channel fit
+    - ecommerce truthfulness
+    - sensitive branding
+
+deliverableSections:
+  - summary
+  - assumptions
+  - promptDraft
+  - qaChecklist
+  - manualReviewPoints

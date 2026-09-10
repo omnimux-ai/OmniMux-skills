@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Prompt Generation Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_material"],
+  "properties": {
+    "source_material": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The existing script, storyboard, shot list, or rough prompt that should be converted."
+    },
+    "input_type": {
+      "type": "string",
+      "enum": ["script", "storyboard", "shot-list", "rough-prompt", "mixed"],
+      "description": "The dominant source-material shape."
+    },
+    "target_model": {
+      "type": "string",
+      "enum": ["generic", "sora", "veo", "seedance"],
+      "description": "The requested prompt-adaptation target."
+    },
+    "output_language": {
+      "type": "string",
+      "description": "Preferred output language."
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 300
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "enum": ["9:16", "16:9", "1:1", "4:5"]
+    },
+    "style": {
+      "type": "string"
+    },
+    "tone": {
+      "type": "string"
+    },
+    "must_keep": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Elements that must stay visible in the converted prompt."
+    },
+    "avoid": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Undesired visuals, expressions, or risk items."
+    },
+    "continuity_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Cross-shot consistency rules."
+    },
+    "reference_inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "value"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["text", "image", "video", "url"]
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "compliance_notes": {
+      "type": "string"
+    }
+  },
+  "examples": [
+    {
+      "source_material": "清晨厨房里，一个女生走到咖啡机旁按下按钮，咖啡流入杯中，她端起杯子走到窗边喝一口。",
+      "input_type": "script",
+      "target_model": "veo",
+      "output_language": "zh-CN",
+      "duration_seconds": 8,
+      "aspect_ratio": "9:16",
+      "style": "温暖自然，轻广告感",
+      "must_keep": ["咖啡流入杯子的特写", "窗边喝一口的收尾动作"],
+      "avoid": ["表情夸张", "背景杂乱", "手部异常"],
+      "continuity_rules": ["人物服装保持一致", "厨房光线持续为晨光"]
+    }
+  ]
+}

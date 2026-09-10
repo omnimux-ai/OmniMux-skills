@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/product-image-set/input.schema.json",
+  "title": "商品套图输入结构",
+  "description": "用于商品套图规划任务的公开复用输入结构定义。",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "request_type": {
+      "type": "string",
+      "enum": ["plan_only", "plan_plus_prompt_pack"],
+      "description": "仅输出套图方案，或额外补充可交给设计师/图像工具的 prompt pack。"
+    },
+    "product_name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "商品名称。"
+    },
+    "category": {
+      "type": "string",
+      "description": "商品类目。"
+    },
+    "product_description": {
+      "type": "string",
+      "description": "商品描述、功能简介或卖点摘要。"
+    },
+    "core_selling_points": {
+      "type": "array",
+      "description": "核心卖点列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "product_images": {
+      "type": "array",
+      "description": "商品图片引用，可为文件名、URL 或资源标识。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "product_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "商品链接。"
+    },
+    "brand_name": {
+      "type": "string",
+      "description": "品牌名称。"
+    },
+    "brand_requirements": {
+      "type": "string",
+      "description": "品牌视觉要求、品牌关键词或风格限制。"
+    },
+    "target_platform": {
+      "type": "string",
+      "enum": ["TikTok Shop", "Amazon", "独立站", "通用"],
+      "default": "通用",
+      "description": "目标平台。"
+    },
+    "target_market": {
+      "type": "string",
+      "description": "目标市场或国家/地区。"
+    },
+    "audience": {
+      "type": "string",
+      "description": "目标受众描述。"
+    },
+    "image_count": {
+      "type": "integer",
+      "enum": [3, 4, 6, 8],
+      "default": 8,
+      "description": "计划输出的图片数量。"
+    },
+    "required_image_types": {
+      "type": "array",
+      "description": "用户指定必须包含的图型。",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hero",
+          "feature_callout",
+          "lifestyle_scene",
+          "detail_closeup",
+          "function_explainer",
+          "spec_sheet",
+          "comparison_chart",
+          "end_card",
+          "packaging",
+          "accessories"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "enum": ["1:1", "4:5", "16:9", "auto"],
+      "default": "auto",
+      "description": "输出比例偏好。"
+    },
+    "text_overlay": {
+      "type": "boolean",
+      "default": true,
+      "description": "是否包含文案叠加建议。"
+    },
+    "style_direction": {
+      "type": "string",
+      "description": "整体视觉风格方向，如极简、科技、温暖生活、专业功能型等。"
+    },
+    "competitor_references": {
+      "type": "array",
+      "description": "竞品参考名称、链接或说明。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "existing_assets": {
+      "type": "object",
+      "description": "当前已有素材情况。",
+      "additionalProperties": false,
+      "properties": {
+        "has_white_background_images": {
+          "type": "boolean",
+          "default": false
+        },
+        "has_lifestyle_images": {
+          "type": "boolean",
+          "default": false
+        },
+        "has_packaging_images": {
+          "type": "boolean",
+          "default": false
+        },
+        "has_logo": {
+          "type": "boolean",
+          "default": false
+        },
+        "has_old_listing_images": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "description": "商品变体信息，如颜色、规格、型号。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": ["color", "size", "model", "bundle", "other"]
+          },
+          "value": {
+            "type": "string",
+            "minLength": 1
+          },
+          "is_primary": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": ["name", "type", "value"]
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "description": "执行限制或不可更改项。",
+      "additionalProperties": false,
+      "properties": {
+        "must_preserve_logo": {
+          "type": "boolean",
+          "default": true
+        },
+        "must_preserve_packaging": {
+          "type": "boolean",
+          "default": true
+        },
+        "avoid_human_models": {
+          "type": "boolean",
+          "default": false
+        },
+        "avoid_text_overlay": {
+          "type": "boolean",
+          "default": false
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "priority_goals": {
+      "type": "array",
+      "description": "本次套图的优先商业目标。",
+      "items": {
+        "type": "string",
+        "enum": [
+          "increase_ctr",
+          "improve_clarity",
+          "highlight_features",
+          "build_trust",
+          "explain_specs",
+          "show_usage",
+          "differentiate_from_competitors",
+          "strengthen_branding"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string",
+      "description": "其他补充说明。"
+    }
+  },
+  "anyOf": [
+    { "required": ["product_name"] },
+    { "required": ["product_images"] },
+    { "required": ["product_url"] },
+    { "required": ["product_description"] }
+  ],
+  "required": ["request_type"]
+}

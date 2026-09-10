@@ -1,0 +1,27 @@
+{
+  "package_name": "aplus-export-package",
+  "version": "1.0.0",
+  "generated_at": "2025-01-01T00:00:00Z",
+  "contents": [
+    {
+      "path": "input/product-brief.full.json",
+      "type": "input",
+      "description": "完整商品简报输入"
+    },
+    {
+      "path": "plans/image-set-plan.json",
+      "type": "plan",
+      "description": "A+图片规划输出"
+    },
+    {
+      "path": "prompts/generation-prompts.json",
+      "type": "prompt_package",
+      "description": "A+图片生成提示词包"
+    },
+    {
+      "path": "output/final-output.json",
+      "type": "final_output",
+      "description": "最终交付整合文件"
+    }
+  ]
+}

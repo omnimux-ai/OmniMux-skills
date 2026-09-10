@@ -1,0 +1,75 @@
+## {{ report_title | default("视频分析报告") }}
+
+### 基本信息
+- 证据等级：{{ evidence_level | default("无法确认") }}
+- 视频来源：{{ basic_info.source | default("无法确认") }}
+- 视频时长：{{ basic_info.duration | default("无法确认") }}
+- 画幅：{{ basic_info.orientation | default("无法确认") }}
+- 语言：{{ basic_info.language | default("无法确认") }}
+- 分析目标：{{ basic_info.goal | default("无法确认") }}
+- 无法确认：{{ basic_info.limitations | default("无额外说明") }}
+
+### 内容总览
+{{ overview | default("无") }}
+
+### 分段目录
+{% for item in toc %}
+{{ item.index }}. {{ item.start }} - {{ item.end }}  {{ item.section }}  {{ item.summary }}
+{% else %}
+1. 无可用分段
+{% endfor %}
+
+### 场景拆解
+{% for scene in scene_breakdown %}
+#### {{ scene.index }}) {{ scene.section }}
+- 时间：{{ scene.time | default("无法确认") }}
+- 片段摘要：{{ scene.summary | default("无") }}
+- 主要画面：{{ scene.visuals | default("无法确认") }}
+- 字幕/口播：{{ scene.speech_or_subtitles | default("无法确认") }}
+- 该片段作用：{{ scene.purpose | default("无法确认") }}
+- 可复用点：
+{% for item in scene.reusable_points | default([]) %}
+  - {{ item }}
+{% else %}
+  - 无
+{% endfor %}
+- 可优化点：
+{% for item in scene.optimization_points | default([]) %}
+  - {{ item }}
+{% else %}
+  - 无
+{% endfor %}
+
+{% else %}
+无可用场景拆解
+{% endfor %}
+
+### 关键表达观察
+{% for item in key_observations | default([]) %}
+- {{ item }}
+{% else %}
+- 无
+{% endfor %}
+
+### 可复用框架
+- 开头：{{ reusable_framework.opening | default("无") }}
+- 中段：{{ reusable_framework.middle | default("无") }}
+- 后段：{{ reusable_framework.late_stage | default("无") }}
+- 结尾：{{ reusable_framework.ending | default("无") }}
+
+### 可执行优化建议
+{% for item in actionable_recommendations | default([]) %}
+{{ loop.index }}. {{ item }}
+{% else %}
+1. 无
+{% endfor %}
+
+### 风险与备注
+{% for item in risks_and_notes | default([]) %}
+- {{ item }}
+{% else %}
+- 无
+{% endfor %}
+
+### 结论
+{{ conclusion | default("无") }}

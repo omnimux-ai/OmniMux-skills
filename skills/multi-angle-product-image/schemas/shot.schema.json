@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/multi-angle-product-image/shot.schema.json",
+  "title": "multi-angle-product-image shot schema",
+  "description": "多角度产品图能力包的公开单张角度输出结构。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "shot_id",
+    "angle",
+    "purpose",
+    "prompt"
+  ],
+  "properties": {
+    "shot_id": {
+      "type": "string",
+      "description": "单张图片的唯一标识。"
+    },
+    "angle": {
+      "type": "string",
+      "enum": [
+        "hero_three_quarter",
+        "clean_front",
+        "left_side",
+        "right_side",
+        "back_view",
+        "top_view",
+        "bottom_view",
+        "macro_detail",
+        "packaging_set",
+        "accessory_layout",
+        "open_state",
+        "folded_state",
+        "scale_context",
+        "custom"
+      ],
+      "description": "角度类型。"
+    },
+    "custom_angle_name": {
+      "type": "string",
+      "description": "当 angle 为 custom 时可填写自定义角度名称。"
+    },
+    "purpose": {
+      "type": "string",
+      "description": "该图的用途，例如主图、结构补充、细节展示等。"
+    },
+    "shared_prefix": {
+      "type": "string",
+      "description": "整组图片共用的产品身份与一致性前缀。"
+    },
+    "prompt": {
+      "type": "string",
+      "description": "该角度的完整提示词。"
+    },
+    "negative_prompt": {
+      "type": "string",
+      "description": "该角度的负面约束。"
+    },
+    "focus_points": {
+      "type": "array",
+      "description": "该角度重点展示内容。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "composition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "framing": {
+          "type": "string",
+          "enum": [
+            "centered",
+            "slightly_offset",
+            "full_product",
+            "close_up",
+            "detail_crop",
+            "flat_lay",
+            "custom"
+          ]
+        },
+        "camera_height": {
+          "type": "string",
+          "enum": [
+            "eye_level",
+            "slightly_high",
+            "top_down",
+            "low_angle",
+            "custom"
+          ]
+        },
+        "distance": {
+          "type": "string",
+          "enum": [
+            "wide",
+            "medium",
+            "close",
+            "macro",
+            "custom"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "white",
+            "light_gray",
+            "neutral_gradient",
+            "soft_lifestyle",
+            "custom"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "lighting": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": [
+            "soft_studio",
+            "clean_catalog",
+            "premium_specular",
+            "natural_soft",
+            "custom"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "consistency_constraints": {
+      "type": "array",
+      "description": "该角度必须遵守的一致性约束。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "risk_note": {
+      "type": "string",
+      "description": "该角度的风险说明。"
+    },
+    "ready_for_generation": {
+      "type": "boolean",
+      "description": "是否建议直接用于出图。"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "angle": {
+            "const": "custom"
+          }
+        },
+        "required": [
+          "angle"
+        ]
+      },
+      "then": {
+        "required": [
+          "custom_angle_name"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "fit_grade": "B",
+  "recreation_strategy": {
+    "preserve": [
+      "问题或结果前置的开场方式",
+      "快节奏镜头推进",
+      "结尾轻量 CTA"
+    ],
+    "replace": [
+      "原人物身份",
+      "原品牌元素",
+      "原句文案"
+    ],
+    "rewrite": [
+      "中段演示动作",
+      "结果画面的呈现方式"
+    ],
+    "avoid": [
+      "高相似度镜头照搬",
+      "夸张效果承诺"
+    ],
+    "strategy_summary": "保留参考视频的抓停留和节奏机制，用目标商品自己的演示动作、场景和语气重写中段与收尾。"
+  },
+  "storyboard": [
+    {
+      "scene_id": "scene_01",
+      "start_second": 0,
+      "end_second": 2,
+      "scene_goal": "Hook",
+      "visual": "先展示一个熟悉的小麻烦或最容易理解的结果画面",
+      "product_focus": "让观众立即明白这条视频解决什么问题",
+      "text_overlay": "先看这个结果",
+      "motion": "快速切入"
+    },
+    {
+      "scene_id": "scene_02",
+      "start_second": 2,
+      "end_second": 9,
+      "scene_goal": "Demo",
+      "visual": "用连续短镜头展示商品如何介入并完成关键动作",
+      "product_focus": "主卖点和使用过程",
+      "text_overlay": "更省事 / 更顺手 / 更直观",
+      "motion": "快切 + 近景"
+    },
+    {
+      "scene_id": "scene_03",
+      "start_second": 9,
+      "end_second": 15,
+      "scene_goal": "CTA",
+      "visual": "用结果画面和产品近景自然收口",
+      "product_focus": "使用后的价值感",
+      "text_overlay": "值得试试",
+      "motion": "稳定收尾"
+    }
+  ],
+  "final_video_prompt": "生成一条 9:16、15 秒、真实生活场景中的短视频方案。开头先展示一个用户熟悉的小麻烦或结果画面，快速抓住注意力；随后用多个紧凑镜头展示商品如何让这件事变得更简单、更顺手；中后段用真实场景和清晰近景强化结果感；结尾用简洁自然的 CTA 收口。避免复用参考视频里的人物身份、品牌视觉、原句文案和夸张承诺。",
+  "negative_constraints": [
+    "不要复用原人物身份",
+    "不要复用原品牌 logo 或包装",
+    "不要逐句复用原文案",
+    "不要加入无法验证的效果主张"
+  ],
+  "output_spec": {
+    "language": "zh-CN",
+    "duration_seconds": 15,
+    "aspect_ratio": "9:16",
+    "market": "US",
+    "style": "真实 UGC 感"
+  }
+}

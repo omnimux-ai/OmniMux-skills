@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gxgen.dev/skills/image-recreation/schemas/input.schema.json",
+  "title": "Image Recreation Input Schema",
+  "description": "图片参考改编任务的结构化输入参考。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_goal",
+    "reference_images",
+    "subject_to_preserve",
+    "desired_output_count"
+  ],
+  "properties": {
+    "task_goal": {
+      "type": "string",
+      "title": "Task Goal",
+      "description": "任务目标，例如重构一组统一风格的商品图。",
+      "minLength": 1
+    },
+    "project_name": {
+      "type": "string",
+      "title": "Project Name",
+      "description": "项目名称。",
+      "minLength": 1
+    },
+    "brand_name": {
+      "type": "string",
+      "title": "Brand Name",
+      "description": "品牌名称。",
+      "minLength": 1
+    },
+    "product_name": {
+      "type": "string",
+      "title": "Product Name",
+      "description": "产品名称。",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "title": "Platform",
+      "description": "使用平台，例如 TikTok Shop、Amazon、Shopify。",
+      "enum": [
+        "TikTok Shop",
+        "Amazon",
+        "Shopify",
+        "Instagram",
+        "Website",
+        "Other"
+      ]
+    },
+    "target_audience": {
+      "type": "string",
+      "title": "Target Audience",
+      "description": "目标受众描述。"
+    },
+    "subject_to_preserve": {
+      "type": "string",
+      "title": "Subject to Preserve",
+      "description": "需要保留的核心主体识别特征，如外形、结构、材质、品牌位等。",
+      "minLength": 1
+    },
+    "must_preserve": {
+      "type": "array",
+      "title": "Must Preserve",
+      "description": "必须保留的关键要素列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "allowed_variations": {
+      "type": "array",
+      "title": "Allowed Variations",
+      "description": "允许变化的元素，例如背景、构图、场景、镜头距离。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "visual_style": {
+      "type": "string",
+      "title": "Visual Style",
+      "description": "整体风格方向，例如 clean commercial、premium、minimal。"
+    },
+    "style_keywords": {
+      "type": "array",
+      "title": "Style Keywords",
+      "description": "风格关键词列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "color_preferences": {
+      "type": "array",
+      "title": "Color Preferences",
+      "description": "色彩偏好。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "background_style": {
+      "type": "string",
+      "title": "Background Style",
+      "description": "背景风格，例如纯净背景、生活方式场景、渐变背景。"
+    },
+    "lighting_style": {
+      "type": "string",
+      "title": "Lighting Style",
+      "description": "光线风格，例如柔和棚拍光、自然窗光、侧光。"
+    },
+    "composition_preference": {
+      "type": "string",
+      "title": "Composition Preference",
+      "description": "构图偏好，例如居中构图、三分法、近景特写。"
+    },
+    "camera_angle_preference": {
+      "type": "string",
+      "title": "Camera Angle Preference",
+      "description": "镜头角度偏好，例如平视、俯拍、三分之四角度。"
+    },
+    "commercial_focus": {
+      "type": "string",
+      "title": "Commercial Focus",
+      "description": "商业重点或主要卖点。"
+    },
+    "selling_points": {
+      "type": "array",
+      "title": "Selling Points",
+      "description": "卖点列表。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "desired_output_count": {
+      "type": "integer",
+      "title": "Desired Output Count",
+      "description": "目标输出图片数量。",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "title": "Aspect Ratio",
+      "description": "画幅比例。",
+      "enum": [
+        "1:1",
+        "4:5",
+        "9:16",
+        "16:9",
+        "3:4",
+        "2:3",
+        "auto",
+        "other"
+      ]
+    },
+    "resolution_tier": {
+      "type": "string",
+      "title": "Resolution Tier",
+      "description": "分辨率等级。",
+      "enum": [
+        "standard",
+        "high",
+        "2K",
+        "4K",
+        "other"
+      ]
+    },
+    "text_overlay_needed": {
+      "type": "boolean",
+      "title": "Text Overlay Needed",
+      "description": "是否需要预留文案空间。"
+    },
+    "text_safe_area": {
+      "type": "string",
+      "title": "Text Safe Area",
+      "description": "文案安全区位置偏好，例如顶部留白、左侧留白。"
+    },
+    "forbidden_elements": {
+      "type": "array",
+      "title": "Forbidden Elements",
+      "description": "禁止出现的元素或问题。",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "consistency_priority": {
+      "type": "string",
+      "title": "Consistency Priority",
+      "description": "一致性优先级。",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "usage": {
+      "type": "string",
+      "title": "Usage",
+      "description": "图片用途，例如商品主图、详情页、广告素材、社媒种草。"
+    },
+    "reference_images": {
+      "type": "array",
+      "title": "Reference Images",
+      "description": "参考图列表。",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/referenceImage"
+      }
+    },
+    "image_roles": {
+      "type": "array",
+      "title": "Image Roles",
+      "description": "每张输出图承担的角色，例如 Hero、Detail、Lifestyle。",
+      "items": {
+        "$ref": "#/$defs/imageRole"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes",
+      "description": "补充说明。"
+    }
+  },
+  "$defs": {
+    "referenceImage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "参考图唯一标识。",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "参考图类型。",
+          "enum": [
+            "product_ref",
+            "style_ref",
+            "scene_ref",
+            "layout_ref",
+            "pose_ref",
+            "detail_ref",
+            "competitor_ref",
+            "other"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "参考图简要说明。"
+        },
+        "borrow_points": {
+          "type": "array",
+          "description": "希望借鉴的点。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "avoid_copying": {
+          "type": "array",
+          "description": "明确不要照搬的内容。",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "imageRole": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index",
+        "role"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "输出图序号。"
+        },
+        "role": {
+          "type": "string",
+          "description": "图像角色，例如 Hero、Detail、Lifestyle。",
+          "minLength": 1
+        },
+        "objective": {
+          "type": "string",
+          "description": "该图承担的目标。"
+        },
+        "selling_point": {
+          "type": "string",
+          "description": "该图重点表达的卖点。"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "task_goal": "制作一组统一风格的商品营销图",
+      "project_name": "便携咖啡杯图组重构",
+      "product_name": "便携保温咖啡杯",
+      "platform": "TikTok Shop",
+      "subject_to_preserve": "保留杯身比例、杯盖结构、材质表现和品牌位",
+      "must_preserve": [
+        "杯身比例",
+        "杯盖结构",
+        "金属与塑料材质关系",
+        "品牌位置"
+      ],
+      "allowed_variations": [
+        "背景",
+        "场景",
+        "构图",
+        "镜头距离"
+      ],
+      "visual_style": "clean commercial, premium, modern",
+      "background_style": "浅色简洁背景",
+      "lighting_style": "柔和受控棚拍光",
+      "desired_output_count": 3,
+      "aspect_ratio": "4:5",
+      "forbidden_elements": [
+        "复杂背景",
+        "错误品牌元素",
+        "主体比例失真"
+      ],
+      "reference_images": [
+        {
+          "id": "ref_01",
+          "type": "product_ref",
+          "description": "主体商品参考图",
+          "borrow_points": [
+            "外形",
+            "材质",
+            "颜色"
+          ]
+        },
+        {
+          "id": "ref_02",
+          "type": "style_ref",
+          "description": "商业风格参考图",
+          "borrow_points": [
+            "光线",
+            "背景层次",
+            "高级感"
+          ]
+        }
+      ],
+      "image_roles": [
+        {
+          "index": 1,
+          "role": "Hero",
+          "objective": "突出整体外观",
+          "selling_point": "颜值与材质"
+        },
+        {
+          "index": 2,
+          "role": "Detail",
+          "objective": "展示细节与做工",
+          "selling_point": "材质与工艺"
+        },
+        {
+          "index": 3,
+          "role": "Lifestyle",
+          "objective": "展示使用场景",
+          "selling_point": "通勤适用性"
+        }
+      ]
+    }
+  ]
+}

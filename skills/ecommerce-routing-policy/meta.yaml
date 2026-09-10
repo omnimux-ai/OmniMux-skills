@@ -1,0 +1,12 @@
+display-name-zh: "Ecommerce Routing Policy"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "路由策略"
+  - "运营"
+  - "精选"
+summary-cn: "Shared routing rules for ecommerce operation agents."
+desc-cn: "Shared routing rules for ecommerce operation agents."
+author-cn: "OmniMux"
+source: official

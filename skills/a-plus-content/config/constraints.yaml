@@ -1,0 +1,63 @@
+meta:
+  name: "a-plus-content-constraints"
+  version: "1.0.0"
+  public: true
+  description: "A+ 内容与商品详情页输出约束。"
+
+global_rules:
+  preserve_product_identity: true
+  preserve_color_when_known: true
+  prioritize_commercial_readability: true
+  avoid_overdecorated_backgrounds: true
+  require_copy_space_when_needed: true
+  do_not_fake_certifications_visually: true
+  do_not_add_unverified_features: true
+  default_negative_elements:
+    - "busy cluttered background"
+    - "distorted product shape"
+    - "extra accessories not provided"
+    - "text baked into image unless requested"
+    - "unreal material transformation"
+    - "overly artistic poster composition that harms usability"
+
+claim_rules:
+  must_be_verifiable:
+    - "material or ingredient claims"
+    - "performance or result claims"
+    - "certification, ranking, award, and sales claims"
+    - "compatibility or comparison claims"
+  rewrite_when_unverified:
+    - "Replace certainty with supported usage value."
+    - "Mark proof requirements when evidence is missing."
+    - "Do not turn user assumptions into factual module copy."
+
+copy_rules:
+  one_module_one_job: true
+  lead_with_user_value: true
+  avoid_repeating_same_claim: true
+  keep_spec_language_structured: true
+  comparison_tone: "neutral and evidence-led"
+  banned_patterns:
+    - "best in category"
+    - "number one"
+    - "clinical result without proof"
+    - "guaranteed income or guaranteed effect"
+    - "official endorsement without proof"
+
+visual_rules:
+  require_copy_space: true
+  require_product_consistency: true
+  allow_lifestyle_scene_only_when_supportive: true
+  ban_visual_shortcuts:
+    - "fake certification badges"
+    - "medical symbols"
+    - "before-after collages"
+    - "competitor trade dress imitation"
+    - "props implying features not included"
+
+review_checklist:
+  - "Does each module answer a distinct buying question?"
+  - "Can every strong claim be supported by provided facts or proof?"
+  - "Are product appearance, packaging, and included parts kept consistent?"
+  - "Is there enough copy space for final layout?"
+  - "Would a reviewer understand what still needs proof before publishing?"

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "video-analysis-report.schema.json",
+  "description": "Gxgen 视频分析报告结构参考 Schema",
+  "type": "object",
+  "properties": {
+    "evidence_level": {
+      "type": "string",
+      "enum": [
+        "raw-video",
+        "transcript-plus-frames",
+        "transcript-only",
+        "summary-only",
+        "url-only"
+      ]
+    },
+    "basic_info": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "duration": { "type": "string" },
+        "orientation": { "type": "string" },
+        "language": { "type": "string" },
+        "analysis_date": { "type": "string" },
+        "goal": { "type": "string" }
+      },
+      "required": ["source", "duration", "orientation", "language", "goal"],
+      "additionalProperties": false
+    },
+    "overview": {
+      "type": "string"
+    },
+    "toc": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": { "type": "integer", "minimum": 1 },
+          "start": { "type": "string" },
+          "end": { "type": "string" },
+          "section": { "type": "string" },
+          "summary": { "type": "string" }
+        },
+        "required": ["index", "start", "end", "section", "summary"],
+        "additionalProperties": false
+      }
+    },
+    "scene_breakdown": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": { "type": "integer", "minimum": 1 },
+          "time": { "type": "string" },
+          "section": { "type": "string" },
+          "summary": { "type": "string" },
+          "visuals": { "type": "string" },
+          "speech_or_subtitles": { "type": "string" },
+          "purpose": { "type": "string" },
+          "reusable_points": { "type": "array", "items": { "type": "string" } },
+          "optimization_points": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": [
+          "index",
+          "time",
+          "section",
+          "summary"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "key_observations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reusable_framework": {
+      "type": "object",
+      "properties": {
+        "opening": { "type": "string" },
+        "middle": { "type": "string" },
+        "late_stage": { "type": "string" },
+        "ending": { "type": "string" }
+      },
+      "required": ["opening", "middle", "ending"],
+      "additionalProperties": false
+    },
+    "actionable_recommendations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "risks_and_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "conclusion": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_level",
+    "basic_info",
+    "overview",
+    "toc",
+    "scene_breakdown",
+    "actionable_recommendations",
+    "conclusion"
+  ],
+  "additionalProperties": false
+}

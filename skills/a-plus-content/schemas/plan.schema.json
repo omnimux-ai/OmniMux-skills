@@ -1,0 +1,226 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A+内容规划输出",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "style_bible",
+    "modules"
+  ],
+  "properties": {
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "product_name",
+        "brand_name",
+        "market",
+        "positioning",
+        "strategy"
+      ],
+      "properties": {
+        "product_name": {
+          "type": "string"
+        },
+        "brand_name": {
+          "type": "string"
+        },
+        "market": {
+          "type": "string"
+        },
+        "positioning": {
+          "type": "string"
+        },
+        "strategy": {
+          "type": "string",
+          "description": "A+整体表达策略摘要"
+        },
+        "key_messages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "compliance_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "style_bible": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tone",
+        "visual_keywords",
+        "color_direction",
+        "typography_direction"
+      ],
+      "properties": {
+        "tone": {
+          "type": "string",
+          "description": "整体文案语气"
+        },
+        "visual_keywords": {
+          "type": "array",
+          "description": "视觉关键词",
+          "items": {
+            "type": "string"
+          }
+        },
+        "color_direction": {
+          "type": "string",
+          "description": "配色方向"
+        },
+        "typography_direction": {
+          "type": "string",
+          "description": "字体/版式方向"
+        },
+        "composition_rules": {
+          "type": "array",
+          "description": "构图规则",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dos": {
+          "type": "array",
+          "description": "应该做",
+          "items": {
+            "type": "string"
+          }
+        },
+        "donts": {
+          "type": "array",
+          "description": "避免事项",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "type",
+          "goal",
+          "copy",
+          "visual_plan"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "hero_banner",
+              "brand_story",
+              "feature_highlights",
+              "comparison_chart",
+              "how_to_use",
+              "specifications",
+              "lifestyle_scene",
+              "materials_detail",
+              "faq",
+              "closing_banner"
+            ]
+          },
+          "goal": {
+            "type": "string",
+            "description": "该模块承担的转化目标"
+          },
+          "copy": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "headline"
+            ],
+            "properties": {
+              "headline": {
+                "type": "string"
+              },
+              "subheadline": {
+                "type": "string"
+              },
+              "body_points": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cta": {
+                "type": "string"
+              }
+            }
+          },
+          "visual_plan": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "scene",
+              "composition",
+              "focus"
+            ],
+            "properties": {
+              "scene": {
+                "type": "string",
+                "description": "画面场景说明"
+              },
+              "composition": {
+                "type": "string",
+                "description": "构图说明"
+              },
+              "focus": {
+                "type": "string",
+                "description": "视觉焦点"
+              },
+              "background": {
+                "type": "string"
+              },
+              "props": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "text_overlay_notes": {
+                "type": "string"
+              }
+            }
+          },
+          "image_prompt": {
+            "type": "string",
+            "description": "如需生成图片，可直接使用的提示词"
+          },
+          "asset_requirements": {
+            "type": "array",
+            "description": "所需素材",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "export_notes": {
+      "type": "array",
+      "description": "导出或交付备注",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

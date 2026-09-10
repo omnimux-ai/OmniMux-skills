@@ -1,0 +1,12 @@
+display-name-zh: "Shopee Market Analysis"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Shopee"
+  - "市场分析"
+  - "精选"
+summary-cn: "Shopee site and category market opportunity analysis using shopee-mcp."
+desc-cn: "Shopee site and category market opportunity analysis using shopee-mcp."
+author-cn: "OmniMux"
+source: official

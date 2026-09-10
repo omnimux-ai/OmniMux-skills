@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Prompt Generation Output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["optimized_prompt", "prompt_breakdown", "negative_constraints"],
+  "properties": {
+    "target_model": {
+      "type": "string",
+      "enum": ["generic", "sora", "veo", "seedance"]
+    },
+    "optimized_prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "prompt_breakdown": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "content"],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "negative_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "assumptions_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "per_shot_prompts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["order", "prompt"],
+        "properties": {
+          "order": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "purpose": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "target_model": "generic",
+      "optimized_prompt": "Create a warm morning coffee scene in a sunlit kitchen. A young woman places a mug beside the coffee machine, presses the button, and watches coffee pour into the cup. She lifts the mug, walks to the window, smells the coffee, and takes a relaxed sip. Keep the light soft, the kitchen clean, the action order continuous, and the mood natural with light commercial polish.",
+      "prompt_breakdown": [
+        {
+          "label": "主体与场景",
+          "content": "清晨厨房、女生、咖啡机、窗边收尾。"
+        },
+        {
+          "label": "动作顺序",
+          "content": "放杯子、按按钮、咖啡流动、走向窗边、闻香、喝一口。"
+        }
+      ],
+      "negative_constraints": [
+        "不要背景杂乱",
+        "不要手部异常",
+        "不要让咖啡机和杯子位置在镜头间跳变"
+      ],
+      "assumptions_used": [
+        "默认竖屏短视频",
+        "默认时长约 8 秒"
+      ]
+    }
+  ]
+}

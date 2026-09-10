@@ -1,0 +1,591 @@
+{  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/storyboard.schema.json",
+  "title": "Storyboard Schema",
+  "description": "Reusable schema for short-form video storyboard authoring.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "meta",
+    "video",
+    "scenes"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Schema/application version.",
+      "default": "1.0.0"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_name",
+        "language",
+        "created_at"
+      ],
+      "properties": {
+        "project_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "brand": {
+          "type": "string"
+        },
+        "product": {
+          "type": "string"
+        },
+        "campaign": {
+          "type": "string"
+        },
+        "objective": {
+          "type": "string",
+          "enum": [
+            "awareness",
+            "consideration",
+            "conversion",
+            "retention",
+            "ugc",
+            "other"
+          ]
+        },
+        "platform": {
+          "type": "string",
+          "enum": [
+            "tiktok",
+            "instagram_reels",
+            "youtube_shorts",
+            "generic"
+          ],
+          "default": "tiktok"
+        },
+        "language": {
+          "type": "string",
+          "description": "BCP 47 language tag, e.g. zh-CN, en-US."
+        },
+        "region": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "aspect_ratio",
+        "duration_seconds"
+      ],
+      "properties": {
+        "aspect_ratio": {
+          "type": "string",
+          "enum": [
+            "9:16",
+            "1:1",
+            "16:9",
+            "4:5"
+          ],
+          "default": "9:16"
+        },
+        "duration_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "style": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "tone": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "cta": {
+          "type": "string"
+        },
+        "music_direction": {
+          "type": "string"
+        },
+        "safe_area_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/scene"
+      }
+    },
+    "global_assets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "claims_to_verify": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "restricted_content_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "disclaimer": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "timecode": {
+      "type": "string",
+      "pattern": "^(?:[0-5]?\\d:)?[0-5]?\\d(?:\\.\\d{1,3})?$",
+      "description": "Loose mm:ss(.sss) or ss(.sss) time string."
+    },
+    "asset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "description"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "image",
+            "video",
+            "logo",
+            "product_packshot",
+            "sfx",
+            "music",
+            "caption_preset",
+            "other"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string"
+        },
+        "usage_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shot_size": {
+          "type": "string",
+          "enum": [
+            "extreme_wide",
+            "wide",
+            "medium_wide",
+            "medium",
+            "medium_close",
+            "close_up",
+            "extreme_close_up",
+            "macro"
+          ]
+        },
+        "angle": {
+          "type": "string",
+          "enum": [
+            "eye_level",
+            "high_angle",
+            "low_angle",
+            "top_down",
+            "dutch",
+            "over_shoulder",
+            "pov",
+            "profile",
+            "front"
+          ]
+        },
+        "movement": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "static",
+              "pan_left",
+              "pan_right",
+              "tilt_up",
+              "tilt_down",
+              "push_in",
+              "pull_out",
+              "truck_left",
+              "truck_right",
+              "pedestal_up",
+              "pedestal_down",
+              "handheld",
+              "orbit",
+              "whip_pan",
+              "zoom_in",
+              "zoom_out"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "lens_feel": {
+          "type": "string",
+          "enum": [
+            "ultra_wide",
+            "wide",
+            "normal",
+            "telephoto",
+            "macro",
+            "unknown"
+          ]
+        },
+        "framing_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "voiceover": {
+          "type": "string"
+        },
+        "dialogue": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "speaker",
+              "line"
+            ],
+            "properties": {
+              "speaker": {
+                "type": "string"
+              },
+              "line": {
+                "type": "string"
+              },
+              "emotion": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "on_screen_text_readout": {
+          "type": "boolean",
+          "default": false
+        },
+        "sfx": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "music_notes": {
+          "type": "string"
+        },
+        "silence_beats": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/timecode"
+          }
+        }
+      }
+    },
+    "overlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "position": {
+          "type": "string",
+          "enum": [
+            "top",
+            "upper_third",
+            "center",
+            "lower_third",
+            "bottom"
+          ]
+        },
+        "style": {
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#/$defs/timecode"
+        },
+        "end": {
+          "$ref": "#/$defs/timecode"
+        }
+      }
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "start",
+        "end",
+        "purpose",
+        "visual"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^scene_[0-9]+$"
+        },
+        "start": {
+          "$ref": "#/$defs/timecode"
+        },
+        "end": {
+          "$ref": "#/$defs/timecode"
+        },
+        "duration_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "hook",
+            "problem",
+            "solution",
+            "demo",
+            "benefit",
+            "social_proof",
+            "offer",
+            "cta",
+            "transition",
+            "other"
+          ]
+        },
+        "beat": {
+          "type": "string",
+          "description": "One-line summary of what this scene achieves."
+        },
+        "visual": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What is seen on screen."
+        },
+        "camera": {
+          "$ref": "#/$defs/camera"
+        },
+        "audio": {
+          "$ref": "#/$defs/audio"
+        },
+        "on_screen_text": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/overlay"
+          }
+        },
+        "props": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "product_focus": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "talent": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "type": "string"
+        },
+        "lighting": {
+          "type": "string"
+        },
+        "transition_in": {
+          "type": "string"
+        },
+        "transition_out": {
+          "type": "string"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/asset"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "success_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "version": "1.0.0",
+      "meta": {
+        "project_name": "短视频样片",
+        "brand": "示例品牌",
+        "product": "示例产品",
+        "campaign": "春季上新",
+        "objective": "conversion",
+        "platform": "tiktok",
+        "language": "zh-CN",
+        "region": "CN",
+        "audience": "18-34岁兴趣电商用户",
+        "created_at": "2025-01-01T00:00:00Z",
+        "notes": "模板示例"
+      },
+      "video": {
+        "aspect_ratio": "9:16",
+        "duration_seconds": 15,
+        "style": [
+          "ugc",
+          "fast_cut"
+        ],
+        "tone": [
+          "energetic",
+          "trustworthy"
+        ],
+        "cta": "立即了解",
+        "music_direction": "轻快节奏",
+        "safe_area_notes": "顶部和底部保留字幕安全区"
+      },
+      "scenes": [
+        {
+          "id": "scene_1",
+          "start": "0.0",
+          "end": "3.0",
+          "duration_seconds": 3,
+          "purpose": "hook",
+          "beat": "开场快速吸引注意",
+          "visual": "人物拿起产品，对镜头展示产品亮点。",
+          "camera": {
+            "shot_size": "medium_close",
+            "angle": "front",
+            "movement": [
+              "push_in"
+            ],
+            "lens_feel": "normal",
+            "framing_notes": "主体居中"
+          },
+          "audio": {
+            "voiceover": "你还在为这个小问题烦恼吗？",
+            "dialogue": [
+              {
+                "speaker": "host",
+                "line": "这可能就是更省心的做法。",
+                "emotion": "excited"
+              }
+            ],
+            "on_screen_text_readout": true,
+            "sfx": [
+              "pop"
+            ],
+            "music_notes": "强节拍开场"
+          },
+          "on_screen_text": [
+            {
+              "text": "3秒看懂亮点",
+              "position": "upper_third",
+              "style": "bold_high_contrast",
+              "start": "0.2",
+              "end": "2.5"
+            }
+          ],
+          "props": [
+            "product",
+            "table"
+          ],
+          "product_focus": [
+            "核心卖点"
+          ],
+          "talent": [
+            "host"
+          ],
+          "location": "home_studio",
+          "lighting": "soft_bright",
+          "transition_in": "cut",
+          "transition_out": "whip_pan",
+          "assets": [
+            "logo_anim_01"
+          ],
+          "success_criteria": [
+            "首屏产品清晰可见",
+            "文案简短易读"
+          ]
+        }
+      ],
+      "global_assets": [
+        {
+          "id": "logo_anim_01",
+          "type": "logo",
+          "description": "品牌logo动效",
+          "source": "brand_library",
+          "usage_notes": "仅片头短暂出现"
+        }
+      ],
+      "compliance": {
+        "claims_to_verify": [
+          "任何功能性或效果性描述需有依据"
+        ],
+        "restricted_content_flags": [],
+        "disclaimer": "如涉及效果、销量、排名等内容，请先核实再发布。"
+      }
+    }
+  ]
+}

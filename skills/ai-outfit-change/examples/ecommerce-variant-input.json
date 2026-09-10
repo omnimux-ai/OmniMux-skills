@@ -1,0 +1,52 @@
+{
+  "taskType": "variant_plan",
+  "taskGoal": "为同款针织衫整理多颜色电商变体要求",
+  "usageScenario": "ecommerce_detail_page",
+  "subject": {
+    "sourceType": "user_photo",
+    "images": [
+      {
+        "label": "main-model",
+        "url": "https://example.com/model.jpg"
+      }
+    ],
+    "keepFeatures": [
+      "face",
+      "hair_style",
+      "pose"
+    ],
+    "authorizationStatus": "confirmed"
+  },
+  "garment": {
+    "category": "top",
+    "name": "基础款圆领针织衫",
+    "colors": [
+      "black",
+      "white",
+      "beige"
+    ],
+    "materials": [
+      "knit"
+    ],
+    "pattern": "solid",
+    "fit": "slim",
+    "silhouette": "short",
+    "visibleDetails": [
+      "crew neck",
+      "long sleeves",
+      "soft knit texture"
+    ],
+    "mustKeep": [
+      "same silhouette across color variants"
+    ],
+    "notes": "只变颜色，不改版型和材质表达"
+  },
+  "output": {
+    "aspectRatio": "4:5",
+    "deliverable": "variant_brief",
+    "variantCount": 3
+  },
+  "riskHints": [
+    "颜色变化不能被误解为新增真实 SKU"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "taskType": "variant_plan",
+  "taskGoal": "为同一件风衣规划多模特换装版本",
+  "usageScenario": "internal_review",
+  "subject": {
+    "sourceType": "multiple_people",
+    "images": [
+      {
+        "label": "model-a",
+        "url": "https://example.com/model-1.jpg"
+      },
+      {
+        "label": "model-b",
+        "url": "https://example.com/model-2.jpg"
+      },
+      {
+        "label": "model-c",
+        "url": "https://example.com/model-3.jpg"
+      }
+    ],
+    "keepFeatures": [
+      "face",
+      "body_shape",
+      "pose"
+    ],
+    "authorizationStatus": "confirmed"
+  },
+  "garment": {
+    "category": "outerwear",
+    "name": "米色长款风衣",
+    "colors": [
+      "beige"
+    ],
+    "materials": [
+      "cotton blend"
+    ],
+    "pattern": "solid",
+    "fit": "regular",
+    "silhouette": "longline",
+    "visibleDetails": [
+      "double-breasted front",
+      "waist belt",
+      "notched lapel"
+    ],
+    "mustKeep": [
+      "front closure structure",
+      "belt position"
+    ],
+    "notes": "用于多模特一致性评审"
+  },
+  "output": {
+    "aspectRatio": "4:5",
+    "deliverable": "variant_brief",
+    "variantCount": 3
+  },
+  "riskHints": [
+    "多人版本要防止服装结构漂移"
+  ]
+}

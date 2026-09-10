@@ -1,0 +1,68 @@
+{
+  "product": {
+    "brand": "lumen",
+    "category": "electronics",
+    "product_name": "Minimal Desk Lamp",
+    "product_slug": "minimal-desk-lamp",
+    "color": "black",
+    "material": "matte aluminum"
+  },
+  "global_style": {
+    "background": "white",
+    "lighting": "soft commercial studio lighting",
+    "render_style": "high-detail realistic product photography",
+    "consistency_notes": [
+      "keep proportions realistic",
+      "preserve button placement",
+      "maintain consistent color and finish across all angles",
+      "do not alter product structure or silhouette"
+    ]
+  },
+  "prompts": [
+    {
+      "angle": "front",
+      "filename": "minimal-desk-lamp_front_v01.png",
+      "prompt": "Minimal Desk Lamp, front view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, highlight the clean silhouette and centered control area, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "front45",
+      "filename": "minimal-desk-lamp_front45_v01.png",
+      "prompt": "Minimal Desk Lamp, three-quarter front view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, highlight the clean silhouette, soft ambient glow, and visible side depth, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "left",
+      "filename": "minimal-desk-lamp_left_v01.png",
+      "prompt": "Minimal Desk Lamp, left side view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, clearly show product thickness, side profile, and stable base geometry, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "right",
+      "filename": "minimal-desk-lamp_right_v01.png",
+      "prompt": "Minimal Desk Lamp, right side view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, clearly show side profile, base stability, and structural consistency with the left view, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "back",
+      "filename": "minimal-desk-lamp_back_v01.png",
+      "prompt": "Minimal Desk Lamp, back view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, clearly show rear structure, back panel continuity, and overall silhouette consistency, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "top",
+      "filename": "minimal-desk-lamp_top_v01.png",
+      "prompt": "Minimal Desk Lamp, top view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, clearly show top surface geometry and head shape, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "bottom",
+      "filename": "minimal-desk-lamp_bottom_v01.png",
+      "prompt": "Minimal Desk Lamp, bottom view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, clearly show base underside, support structure, and bottom surface logic, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "macro_detail",
+      "filename": "minimal-desk-lamp_macro_detail_v01.png",
+      "prompt": "Minimal Desk Lamp, macro detail view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, focus on fine surface finish, edge precision, and button detailing, keep proportions realistic, preserve button placement, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    },
+    {
+      "angle": "packaging",
+      "filename": "minimal-desk-lamp_packaging_v01.png",
+      "prompt": "Minimal Desk Lamp, packaging view, clean white background, high-detail realistic product photography, matte aluminum material, black colorway, soft commercial studio lighting, show product together with its retail packaging, maintain a premium modern presentation, keep proportions realistic, preserve brand consistency, maintain consistent color and finish across all angles, do not alter product structure or silhouette."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "product_assessment": {
+    "product_name": "真皮通勤托特包",
+    "category": "fashion_bag",
+    "complexity": "medium",
+    "input_mode": "multi_product_images",
+    "intended_use": "电商上架图与详情页辅图",
+    "notes": "参考较充分，适合输出标准多角度方案与细节图。"
+  },
+  "consistency_brief": {
+    "shape_profile": "中号硬挺托特包，整体为竖向矩形包身，顶部开放式开口，双提手对称连接。",
+    "proportion_profile": "包身宽度大于厚度，高度与提手高度比例稳定，侧面厚度中等，不应在不同角度发生明显膨胀或压缩。",
+    "primary_colors": [
+      "warm_brown"
+    ],
+    "secondary_colors": [
+      "dark_brown_edge_paint",
+      "muted_gold_hardware"
+    ],
+    "materials": [
+      "genuine_leather"
+    ],
+    "surface_finish": [
+      "matte",
+      "fine_natural_grain"
+    ],
+    "key_structures": [
+      "structured_tote_body",
+      "double_top_handles",
+      "open_top",
+      "reinforced_base",
+      "subtle_front_embossed_logo"
+    ],
+    "brand_elements": [
+      "small_embossed_front_logo"
+    ],
+    "known_surfaces": [
+      "front",
+      "left_side",
+      "back",
+      "detail_area",
+      "packaging"
+    ],
+    "partially_known_surfaces": [
+      "right_side",
+      "bottom"
+    ],
+    "unknown_surfaces": [],
+    "non_negotiables": [
+      "保持硬挺包型",
+      "保持双提手比例与连接位置",
+      "保持暖棕色真皮与细腻皮纹",
+      "不要新增外部口袋、装饰带或额外五金"
+    ]
+  },
+  "reference_coverage": {
+    "front": {
+      "status": "clear",
+      "evidence": [
+        "ref_01"
+      ],
+      "notes": "正面结构清晰。"
+    },
+    "sides": {
+      "status": "partial",
+      "evidence": [
+        "ref_02"
+      ],
+      "notes": "左侧明确，右侧可基于对称关系保守推断。"
+    },
+    "back": {
+      "status": "clear",
+      "evidence": [
+        "ref_03"
+      ],
+      "notes": "背面轮廓与走线可见。"
+    },
+    "top": {
+      "status": "partial",
+      "evidence": [
+        "ref_01",
+        "ref_02"
+      ],
+      "notes": "顶部开口可判断，但内里细节不足。"
+    },
+    "bottom": {
+      "status": "partial",
+      "evidence": [
+        "ref_02"
+      ],
+      "notes": "可推断底部厚度与加固逻辑，但底面细节未完全可见。"
+    },
+    "details": {
+      "status": "clear",
+      "evidence": [
+        "ref_04"
+      ],
+      "notes": "皮纹、车线与五金细节清晰。"
+    },
+    "packaging": {
+      "status": "clear",
+      "evidence": [
+        "ref_05"
+      ],
+      "notes": "包装参考充分。"
+    },
+    "notes": "整体参考质量较高，可支持 7–8 张标准输出。"
+  },
+  "recommended_shots": [
+    {
+      "shot_id": "shot_01",
+      "angle": "hero_three_quarter",
+      "purpose": "作为主展示图，突出整体包型、立体感和材质质感。",
+      "composition_guidance": "略微三分之四视角，主体完整入镜，适度留白，构图稳定。",
+      "focus_points": [
+        "整体轮廓",
+        "双提手结构",
+        "皮革质感",
+        "前片低调标识"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "low",
+      "risk_notes": "参考充分，可直接执行。",
+      "execution_recommendation": "execute_now"
+    },
+    {
+      "shot_id": "shot_02",
+      "angle": "clean_front",
+      "purpose": "作为标准识别图，清晰展示正面结构与正面标识位置。",
+      "composition_guidance": "正面平视，居中构图，减少透视变形。",
+      "focus_points": [
+        "正面轮廓",
+        "顶部开口比例",
+        "提手连接点",
+        "正面压印标识"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "low",
+      "risk_notes": "正面参考清晰，适合直接执行。",
+      "execution_recommendation": "execute_now"
+    },
+    {
+      "shot_id": "shot_03",
+      "angle": "left_side",
+      "purpose": "展示侧面厚度、包身深度与侧边轮廓。",
+      "composition_guidance": "左侧平视，全包入镜，强调厚度与侧边收口。",
+      "focus_points": [
+        "包身厚度",
+        "侧边轮廓",
+        "底部加固延伸",
+        "提手落点"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "low",
+      "risk_notes": "左侧参考明确，可直接执行。",
+      "execution_recommendation": "execute_now"
+    },
+    {
+      "shot_id": "shot_04",
+      "angle": "right_side",
+      "purpose": "补全另一侧视图，保证详情页多角度完整性。",
+      "composition_guidance": "右侧平视，保持与左侧图一致的构图与镜头距离。",
+      "focus_points": [
+        "右侧轮廓",
+        "厚度一致性",
+        "提手结构",
+        "边缘涂层"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "medium",
+      "risk_notes": "右侧未单独提供参考，建议按整体对称逻辑保守执行。",
+      "execution_recommendation": "execute_with_caution"
+    },
+    {
+      "shot_id": "shot_05",
+      "angle": "back_view",
+      "purpose": "展示背面轮廓、走线和后片结构。",
+      "composition_guidance": "背面平视，主体完整居中，避免复杂背景。",
+      "focus_points": [
+        "背面整体轮廓",
+        "走线逻辑",
+        "提手连接位置",
+        "背面简洁度"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "low",
+      "risk_notes": "背面参考充分，可直接执行。",
+      "execution_recommendation": "execute_now"
+    },
+    {
+      "shot_id": "shot_06",
+      "angle": "bottom_view",
+      "purpose": "补充底部支撑与底面结构信息。",
+      "composition_guidance": "轻微翻转或低角度展示底部，保持整体逻辑自然。",
+      "focus_points": [
+        "底部厚度",
+        "底边结构",
+        "加固逻辑"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "medium",
+      "risk_notes": "底部未被完整拍到，建议保守处理，不新增脚钉或结构件。",
+      "execution_recommendation": "execute_with_caution"
+    },
+    {
+      "shot_id": "shot_07",
+      "angle": "macro_detail",
+      "purpose": "突出皮纹、车线与五金工艺，强化材质质感。",
+      "composition_guidance": "局部近拍，聚焦明确，背景尽量简洁。",
+      "focus_points": [
+        "真皮纹理",
+        "车线做工",
+        "五金细节",
+        "边油处理"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "low",
+      "risk_notes": "已有清晰细节参考，可直接执行。",
+      "execution_recommendation": "execute_now"
+    },
+    {
+      "shot_id": "shot_08",
+      "angle": "packaging_set",
+      "purpose": "展示产品与包装、防尘袋的组合关系，增强开箱完整度表达。",
+      "composition_guidance": "产品为主体，包装作为辅助，画面整洁有层次。",
+      "focus_points": [
+        "包与防尘袋关系",
+        "包装盒简洁风格",
+        "品牌一致性"
+      ],
+      "background_recommendation": "light_gray",
+      "lighting_recommendation": "clean_catalog",
+      "risk_level": "low",
+      "risk_notes": "包装参考充分，可直接执行。",
+      "execution_recommendation": "execute_now"
+    }
+  ],
+  "recommended_output_count": 8,
+  "deferred_shots": [],
+  "reference_gap_advice": [
+    "若需更高保真底部图，可补充底面实拍参考。",
+    "若需展示内里结构，可补充顶部打开状态与内里细节图。"
+  ],
+  "risk_summary": [
+    "右侧图依赖对称逻辑推断，需保持与左侧结构一致。",
+    "底部图应保守处理，避免虚构脚钉、铭牌或底面纹路。"
+  ],
+  "notes": "该方案适合继续进入逐图提示词编写或直接交给图像生成流程。"
+}

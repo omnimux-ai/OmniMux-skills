@@ -1,0 +1,168 @@
+{
+  "product": {
+    "name": "焕亮修护精华油",
+    "category": "Beauty & Skincare",
+    "sub_category": "Face Oil",
+    "selling_points": [
+      "轻盈不黏腻",
+      "帮助改善干燥暗沉",
+      "适合妆前与夜间护理",
+      "适配极简护肤流程"
+    ],
+    "materials": [
+      "角鲨烷",
+      "霍霍巴籽油",
+      "维生素E"
+    ],
+    "dimensions": {
+      "length": 3.8,
+      "width": 3.8,
+      "height": 11.5,
+      "unit": "cm"
+    },
+    "weight": {
+      "value": 120,
+      "unit": "g"
+    },
+    "package_includes": [
+      "30ml 精华油 x1",
+      "彩盒包装 x1"
+    ],
+    "warranty": "开封后建议 12 个月内使用完毕",
+    "compliance_notes": [
+      "避免医疗功效承诺",
+      "避免使用“100%有效”或“立刻见效”等绝对化表达"
+    ]
+  },
+  "brand": {
+    "name": "LUMERA",
+    "tagline": "轻润修护，透亮发光",
+    "story": "LUMERA 专注于以精简而愉悦的护肤体验，帮助都市女性在快节奏生活中也能维持稳定、舒适、透亮的肌肤状态。",
+    "tone": "clean, premium, reassuring",
+    "visual_style": [
+      "minimal",
+      "soft light",
+      "premium skincare",
+      "editorial close-up"
+    ],
+    "logo_usage_notes": "Logo 建议低干扰置于角落，避免压住产品主体。"
+  },
+  "target_market": {
+    "locale": "US",
+    "language": "zh-CN",
+    "audience": "25-40岁关注肌肤状态、偏好高颜值与高使用愉悦感护肤产品的女性",
+    "price_positioning": "premium",
+    "use_cases": [
+      "晨间妆前打底",
+      "夜间修护",
+      "换季干燥期护理",
+      "旅行时的精简护肤"
+    ],
+    "competitors": [
+      "biossance squalane oil",
+      "summer fridays heavenly sixteen oil"
+    ]
+  },
+  "assets": {
+    "product_images": [
+      {
+        "label": "白底主图",
+        "url": "https://example.com/assets/lumera-main.jpg",
+        "notes": "瓶身正面清晰可见，适合作为产品一致性参考"
+      },
+      {
+        "label": "质地参考图",
+        "url": "https://example.com/assets/lumera-texture.jpg",
+        "notes": "展示油滴与肤感质地"
+      }
+    ],
+    "brand_assets": [
+      {
+        "label": "品牌Logo",
+        "url": "https://example.com/assets/lumera-logo.png"
+      }
+    ],
+    "reference_pages": [
+      "https://example.com/products/lumera-face-oil"
+    ]
+  },
+  "constraints": {
+    "must_include": [
+      "突出肤感轻盈",
+      "强调日夜可用场景",
+      "体现高端、干净、安心感"
+    ],
+    "must_avoid": [
+      "医疗功效表述",
+      "绝对化承诺",
+      "夸大前后对比"
+    ],
+    "claim_policy": "仅可使用日常护理、肤感、使用场景相关表述；不得暗示治疗或临床级修复。",
+    "image_ratio_preferences": [
+      "4:5",
+      "1:1"
+    ]
+  },
+  "modules": [
+    {
+      "id": "m1",
+      "type": "hero_banner",
+      "objective": "建立高端第一印象并快速传达核心卖点",
+      "headline": "一滴润泽，焕现柔亮肤感",
+      "subheadline": "轻盈修护精华油，妆前与夜间都适用",
+      "body_points": [
+        "轻润包裹，肤感不厚重",
+        "适合精简护肤人群",
+        "高颜值瓶身，适配梳妆台陈列"
+      ],
+      "image_direction": "产品悬浮于柔光背景中央，搭配微光油滴与玻璃折射细节",
+      "layout_notes": "产品居中偏下，左上留标题区，整体呼吸感充足",
+      "cta": "探索你的发光护肤一步",
+      "priority": 1
+    },
+    {
+      "id": "m2",
+      "type": "feature_highlights",
+      "objective": "解释产品核心成分与使用收益",
+      "headline": "轻润配方，兼顾肤感与护理体验",
+      "body_points": [
+        "角鲨烷帮助提升柔润感",
+        "霍霍巴籽油带来轻薄包裹感",
+        "维生素E帮助日常护理"
+      ],
+      "image_direction": "成分微观视觉 + 产品局部特写",
+      "layout_notes": "三栏结构，每栏对应一个成分卖点",
+      "priority": 2
+    },
+    {
+      "id": "m3",
+      "type": "lifestyle_scene",
+      "objective": "展示妆前与夜间护理场景，增强代入感",
+      "headline": "从清晨到底夜，一瓶都适合",
+      "subheadline": "妆前轻润打底，夜间柔和修护",
+      "image_direction": "浴室台面晨间场景 + 夜间 bedside 护肤场景",
+      "layout_notes": "左右双场景拼接，中间用产品作为视觉连接点",
+      "priority": 3
+    },
+    {
+      "id": "m4",
+      "type": "specifications",
+      "objective": "补充产品规格与购买决策信息",
+      "headline": "你关心的细节，一目了然",
+      "body_points": [
+        "容量：30ml",
+        "适合多场景护肤使用",
+        "建议避光保存"
+      ],
+      "layout_notes": "简洁图标 + 文本信息排布",
+      "priority": 4
+    }
+  ],
+  "output_preferences": {
+    "deliverables": [
+      "full_aplus_package"
+    ],
+    "image_generation": false,
+    "notes": "希望输出适合作为后续A+详情页策划与图片生成的统一交付包。"
+  }
+}

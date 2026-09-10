@@ -1,0 +1,12 @@
+display-name-zh: "Shopee Brand Analysis"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "Shopee"
+  - "品牌分析"
+  - "精选"
+summary-cn: "Shopee brand ranking, detail, trend, assortment and site/category distribute using shopee-mcp."
+desc-cn: "Shopee brand ranking, detail, trend, assortment and site/category distribute using shopee-mcp."
+author-cn: "OmniMux"
+source: official

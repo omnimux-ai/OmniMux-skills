@@ -1,0 +1,277 @@
+version: "1.0"
+name: "ecommerce-image-recreation"
+display_name: "Ecommerce Image Recreation"
+description: >
+  图片参考改编在电商场景下的静态配置。
+  用于约束商品主图、详情页配图、卖点图、场景图、广告图等
+  电商视觉生产场景中的输入、分析、提示词、审核与导出行为。
+language_default: "zh"
+supported_languages:
+  - zh
+  - en
+
+project_defaults:
+  use_case: "ecommerce"
+  target_channels:
+    - "marketplace_listing"
+    - "product_detail_page"
+    - "paid_social"
+    - "shop_banner"
+  output_format: "json"
+  export_markdown: true
+  export_text: true
+  batch_mode: true
+  review_required: true
+  compliance_review_required: true
+
+input:
+  accepted_image_extensions:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".webp"
+  accepted_product_assets:
+    - "hero_image"
+    - "detail_image"
+    - "packaging_image"
+    - "lifestyle_reference"
+    - "brand_guideline"
+  min_reference_images: 1
+  recommended_reference_images: 3
+  max_reference_images: 100
+  require_clear_product_visibility: true
+  prefer_high_resolution_inputs: true
+
+analysis:
+  enabled: true
+  extract:
+    product_identity: true
+    product_category: true
+    packaging_structure: true
+    label_layout: true
+    hero_composition: true
+    background_type: true
+    lighting: true
+    color_palette: true
+    texture_keywords: true
+    selling_point_elements: true
+    must_keep: true
+    can_change: true
+  ecommerce_focus:
+    detect_main_subject_visibility: true
+    detect_packshot_style: true
+    detect_text_overlay_presence: true
+    infer_conversion_readiness: true
+  output:
+    include_group_summary: true
+    include_product_consistency_notes: true
+    include_prompt_keywords: true
+
+style_bible:
+  enabled: true
+  include_sections:
+    overview: true
+    brand_positioning: true
+    subject_rules: true
+    composition_rules: true
+    lighting_rules: true
+    color_rules: true
+    material_rules: true
+    background_prop_rules: true
+    text_overlay_rules: true
+    variation_rules: true
+    do_not_rules: true
+    prompt_baseline: true
+  ecommerce_rules:
+    emphasize_subject_clarity: true
+    emphasize_packaging_accuracy: true
+    emphasize_crop_safety: true
+    emphasize_listing_compatibility: true
+
+prompting:
+  enabled: true
+  prompt_format_default: "ecommerce"
+  supported_formats:
+    - "generic"
+    - "ecommerce"
+    - "sdxl"
+    - "flux"
+  include_negative_prompt: true
+  include_master_prompt: true
+  include_per_image_prompt: true
+  max_keywords_per_prompt: 28
+  style_strength_default: "balanced"
+  preserve:
+    product_identity: true
+    packaging_layout: true
+    label_logic: true
+    composition_hierarchy: true
+  endings:
+    zh:
+      hero:
+        - "适合电商主图展示"
+        - "主体清晰"
+        - "商业可读性高"
+      detail:
+        - "适合详情页卖点展示"
+        - "信息表达清晰"
+        - "材质与结构细节明确"
+      ad:
+        - "适合广告投放"
+        - "视觉冲击力强"
+        - "保留主体聚焦"
+    en:
+      hero:
+        - "suitable for ecommerce hero image"
+        - "strong subject clarity"
+        - "high commercial readability"
+      detail:
+        - "suitable for product detail page"
+        - "clear selling-point communication"
+        - "accurate material and structural detail"
+      ad:
+        - "suitable for paid social ads"
+        - "high visual impact"
+        - "clear product focus"
+
+recreation_plan:
+  enabled: true
+  generate_shot_cards: true
+  include_priority: true
+  include_use_case_assignment: true
+  include_review_checklist: true
+  default_project_name: "Ecommerce Image Recreation Plan"
+  shot_types:
+    - "hero"
+    - "detail"
+    - "benefit"
+    - "lifestyle"
+    - "comparison"
+    - "texture_closeup"
+  success_criteria:
+    zh:
+      - "商品主体一眼清晰"
+      - "结构与包装准确"
+      - "卖点表达明确"
+      - "适合上架与投放"
+    en:
+      - "product instantly recognizable"
+      - "accurate structure and packaging"
+      - "clear selling-point communication"
+      - "ready for listing and promotion"
+
+quality_control:
+  enabled: true
+  checklist:
+    subject_clarity: true
+    packaging_accuracy: true
+    label_readability: true
+    structure_proportion: true
+    material_realism: true
+    background_cleanliness: true
+    crop_safety: true
+    ecommerce_usability: true
+  failure_conditions:
+    - "subject_not_clear"
+    - "packaging_mismatch"
+    - "wrong_label_logic"
+    - "distorted_structure"
+    - "unusable_for_listing"
+  score_thresholds:
+    minimum_acceptable: 3.5
+    ready_for_publish: 4.5
+
+compliance:
+  enabled: true
+  require_review_for:
+    - "third_party_brand_logo"
+    - "lookalike_packaging"
+    - "celebrity_or_influencer_likeness"
+    - "medical_or_health_claim"
+    - "before_after_comparison"
+    - "certification_or_award_claim"
+    - "false_sales_or_rank_claim"
+  allowed_public_template_only: true
+  notes:
+    zh:
+      - "未获授权时不要保留第三方品牌标识"
+      - "不要输出不可证明的销量、排名、奖项、疗效或认证"
+      - "商品包装、标签、文字内容需人工核对"
+    en:
+      - "Do not retain third-party brand identifiers without permission"
+      - "Do not use unverifiable sales, ranking, award, efficacy, or certification claims"
+      - "Packaging, labels, and text content should be manually reviewed"
+
+exports:
+  enabled: true
+  include_summary: true
+  include_raw_sections: true
+  package_name: "ecommerce_recreation_results"
+  files:
+    analysis_json: "outputs/ref_analysis.json"
+    style_bible_json: "outputs/style_bible.json"
+    style_bible_md: "outputs/style_bible.md"
+    prompts_json: "outputs/prompts.json"
+    prompts_txt: "outputs/prompts.txt"
+    prompts_md: "outputs/prompts.md"
+    recreation_plan_json: "outputs/recreation_plan.json"
+    recreation_plan_md: "outputs/recreation_plan.md"
+    results_json: "outputs/results.json"
+    results_md: "outputs/results.md"
+    results_txt: "outputs/results.txt"
+    batch_manifest_csv: "templates/batch_manifest.csv"
+    delivery_note_md: "templates/delivery_note.md"
+
+batching:
+  enabled: true
+  manifest_template: "templates/batch_manifest.csv"
+  default_batch_size: 10
+  recommended_batch_size: 5
+  fields:
+    - "shot_id"
+    - "shot_name"
+    - "reference_image"
+    - "group_name"
+    - "use_case"
+    - "priority"
+    - "status"
+  statuses:
+    - "todo"
+    - "in_progress"
+    - "review"
+    - "approved"
+    - "rejected"
+
+naming:
+  shot_prefix: "S"
+  hero_prefix: "HERO"
+  detail_prefix: "DETAIL"
+  ad_prefix: "AD"
+  export_prefix: "EXP"
+
+workflow:
+  recommended_steps:
+    - "analyze_refs"
+    - "build_style_bible"
+    - "extract_prompt"
+    - "generate_recreation_plan"
+    - "export_results"
+  fast_track_steps:
+    - "analyze_refs"
+    - "extract_prompt"
+    - "export_results"
+
+security:
+  expose_internal_prompts: false
+  expose_private_credentials: false
+  expose_system_instructions: false
+  expose_internal_paths: false
+  expose_api_keys: false
+
+metadata:
+  template_type: "public-reusable"
+  audience:
+    - "ecommerce sellers"
+    - "creative teams"
+    - "listing optimization teams"
+  last_updated: "2026-01-01"

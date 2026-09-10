@@ -1,0 +1,115 @@
+{
+  "global_direction": {
+    "style_consistency": "整套画面保持 premium skincare 的极简高级风格，统一使用柔光、奶油白与浅香槟金色系，版式留白充足。",
+    "product_consistency": "所有画面中的瓶身比例、标签信息、瓶盖材质与主色调需保持一致，不可擅自改动包装结构或品牌元素。",
+    "render_quality": "高真实感商业级渲染，标签清晰、材质准确、玻璃与油体反射自然，适合电商A+详情页使用。",
+    "negative_prompt": "low resolution, blurry label, distorted bottle, extra objects, messy composition, harsh shadows, medical symbols, before after collage, exaggerated claim visuals, unrealistic skin texture, oversaturated colors",
+    "compliance_guardrails": [
+      "避免医疗、治疗、修复屏障等不可验证功效暗示",
+      "避免前后对比图与绝对化视觉表达",
+      "避免出现临床、处方、药妆等暗示性元素"
+    ]
+  },
+  "prompts": [
+    {
+      "module_id": "m1",
+      "module_type": "hero_banner",
+      "goal": "建立高端第一印象并快速传达核心卖点",
+      "prompt": "Create a premium skincare hero banner for a face oil bottle. Show the product floating at the center against a creamy white to soft champagne gradient background. Add subtle glossy oil droplets and elegant glass reflections to suggest lightweight nourishment. Use soft diffused studio lighting, minimal luxury composition, realistic packaging, sharp label, refined glow, editorial beauty advertising style, high-end ecommerce visual, clean negative space for headline placement.",
+      "negative_prompt": "distorted bottle, unreadable label, cluttered props, dark background, dramatic hard light, medical icons, before-after effect, excessive sparkles",
+      "aspect_ratio": "4:5",
+      "text_overlay": {
+        "headline": "一滴润泽，焕现柔亮肤感",
+        "subheadline": "轻盈修护精华油，妆前与夜间都适用",
+        "body_points": [
+          "轻润包裹，肤感不厚重",
+          "适合精简护肤人群"
+        ],
+        "placement_notes": "文案位于左上到左中区域，主体瓶身保持完整露出"
+      },
+      "asset_dependencies": [
+        "产品正面主图",
+        "品牌Logo参考"
+      ],
+      "quality_checks": [
+        "瓶身结构与参考图一致",
+        "标签可辨识且不变形",
+        "整体氛围高级、干净、不杂乱"
+      ]
+    },
+    {
+      "module_id": "m2",
+      "module_type": "feature_highlights",
+      "goal": "解释产品核心成分与使用收益",
+      "prompt": "Design a premium skincare feature highlights image for a face oil. Use a clean split-panel composition with ingredient-inspired visuals for squalane, jojoba seed oil, and vitamin E. Include translucent oil textures, soft botanical cues, macro beauty details, and an elegant close-up of the product bottle. Keep the palette in warm beige, ivory, and subtle gold. The image should feel modern, minimal, informative, and commercial, suitable for an ecommerce A+ detail page.",
+      "negative_prompt": "scientific lab scene, medical packaging, cluttered infographic, too many colors, fake fruit explosion, cartoon icons, distorted text area",
+      "aspect_ratio": "4:5",
+      "text_overlay": {
+        "headline": "轻润配方，兼顾肤感与护理体验",
+        "body_points": [
+          "角鲨烷帮助提升柔润感",
+          "霍霍巴籽油带来轻薄包裹感",
+          "维生素E帮助日常护理"
+        ],
+        "placement_notes": "每个卖点对应独立区域，文案不要压住产品关键细节"
+      },
+      "asset_dependencies": [
+        "产品局部特写",
+        "成分卖点文案"
+      ],
+      "quality_checks": [
+        "成分画面表达克制高级",
+        "信息分区清楚易读",
+        "没有医学或疗效暗示"
+      ]
+    },
+    {
+      "module_id": "m3",
+      "module_type": "lifestyle_scene",
+      "goal": "展示妆前与夜间护理场景，增强用户代入感",
+      "prompt": "Create a lifestyle storytelling image for a premium face oil, using a diptych composition. On the left, show a bright morning vanity or bathroom counter scene with soft natural light, suggesting pre-makeup skincare. On the right, show a warm nighttime bedside skincare scene with calm, intimate lighting. Place the product as a visual anchor between the two scenes. Keep styling elegant, feminine, minimal, and premium, with realistic product placement and ecommerce-friendly cleanliness.",
+      "negative_prompt": "busy room, too many props, strong fashion makeup look, unrealistic skin glow, medical context, dark moody shadows, chaotic split layout",
+      "aspect_ratio": "4:5",
+      "text_overlay": {
+        "headline": "从清晨到底夜，一瓶都适合",
+        "subheadline": "妆前轻润打底，夜间柔和修护",
+        "placement_notes": "左右场景各放一段简短说明，中部或下方保留产品展示区"
+      },
+      "asset_dependencies": [
+        "产品主图",
+        "生活方式风格参考"
+      ],
+      "quality_checks": [
+        "双场景切换自然清晰",
+        "产品仍然是视觉核心之一",
+        "整体氛围真实且具有购买代入感"
+      ]
+    },
+    {
+      "module_id": "m4",
+      "module_type": "specifications",
+      "goal": "补充产品规格与购买决策信息",
+      "prompt": "Generate a minimal premium skincare specification panel showing a face oil bottle with clean ecommerce infographic styling. Use a soft beige or ivory background, modern simple icons, tidy spacing, and a trustworthy design language. Emphasize product size, packaging clarity, and practical usage details. Keep the composition elegant, sparse, and easy to read, with the bottle rendered sharply and proportionally.",
+      "negative_prompt": "crowded layout, cheap graphic style, neon colors, blurry bottle, excessive text, fake certification badges, medical symbols",
+      "aspect_ratio": "4:5",
+      "text_overlay": {
+        "headline": "你关心的细节，一目了然",
+        "body_points": [
+          "容量：30ml",
+          "适合多场景护肤使用",
+          "建议避光保存"
+        ],
+        "placement_notes": "图标与文字分层排列，避免文案过密"
+      },
+      "asset_dependencies": [
+        "产品规格信息",
+        "包装尺寸信息"
+      ],
+      "quality_checks": [
+        "规格信息区域预留充分",
+        "视觉风格与前几张保持统一",
+        "画面清爽且适合电商阅读"
+      ]
+    }
+  ]
+}

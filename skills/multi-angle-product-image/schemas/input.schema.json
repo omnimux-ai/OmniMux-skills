@@ -1,0 +1,324 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/multi-angle-product-image/input.schema.json",
+  "title": "multi-angle-product-image input schema",
+  "description": "多角度产品图能力包的公开输入结构。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "input_mode"
+  ],
+  "properties": {
+    "input_mode": {
+      "type": "string",
+      "enum": [
+        "single_product_image",
+        "multi_product_images",
+        "product_link_resolved_data",
+        "text_description",
+        "mixed_input"
+      ],
+      "description": "输入模式。"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "产品名称或临时命名。",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "description": "产品品类。"
+    },
+    "product_description": {
+      "type": "string",
+      "description": "产品文字描述、卖点说明或外观描述。"
+    },
+    "reference_images": {
+      "type": "array",
+      "description": "产品参考图列表。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "description": "这里可表示为 URL、对象键、文件名或任意可识别引用。"
+          },
+          "view_hint": {
+            "type": "string",
+            "enum": [
+              "front",
+              "back",
+              "left_side",
+              "right_side",
+              "top",
+              "bottom",
+              "three_quarter",
+              "detail",
+              "packaging",
+              "accessory",
+              "unknown"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "resolved_product_data": {
+      "type": "object",
+      "description": "由商品链接解析得到的结构化产品信息。",
+      "additionalProperties": true,
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "desired_angles": {
+      "type": "array",
+      "description": "用户指定或偏好的角度清单。",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hero_three_quarter",
+          "clean_front",
+          "left_side",
+          "right_side",
+          "back_view",
+          "top_view",
+          "bottom_view",
+          "macro_detail",
+          "packaging_set",
+          "accessory_layout",
+          "open_state",
+          "folded_state",
+          "scale_context"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "output_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "description": "期望输出图片数量。"
+    },
+    "background_mode": {
+      "type": "string",
+      "enum": [
+        "white",
+        "light_gray",
+        "neutral_gradient",
+        "soft_lifestyle",
+        "custom"
+      ]
+    },
+    "background_notes": {
+      "type": "string",
+      "description": "背景补充说明。"
+    },
+    "lighting_style": {
+      "type": "string",
+      "enum": [
+        "soft_studio",
+        "clean_catalog",
+        "premium_specular",
+        "natural_soft",
+        "custom"
+      ]
+    },
+    "lighting_notes": {
+      "type": "string",
+      "description": "布光补充说明。"
+    },
+    "platform_target": {
+      "type": "string",
+      "enum": [
+        "amazon",
+        "tiktok_shop",
+        "shopify",
+        "generic_marketplace",
+        "custom"
+      ]
+    },
+    "strict_consistency_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "description": "一致性要求等级。"
+    },
+    "include_packaging": {
+      "type": "boolean",
+      "description": "是否包含包装相关视图。"
+    },
+    "include_macro_detail": {
+      "type": "boolean",
+      "description": "是否包含局部细节图。"
+    },
+    "include_scale_context": {
+      "type": "boolean",
+      "description": "是否包含尺寸感或比例参照图。"
+    },
+    "allow_inferred_surfaces": {
+      "type": "boolean",
+      "description": "是否允许对未见面做有限合理推断。"
+    },
+    "brand_elements": {
+      "type": "object",
+      "description": "品牌元素约束。",
+      "additionalProperties": false,
+      "properties": {
+        "has_logo": {
+          "type": "boolean"
+        },
+        "logo_notes": {
+          "type": "string"
+        },
+        "text_policy": {
+          "type": "string",
+          "enum": [
+            "preserve_if_visible",
+            "keep_generic_if_unclear",
+            "omit_if_unknown"
+          ]
+        }
+      }
+    },
+    "material_notes": {
+      "type": "string",
+      "description": "材质相关补充说明。"
+    },
+    "color_notes": {
+      "type": "string",
+      "description": "颜色相关补充说明。"
+    },
+    "packaging_notes": {
+      "type": "string",
+      "description": "包装相关补充说明。"
+    },
+    "accessory_notes": {
+      "type": "string",
+      "description": "配件相关补充说明。"
+    },
+    "constraints": {
+      "type": "array",
+      "description": "用户或流程指定的额外约束。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "任意补充说明。"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "input_mode": {
+            "const": "single_product_image"
+          }
+        },
+        "required": [
+          "input_mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "reference_images"
+        ],
+        "properties": {
+          "reference_images": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "input_mode": {
+            "const": "multi_product_images"
+          }
+        },
+        "required": [
+          "input_mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "reference_images"
+        ],
+        "properties": {
+          "reference_images": {
+            "minItems": 2
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "input_mode": {
+            "const": "product_link_resolved_data"
+          }
+        },
+        "required": [
+          "input_mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "resolved_product_data"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "input_mode": {
+            "const": "text_description"
+          }
+        },
+        "required": [
+          "input_mode"
+        ]
+      },
+      "then": {
+        "required": [
+          "product_description"
+        ]
+      }
+    }
+  ]
+}

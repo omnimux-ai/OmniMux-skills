@@ -1,0 +1,527 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/multi-angle-product-image/output.schema.json",
+  "title": "multi-angle-product-image output schema",
+  "description": "多角度产品图能力包的公开最终输出结构。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "plan",
+    "shots"
+  ],
+  "properties": {
+    "plan": {
+      "type": "object",
+      "description": "整体角度规划结果。",
+      "additionalProperties": false,
+      "required": [
+        "product_assessment",
+        "consistency_brief",
+        "reference_coverage",
+        "recommended_shots",
+        "recommended_output_count"
+      ],
+      "properties": {
+        "product_assessment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "category",
+            "complexity",
+            "input_mode",
+            "intended_use"
+          ],
+          "properties": {
+            "product_name": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            },
+            "complexity": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "input_mode": {
+              "type": "string",
+              "enum": [
+                "single_product_image",
+                "multi_product_images",
+                "product_link_resolved_data",
+                "text_description",
+                "mixed_input"
+              ]
+            },
+            "intended_use": {
+              "type": "string"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "consistency_brief": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "shape_profile",
+            "proportion_profile",
+            "primary_colors",
+            "materials",
+            "key_structures",
+            "known_surfaces",
+            "unknown_surfaces"
+          ],
+          "properties": {
+            "shape_profile": {
+              "type": "string"
+            },
+            "proportion_profile": {
+              "type": "string"
+            },
+            "primary_colors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "secondary_colors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "materials": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "surface_finish": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "key_structures": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "brand_elements": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "known_surfaces": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "partially_known_surfaces": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unknown_surfaces": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "non_negotiables": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "reference_coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "front",
+            "sides",
+            "back",
+            "top",
+            "bottom",
+            "details",
+            "packaging"
+          ],
+          "properties": {
+            "front": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "sides": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "back": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "top": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "bottom": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "details": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "packaging": {
+              "$ref": "#/$defs/coverageLevel"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "recommended_shots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/planShot"
+          }
+        },
+        "recommended_output_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "deferred_shots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/planShot"
+          }
+        },
+        "reference_gap_advice": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risk_summary": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "shots": {
+      "type": "array",
+      "description": "逐图提示词结果。",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/shot"
+      }
+    },
+    "global_shared_prefix": {
+      "type": "string",
+      "description": "全局共享前缀，可供所有角度复用。"
+    },
+    "global_negative_prompt": {
+      "type": "string",
+      "description": "全局负面约束。"
+    },
+    "generation_readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ready": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "missing_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "coverageLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "clear",
+            "partial",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "planShot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shot_id",
+        "angle",
+        "purpose",
+        "focus_points",
+        "risk_level",
+        "execution_recommendation"
+      ],
+      "properties": {
+        "shot_id": {
+          "type": "string"
+        },
+        "angle": {
+          "type": "string",
+          "enum": [
+            "hero_three_quarter",
+            "clean_front",
+            "left_side",
+            "right_side",
+            "back_view",
+            "top_view",
+            "bottom_view",
+            "macro_detail",
+            "packaging_set",
+            "accessory_layout",
+            "open_state",
+            "folded_state",
+            "scale_context",
+            "custom"
+          ]
+        },
+        "custom_angle_name": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "composition_guidance": {
+          "type": "string"
+        },
+        "focus_points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "background_recommendation": {
+          "type": "string"
+        },
+        "lighting_recommendation": {
+          "type": "string"
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "risk_notes": {
+          "type": "string"
+        },
+        "execution_recommendation": {
+          "type": "string",
+          "enum": [
+            "execute_now",
+            "execute_with_caution",
+            "defer_until_more_references"
+          ]
+        }
+      }
+    },
+    "shot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "shot_id",
+        "angle",
+        "purpose",
+        "prompt"
+      ],
+      "properties": {
+        "shot_id": {
+          "type": "string"
+        },
+        "angle": {
+          "type": "string",
+          "enum": [
+            "hero_three_quarter",
+            "clean_front",
+            "left_side",
+            "right_side",
+            "back_view",
+            "top_view",
+            "bottom_view",
+            "macro_detail",
+            "packaging_set",
+            "accessory_layout",
+            "open_state",
+            "folded_state",
+            "scale_context",
+            "custom"
+          ]
+        },
+        "custom_angle_name": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "shared_prefix": {
+          "type": "string"
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "negative_prompt": {
+          "type": "string"
+        },
+        "focus_points": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "composition": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "framing": {
+              "type": "string",
+              "enum": [
+                "centered",
+                "slightly_offset",
+                "full_product",
+                "close_up",
+                "detail_crop",
+                "flat_lay",
+                "custom"
+              ]
+            },
+            "camera_height": {
+              "type": "string",
+              "enum": [
+                "eye_level",
+                "slightly_high",
+                "top_down",
+                "low_angle",
+                "custom"
+              ]
+            },
+            "distance": {
+              "type": "string",
+              "enum": [
+                "wide",
+                "medium",
+                "close",
+                "macro",
+                "custom"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "background": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": [
+                "white",
+                "light_gray",
+                "neutral_gradient",
+                "soft_lifestyle",
+                "custom"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "lighting": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "style": {
+              "type": "string",
+              "enum": [
+                "soft_studio",
+                "clean_catalog",
+                "premium_specular",
+                "natural_soft",
+                "custom"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "consistency_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "risk_note": {
+          "type": "string"
+        },
+        "ready_for_generation": {
+          "type": "boolean"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

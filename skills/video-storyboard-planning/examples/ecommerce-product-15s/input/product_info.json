@@ -1,0 +1,84 @@
+{
+  "project_name": "15秒电商带货视频分镜图",
+  "platform": "TikTok",
+  "format": "9:16",
+  "duration_seconds": 15,
+  "language": "zh-CN",
+  "product": {
+    "name": "便携榨汁杯",
+    "category": "小家电 / 厨房用品",
+    "brand": "示例品牌",
+    "price_range": "中低客单",
+    "variants": [
+      "白色",
+      "奶油黄"
+    ],
+    "materials": [
+      "食品接触级杯体",
+      "不锈钢刀头"
+    ],
+    "package_includes": [
+      "榨汁杯主机",
+      "充电线",
+      "说明书"
+    ],
+    "usage": "加入水果和饮品原料后，一键启动进行便携榨汁",
+    "core_selling_points": [
+      "便携小巧，随手带走",
+      "一键启动，操作简单",
+      "适合通勤、办公室、健身后场景"
+    ],
+    "functional_claims": [
+      "快速制作单人份果昔或饮品"
+    ],
+    "visual_highlights": [
+      "杯身简洁",
+      "颜色干净",
+      "适合近景展示",
+      "适合手持场景"
+    ]
+  },
+  "audience": {
+    "primary": "18-35岁偏爱轻食、健身、便携生活方式的女性用户",
+    "secondary": "办公室人群、宿舍用户、通勤党",
+    "pain_points": [
+      "外出时很难快速喝到现做饮品",
+      "传统搅拌机太大，不方便携带",
+      "早上赶时间，不想复杂操作"
+    ],
+    "motivations": [
+      "更方便地管理饮食",
+      "更轻松地制作饮品",
+      "追求轻便、高颜值、小体积产品"
+    ]
+  },
+  "content_goal": {
+    "objective": "促使用户点击商品并产生购买兴趣",
+    "cta": "立即点击查看"
+  },
+  "creative_direction": {
+    "style": "快节奏、平台感强、偏UGC带货",
+    "tone": "轻松、直接、实用",
+    "with_voiceover": true,
+    "with_subtitles": true,
+    "show_face": true
+  },
+  "scene_preferences": [
+    "厨房台面",
+    "办公室桌面",
+    "健身后手持场景"
+  ],
+  "constraints": {
+    "avoid": [
+      "医疗功效暗示",
+      "绝对化承诺",
+      "未经证实的极限表达"
+    ]
+  },
+  "deliverables": {
+    "need_storyboard": true,
+    "need_shotlist": true,
+    "need_prompts": true,
+    "need_production_notes": true
+  }
+}

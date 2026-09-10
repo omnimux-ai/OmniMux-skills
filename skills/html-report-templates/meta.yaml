@@ -1,0 +1,12 @@
+display-name-zh: "HTML Report Templates"
+version: 1.0.0
+tag-cn: "电商 / 内容运营"
+complete-tags-cn:
+  - "电商"
+  - "报表"
+  - "模板"
+  - "HTML"
+summary-cn: "Copy-and-fill HTML report and dashboard templates for html-writer."
+desc-cn: "Copy-and-fill HTML report and dashboard templates for html-writer."
+author-cn: "OmniMux"
+source: official
