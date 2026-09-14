@@ -34,10 +34,14 @@ Motion: describe what happens to the elements already visible in the frame — r
 
 Camera: state the movement explicitly — 镜头推进, 镜头左移. When the camera must hold still, write **固定镜头** to force it. Without it the model improvises movement that can break the adherence to the supplied frames.
 
-## Multi-shot inside this mode
+## Structure between the frames
 
-Boundary frames do not forbid a shot list. When the request spans several beats between the frames, use the multi-shot formula inside this mode: overall description, then shot number with timestamp, then the per-shot content. Keep the intermediate beats consistent with the supplied frames' subject, scene, and lighting so the endpoints remain reachable.
+The handbook's 首尾帧 examples are written as timestamped beats inside one continuous shot (`(0:00 - 0:03) 运镜：…`), so time-coded structure is the native form here. When a request spans several beats between the frames, keep that shape: overall description, then each beat with its timestamp, then the per-beat content.
 
-## Aspect ratio note
+Keep intermediate beats consistent with the supplied frames' subject, scene, and lighting so both endpoints stay reachable. Whether this mode honors a hard cut between separate shots is not stated in the handbook — if the user needs definite cutting, ask for it in the prompt and treat the result as something to verify rather than assume.
 
-First-last-frame mode follows the input image's original aspect ratio. It does not accept an independent ratio setting, so a 9:16 still produces a 9:16 video. If the user needs a different ratio, produce or crop the boundary frames first — do not try to override the ratio in the prompt.
+## Aspect ratio
+
+Aspect ratio stays an independent setting in this mode — the boundary frames do not force it. The handbook states exactly one restriction for this mode (mutual exclusivity with reference inputs); it does not restrict ratio, resolution, or duration.
+
+Still, match the output ratio to the supplied frames. A 16:9 output built from 9:16 boundary frames asks the model to reframe between the endpoints, which weakens adherence to them. When the user wants a ratio the frames do not have, produce or crop the boundary frames to that ratio before submitting. This is engineering practice, not a model restriction, so do not present it to the user as one.
