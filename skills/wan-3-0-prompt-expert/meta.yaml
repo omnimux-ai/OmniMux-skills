@@ -1,0 +1,15 @@
+display-name-zh: Wan 3.0 提示词专家
+version: 1.0.0
+tag-en: Platform Tooling
+tag-cn: 平台工具
+complete-tags-en:
+  - "Platform Tooling"
+complete-tags-cn:
+  - "平台工具"
+summary-en: "Checks which of the two Wan 3.0 creation modes the supplied assets imply, validates the hard parameter limits, then writes a submittable prompt in the matching formula and repairs out-of-range inputs in place."
+summary-cn: "先判断素材属于哪种创作模式，校验参数红线，再按对应公式产出可直接提交的生成提示词，越界输入就地给出修正方案。"
+desc-en: "Built for creators producing video with Alibaba Wanxiang 3.0. The user brings an idea, reference assets (images, videos, audio, documents, or web pages), a first-last-frame pair, an edit instruction, or an extension request. The skill first resolves which of the two modes it is — all-purpose reference or first-last-frame — then audits reference counts, total durations, resolution, aspect ratio and duration rules against the hard limits, writes the prompt with the matching official formula, and repairs any out-of-range input in place instead of truncating silently. The output is a submittable prompt plus a request summary covering mode, ratio, resolution, duration, audio state and each asset's role. Best for multimodal reference generation, boundary-frame control, video editing and video extension. It does not cover full screenwriting, storyboard planning, image generation, post-production, or prompts for other video models."
+desc-cn: "面向使用阿里万相 3.0 生成视频的创作者。用户提供视频创意、参考素材（图片、视频、音频、文档或网页）、首尾帧图像、编辑指令或视频延长需求后，技能先判断应走全能参考还是首尾帧模式，再逐项核对参考数量、总时长、分辨率、比例与时长规则等硬约束，随后按对应公式写出提示词，并对越界输入给出就地修正方案而非静默截断。最终产出为可直接提交的提示词与请求摘要，覆盖模式、比例、分辨率、时长、音频开关以及每个素材承担的角色。适合多模态参考生成、首尾帧控制、视频编辑与视频延长，不适合完整剧本创作、分镜统筹、图片生成、后期剪辑，以及其他视频模型的提示词撰写。"
+author-en: "OmniMux"
+author-cn: "OmniMux"
+source: official
